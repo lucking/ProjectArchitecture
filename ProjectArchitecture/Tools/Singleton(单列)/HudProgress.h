@@ -1,0 +1,95 @@
+//
+//  HudProgress.h
+//  ZM_MBProgressHUD
+//
+//  Created by ZM on 2017/5/27.
+//  Copyright © 2017年 ZM. All rights reserved.
+//
+
+
+#import "Singleton.h"
+//#import <Foundation/Foundation.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+
+
+@interface HudProgress : Singleton< MBProgressHUDDelegate >
+{
+}
+@property (nonatomic, strong) MBProgressHUD *hudView;
+// 单例
++ (HudProgress *)singleton;
+//创建实例
+Singleton_Instance_method_Interface(HudProgress)
+
+
++ (void)test;
+
+
+//- (void)hudShowLoading;
+//- (void)hudShowLoadingMsg:(NSString *)message;
+//
+//- (void)hudHidden:(NSTimeInterval)delay;
+//- (void)hudHidden;
+//- (void)hudHiddenImmediately;
+//- (void)hideHUD;
+
+
+#pragma mark ------------------"  MBProgressHUD Delegate  "------------------
+#pragma
+// 菊花
+- (void)hudShowLoading;
+// 菊花 延时
+- (void)hudShowLoadingDelay:(NSTimeInterval)delay;
+// 菊花消息
+- (void)hudShowLoadingMsg:(NSString *)message;
+// 菊花消息 延时
+- (void)hudShowLoadingMsg:(NSString *)message afterDelay:(NSTimeInterval)delay;
+
+// 普通：提示信息
+- (void)hudShowMessage:(NSString *)messag offset:(CGPoint)offset afterDelay:(NSTimeInterval)delay;
+// 错误：提示信息
+- (void)hudShowErrorMsg:(NSString *)message afterDelay:(NSTimeInterval)delay;
+// 成功时：提示图片
+- (void)hudShowSucceedDelay:(NSTimeInterval)delay;
+// 成功时：提示 图片+信息
+- (void)hudShowSucceedMsg:(NSString *)message afterDelay:(NSTimeInterval)delay;
+
+
+// 提示：图片+信息
+- (void)hudShowImgName:(NSString *)imgName
+                   msg:(NSString *)message
+            afterDelay:(NSTimeInterval)delay;
+// 自定义view
+- (void)hudCustomView:(UIView *)customView
+                  Msg:(NSString *)message
+           afterDelay:(NSTimeInterval)delay;
+
+/** 多控制属性 hud
+ @param message 消息
+ @param font 字体
+ @param modeType 展示模式
+ @param animationType 动画模式
+ @param delay 延迟时间
+ */
+- (void)hudLoadingAddedTo:(UIView *)superView
+                      Msg:(NSString *)message
+                  labFont:(UIFont *)font
+                  hudMode:(MBProgressHUDMode)modeType
+             hudAnimation:(MBProgressHUDAnimation)animationType
+               afterDelay:(NSTimeInterval)delay;
+
+
+//网络使用 含请求超时
+- (void)hudShowLoadingNetWork;
+- (void)hudNetWorkLoadingAddedTo:(UIView *)superView message:(NSString *)message;
+
+//隐藏
+- (void)hudHidden:(NSTimeInterval)delay;
+- (void)hudHidden;
+//从 Window 找到 hud 并隐藏它
+- (void)hudHiddenForWindow;
+//从 父视图中 找到 hud 并隐藏它
+- (void)hudHiddenForView:(UIView *)superView;
+
+
+@end

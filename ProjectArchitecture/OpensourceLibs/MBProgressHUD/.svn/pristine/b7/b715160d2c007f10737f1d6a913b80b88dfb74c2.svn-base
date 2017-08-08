@@ -1,0 +1,36 @@
+//
+//  EICheckBox.h
+//  EInsure
+
+#import <UIKit/UIKit.h>
+
+@protocol CheckBoxDelegate;
+
+@interface CheckBox : UIButton {
+    id<CheckBoxDelegate> _delegate;
+    BOOL _checked;
+    id _userInfo;
+}
+
+@property(nonatomic, assign)id<CheckBoxDelegate> delegate;
+@property(nonatomic, assign)BOOL checked;
+@property(nonatomic, retain)id userInfo;
+
+- (id)initWithDelegate:(id)delegate;
+-(void)setImages;
+-(void)StateNormal;
+-(void)StateSelected;
+@end
+
+@protocol CheckBoxDelegate <NSObject>
+@optional
+- (void)didSelectedCheckBox:(CheckBox *)checkbox checked:(BOOL)checked;
+@end
+
+
+
+
+
+
+
+

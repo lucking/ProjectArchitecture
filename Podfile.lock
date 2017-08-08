@@ -1,0 +1,86 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - iCarousel (1.8.3)
+  - IQKeyboardManager (4.0.10)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - RealReachability (1.1.8):
+    - RealReachability/Connection (= 1.1.8)
+    - RealReachability/Ping (= 1.1.8)
+  - RealReachability/Connection (1.1.8)
+  - RealReachability/Ping (1.1.8)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - XMLDictionary (1.4.1)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - iCarousel (~> 1.8.3)
+  - IQKeyboardManager (~> 4.0.10)
+  - Masonry (= 1.0.2)
+  - MBProgressHUD (~> 1.0.0)
+  - MJExtension (~> 3.0.13)
+  - MJRefresh (~> 3.1.12)
+  - ReactiveCocoa (~> 2.5)
+  - RealReachability (~> 1.1.8)
+  - SDWebImage (~> 4.0.0)
+  - XMLDictionary (~> 1.4.1)
+  - YYCache (~> 1.0.4)
+  - YYCategories (~> 1.0.4)
+  - YYImage (~> 1.0.4)
+  - YYWebImage (~> 1.0.5)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  RealReachability: e6c8a2bbffa316006e8c282efc1ee2567d61a920
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: a011590fbf2e25768096e3cb69a6ff202dd95caf
+
+COCOAPODS: 1.1.1

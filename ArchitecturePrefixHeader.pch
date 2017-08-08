@@ -1,0 +1,36 @@
+//
+//  ArchitecturePrefixHeader.pch
+//  ProjectArchitecture
+//
+//  Created by ZM on 2017/5/16.
+//  Copyright © 2017年 ZM. All rights reserved.
+//
+
+#ifndef ArchitecturePrefixHeader_pch
+#define ArchitecturePrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 配置头文件
+#import "BaseHeader.h"
+#import "SingletonManager.h"
+//#import "ServerURL.h"
+#import "NetworkManager.h"
+#import "AppConst.h"
+#import "HudProgress.h"
+
+//#import "AppMacro.h"
+//#import "AppConfig.h"
+//#import "NetworkAPI.h"
+//#import <UIKit/UIKit.h>
+//#import <Foundation/Foundation.h>
+#import "ReactiveCocoa.h"
+//#import "Masonry.h"
+//#import <ReactiveCocoa.h>
+//#import <Masonry.h>
+//#import <SDWebImage/SDWebImageManager.h>
+//#import <ReactiveCocoa/ReactiveCocoa.h>
+
+
+#endif /* ArchitecturePrefixHeader_pch */
