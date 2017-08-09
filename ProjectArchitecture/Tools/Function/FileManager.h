@@ -83,6 +83,8 @@
 // 将文件写入指定路径
 + (void) writeNewFileToPath:(id) file WithPath:(NSString *) filePath WithFileName:(NSString *) fileName;
 
+#pragma mark - 保存数组到plist文件
++ (void)creatPlistFileWithArr:(NSArray *)array fileName:(NSString *)fileName;
 
 
 

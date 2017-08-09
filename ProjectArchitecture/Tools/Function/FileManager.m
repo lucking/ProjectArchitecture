@@ -48,6 +48,15 @@
 	_imageFilePath1= [_imageFilesPath stringByAppendingPathComponent:@"imageFilePath1"];
 	_imageFilePath2= [_imageFilesPath stringByAppendingPathComponent:@"imageFilePath2"];
 
+    
+    //iOS数据存储方式:
+    //plist(属性列表),preference(偏好设置),SQLite,coredata
+    //plist和preference不支持自定义模型的存储
+    //整理代码创建plist文件的方法： 保存数组到plist文件
+    NSArray *cityArray = @[@"北京",@"上海",@"安徽"];
+    [FileManager creatPlistFileWithArr:cityArray fileName:@"cityPlist.plist"];
+    
+    
 }
 
 NSString *applicationDocumentsDirectory() {
@@ -177,5 +186,21 @@ NSString *applicationDocumentsDirectory() {
 
 	[data writeToFile:path atomically:YES];
 }
+
+
+#pragma mark - 创建plist文件：保存数组到plist文件
++ (void)creatPlistFileWithArr:(NSArray *)array fileName:(NSString *)fileName {
+    //将字典保存到document文件->获取appdocument路径
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    //要创建的plist文件名 -> 路径
+    NSString *filePath = [docPath stringByAppendingPathComponent:fileName];
+    //将数组写入文件
+    [array writeToFile:filePath atomically:YES];
+    //读取文件
+    NSArray *plistArr = [NSArray arrayWithContentsOfFile:filePath];
+    NSLog(@"plistArr= 读取 写入的plist 文件:%@",plistArr);
+}
+
+
 
 @end
