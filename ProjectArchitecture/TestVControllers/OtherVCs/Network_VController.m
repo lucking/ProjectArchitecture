@@ -24,9 +24,12 @@
 //    [self backBtnNoNavBar:NO normalBack:YES];
 
     NSString *title=@"";
-    CGFloat width = 120;
+    CGFloat width = 150;
     for (int i=1 ; i<11; i++) {
         title = [NSString stringWithFormat:@"case%d",i];
+        if (i==6) {
+            title= @"我的阿里云股票测试";
+        }
         [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
     }
 
@@ -183,8 +186,11 @@ static NSString *type = @"";
  
  //股票K线数据：
  //https://market.aliyun.com/products/57000002/cmapi010845.html?spm=5176.2020520132.101.22.JNMy2D#sku=yuncode484500003
+ 
+ //https://market.aliyun.com/products/57000002/cmapi010845.html?spm=5176.2020520132.101.22.JNMy2D#sku=yuncode484500003
+ 
  appcode：你自己的AppCode
- code：股票编码（例如腾讯控股的是：txkg）
+ code：股票编码（例如腾讯控股的是：txkg） 600004    青岛啤酒:600600
  time： 5 = 5分k线(默认) ，
         30 = 30分k线，
         60 = 60分k线，
@@ -200,15 +206,29 @@ static NSString *type = @"";
  "close":"13.510"       //时间区间结束的价格
  },
  
+ {
+ "time": "09:41",
+ "price": "32.54",      //实时价格
+ "aveprice": "32.51",   //均价（前一天的收盘价）
+ "hsl": "0.71",         //换手率
+ "volumn": "49489.00",  //成交量
+ "amount": "160883.00", //成交额
+ "vbuy": "18411.00",    //买量
+ "vsell": "2000.00",    //卖量
+ "bigbar": 0
+ },
+ 
+ 
+ 
 */
     
-    NSString *appcode = @"a1bb20a436404ce894a06dad76bfa5c7";
-    NSString *host = @"https://ali-stock.showapi.com";
-    NSString *path = @"/realtime-k";
+    NSString *appcode= @"a1bb20a436404ce894a06dad76bfa5c7";
+    NSString *host   = @"https://ali-stock.showapi.com";
+    NSString *path   = @"/realtime-k";
     NSString *method = @"GET";
-    NSString *querys = @"?beginDay=20161101&code=600004&time=day&type=bfq";
+    NSString *querys = @"?beginDay=20161101&code=600600&time=5&type=bfq";
     NSString *url = [NSString stringWithFormat:@"%@%@%@",  host,  path , querys];
-    NSString *bodys = @"";
+    //NSString *bodys = @"";
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: url]  cachePolicy:1  timeoutInterval:  5];
     request.HTTPMethod  =  method;
