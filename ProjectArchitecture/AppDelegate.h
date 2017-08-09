@@ -32,6 +32,8 @@ static CGFloat Test_rowHeight = 200;
  *  网络状态
  */
 @property (assign , nonatomic , readonly) ReachabilityStatus  NetWorkStatus;
-
 @end
 
+/* 我的 Github
+ https://github.com/lucking/ProjectArchitecture
+*/

@@ -11,7 +11,6 @@
 #import "IQKeyboardManager.h"
 #import "GuidepageViewController.h"
 #import "ServerConfig.h"
-#import "DeviceInfo.h"
 #import "NetworkReachability.h"
 //测试
 #import "AssertHandler.h"
@@ -43,11 +42,11 @@ static AppDelegate *_singleInstance;
     _singleInstance = self;
     //2.基础设置
     [self BaseSetting];
-    // 配置服务器环境   00:测试环境  01:生产环境   02:折扣宜家
+    // 3.配置服务器环境   00:测试环境  01:生产环境   02:折扣宜家
     [ServerConfig configServer:@"01"];
-    // 配置IQKeyboardManager
+    // 4.配置IQKeyboardManager
     [self configurationIQKeyboard];
-    // 配置网络状态
+    // 5.配置网络状态
     [self configurationNetWorkStatus];
     
     //测试

@@ -181,7 +181,6 @@ static NSString *type = @"";
  AppCode：a1bb20a436404ce894a06dad76bfa5c7
  
  
- 
  //股票K线数据：
  //https://market.aliyun.com/products/57000002/cmapi010845.html?spm=5176.2020520132.101.22.JNMy2D#sku=yuncode484500003
  appcode：你自己的AppCode
