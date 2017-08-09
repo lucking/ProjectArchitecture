@@ -4,7 +4,9 @@
 
 一.基本内容 
     
-    TabBar、TabBarController、NavController、突出模块按钮UpperButton、ReactiveCocoa、Network_网络、Category_类别、Singleton(单列)、FlieUpDownload_上传下载、DataManager_数据管理、单元测试、沙盒文件管理、加密解密、框架基本配置等等 
+    TabBar、TabBarController、NavController、突出模块按钮UpperButton、Network_网络、 
+    ReactiveCocoa（MVVM模式）、Category_类别、Singleton(单列)、FlieUpDownload_上传下载、 
+    DataManager_数据管理、单元测试、沙盒文件管理、加密解密、框架基本配置等等 
 
 
 二.框架搭建  
