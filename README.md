@@ -13,14 +13,14 @@ TabBar、TabBarController、NavController、突出模块按钮UpperButton、Reac
 
 
 三.框架基本配置
-1、app启动
-2、锁屏通知
+
+    1、app启动 
+    2、锁屏通知 
    
-3、注册异常处理函数
+    3、注册异常处理函数 
+    4、配置服务器环境 
    
-4、配置服务器环境
+    5、配置IQKeyboardManager 
    
-5、配置IQKeyboardManager
-   
-6、配置网络状态
-7、进入主题主页
+    6、配置网络状态 
+    7、进入主题主页 
