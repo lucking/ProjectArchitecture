@@ -16,8 +16,6 @@
 }
 @property (nonatomic, assign) NSInteger upperIndex; //突出项的索引
 @property (nonatomic, strong) ZMTabBar *zmTabBar;
-//重写选择器
-//@property(nonatomic) NSUInteger selectedIndex;
 
 @end
 

@@ -21,8 +21,6 @@
 @end
 
 @implementation ZMTabBarController
-//@dynamic selectedIndex;
-//@synthesize selectedIndex = _selectedIndex;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,8 +40,7 @@
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    //change 要改变的属性 keyPath
-    //改变的内容: [change objectForKey:@"new"]
+    //改变的内容: [change objectForKey:@"new"]、change 要改变的属性 keyPath
 //    NSLog(@"--->change: %@",change);
 //    NSLog(@"--->_upperIndex: %ld",_upperIndex);
 //    NSLog(@"--->new: %ld \n ",[[change objectForKey:@"new"] integerValue]);
@@ -87,8 +84,7 @@
 
 #pragma mark- UITabBarDelegate
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     NSLog(@"--> selectedIndex = %ld ",self.selectedIndex);
 
 }
@@ -115,11 +111,10 @@
                              navRootVC_2,
                              navRootVC_3,
                              navRootVC_4];
-    // tb_index_gray、tb_index_gray_select
-    // tabbar_item_setting、tabbar_item_setting_select
     UITabBarItem *tabBarItem_1 =[self getTabBarItemOfNavController:navRootVC_1  myVC:aaVC title:@"首页"
                                                      normolImgName:@"home_bottom"
                                                      selectImgName:@"home_bottom_click"];
+   
     UITabBarItem *tabBarItem_2 =[self getTabBarItemOfNavController: navRootVC_2 myVC: bbVC title:@"模拟"
                                                      normolImgName:@"money_bottom"
                                                      selectImgName:@"money_bottom_click"];
@@ -131,7 +126,6 @@
     UITabBarItem *tabBarItem_4 = [self getTabBarItemOfNavController: navRootVC_4 myVC: ddVC title:@"我的账户"
                                                      normolImgName:@"mine_bottom"
                                                      selectImgName:@"mine_bottom_click"];
-    
     // 调整tabbar
     [self setUpTabBar];
     
@@ -190,13 +184,9 @@
 - (void)addUpperButtonIndex:(NSInteger)upperIndex
 {
     self.upperIndex = upperIndex;
-    //PlusBtnNormal、root_tab_add_btn
-    //PlusBtnNormal、PlusBtn_click
-    //upper0、upper1
     [self addUpperButtonWithImage:[UIImage imageNamed:@"PlusNormal"]
                     selectedImage:[UIImage imageNamed:@"Plusclick"]
                        upperIndex:_upperIndex];
-    
     //（覆盖原位置Item）应该把 UITabBarItem 的图片置空 @"" ,避免UpperBtn图片没有完全覆盖 UITabBarItem图
     self.zmTabBar.items[_upperIndex].image = IMG(@"");
     self.zmTabBar.items[_upperIndex].selectedImage = IMG(@"");
