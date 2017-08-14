@@ -10,6 +10,7 @@
 #import "MoreCell.h"
 #import "UIColor+ZMAdd.h"
 #import "UIView+ZMFrame.h"
+#import "UIView+ZMAdd.h"
 #import "NSString+ZMAdd.h"
 #import "UILabel+ZMAdd.h"
 #import "TabelTextFieldVController.h"
@@ -135,7 +136,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.scrollEnabled = YES;
-        [self clearTableViewLine:_tableView isHeaderView:YES isFooterView:YES];
+        [UIView clearTableViewLine:_tableView isHeaderView:YES isFooterView:YES];
         [self.view addSubview:self.tableView];
     }
     return _tableView;

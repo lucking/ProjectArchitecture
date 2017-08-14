@@ -9,6 +9,7 @@
 #import "TabelTextFieldVController.h"
 #import "UIColor+ZMAdd.h"
 #import "UIView+ZMFrame.h"
+#import "UIView+ZMAdd.h"
 #import "IQKeyboardManager.h"
 #import "AccountModel.h"
 
@@ -94,7 +95,7 @@
         _ttableView.dataSource = self;
         _ttableView.delegate = self;
         _ttableView.scrollEnabled = YES;
-        [self clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
+        [UIView clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
         [self.view addSubview:self.ttableView];
     }
     return _ttableView;

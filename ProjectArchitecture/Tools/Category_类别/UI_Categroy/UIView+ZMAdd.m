@@ -142,6 +142,20 @@
 }
 
 
+// 清除UITableView底部多余的分割线
++ (void)clearTableViewLine:(UITableView *)tabelView
+              isHeaderView:(BOOL)isHeader
+              isFooterView:(BOOL)isFooter {
+    UIView *View=[UIView new];
+    View.backgroundColor= [UIColor clearColor];
+    if (isHeader) { [tabelView setTableHeaderView:View]; }
+    if (isFooter) { [tabelView setTableFooterView:View]; }
+}
+
+
+
+//============================"  动画测试  "=============================
+
 
 #pragma mark 导航视图 动画
 - (void)pushViewController:(UIViewController *)nav

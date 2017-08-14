@@ -32,6 +32,7 @@
 #import "AFNetworkingBase_VC.h"
 #import "Network_VController.h"
 #import <YYWebImage.h>
+#import "UIView+ZMAdd.h"
 
 @interface TestViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -240,7 +241,7 @@
     _ttableView.scrollEnabled= YES;
     _ttableView.separatorStyle= UITableViewCellSeparatorStyleSingleLine;
     [self.view addSubview:_ttableView];
-    [self clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
+    [UIView clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
 }
 
 @end

@@ -382,7 +382,7 @@ static CGFloat const SelectDealViewHeight = 40;//处理选择View的高度
         _ttableView.dataSource = self;
         _ttableView.delegate = self;
         _ttableView.scrollEnabled = YES;
-        [self clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
+        [UIView clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
         [self.view addSubview:self.ttableView];
     }return _ttableView;
 }

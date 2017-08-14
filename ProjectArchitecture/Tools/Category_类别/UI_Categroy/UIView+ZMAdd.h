@@ -71,6 +71,13 @@
                       lineColor:(UIColor *)lineColor;
 
 
+// 清除UITableView底部多余的分割线
++ (void)clearTableViewLine:(UITableView *)tabelView
+              isHeaderView:(BOOL)isHeader
+              isFooterView:(BOOL)isFooter;
+
+
+
 
 #pragma mark 导航视图 动画
 - (void)pushViewController:(UIViewController *)nav;

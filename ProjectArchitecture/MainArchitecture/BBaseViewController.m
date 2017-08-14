@@ -32,10 +32,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     self.navigationController.navigationBar.tintColor = Clear_COLOR;
-    
     //[self test];
     
-
 }
 
 
@@ -66,7 +64,7 @@
     NSLog(@"---> self.childVCs.count = %ld \n ",self.childViewControllers.count);
     return self.navigationController.childViewControllers.count > 1;
     //或
-    //    return YES;
+    //return YES;
 }
 
 //导航标题 navTitle
@@ -119,27 +117,6 @@
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imgName] style:UIBarButtonItemStylePlain target:self action:action];
         self.navigationItem.leftBarButtonItem.tintColor = tintColor;
     }
-}
-
-
-// 清除UITableView底部多余的分割线
-- (void)clearTableViewLine:(UITableView *)tabelView
-              isHeaderView:(BOOL)isHeader
-              isFooterView:(BOOL)isFooter {
-    UIView *View=[UIView new];
-    View.backgroundColor= [UIColor clearColor];
-    if (isHeader) { [tabelView setTableHeaderView:View]; }
-    if (isFooter) { [tabelView setTableFooterView:View]; }
-}
-
-
-// 添加线 控制：坐标、颜色、透明度
--(void)addlineBg:(UIView*)view Rect:(CGRect)rect Color:(UIColor*)color Alpha:(float)alpha
-{
-    UIView* line1= [[UIView alloc]initWithFrame:rect];
-    line1.backgroundColor= color;
-    line1.alpha= alpha;
-    [view addSubview:line1]; 
 }
 
 

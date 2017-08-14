@@ -49,14 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
                          isRightItem:(BOOL)isRightItem;
 
 
-// 清除UITableView底部多余的分割线
-//- (void)clearTableViewLine:(UITableView *)tabelView;
-// 清除UITableView底部多余的分割线
-- (void)clearTableViewLine:(UITableView *)tabelView
-              isHeaderView:(BOOL)isHeader
-              isFooterView:(BOOL)isFooter;
-// 添加线
--(void)addlineBg:(UIView*)view Rect:(CGRect)rect Color:(UIColor*)color Alpha:(float)alpha;
 
 
 // 添加按钮：UIButton （测试使用）
