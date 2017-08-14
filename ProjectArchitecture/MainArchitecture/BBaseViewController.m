@@ -33,17 +33,10 @@
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     self.navigationController.navigationBar.tintColor = Clear_COLOR;
     //[self test];
-    
 }
 
-
 //view 将要出现
-- (void)viewWillAppear:(BOOL)animated
-{
-    //[super viewWillAppear:animated];
-    //[self.navigationController.navigationBar setBarTintColor:NavBg_COLOR];
-    //在此写（在viewWillAppear里写），有3级以上vc，vc消失时，delegate为重新代理，依然支持右滑返回功能
-    //self.navigationController.interactivePopGestureRecognizer.delegate = self;
+- (void)viewWillAppear:(BOOL)animated {
 }
 //view 已经出现
 - (void)viewDidAppear:(BOOL)animated {
@@ -82,7 +75,6 @@
 }
 
 - (void)setTitleCustom:(NSString *)titleCustom {
-    
     _titleCustom = titleCustom;
     _titleNavLab.text = titleCustom;
 }
@@ -158,20 +150,20 @@
 }
 // 菊花停止
 - (void)hudHidden {
-//    [MMBProgress hudHiddenImmediately];
+    [[HudProgress singleton] hudHidden];
 }
 // 等待：提示信息
 - (void)hudShowLoading:(NSString *)message afterDelay:(NSTimeInterval)delay
 {
-//    [MMBProgress hudShowLoading:message afterDelay:delay];
+    [[HudProgress singleton] hudShowLoadingMsg:message afterDelay:delay];
 }
 // 普通：提示信息
 - (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay {
-//    [MMBProgress hudShowMessage:message afterDelay:delay];
+    [[HudProgress singleton] hudShowLoadingMsg:message afterDelay:delay];
 }
 // 成功时：提示信息
 - (void)hudShowSucceed:(NSString *)message afterDelay:(NSTimeInterval)delay {
-//    [MMBProgress hudShowSucceed:message afterDelay:delay];
+    [[HudProgress singleton] hudShowSucceedMsg:message afterDelay:delay];
 }
 
 
@@ -181,7 +173,14 @@
     //self.navigationController.interactivePopGestureRecognizer.delegate = self;
     //self.backBtn.hidden = YES;
 }
-
+//view 将要出现
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    //[super viewWillAppear:animated];
+//    //[self.navigationController.navigationBar setBarTintColor:NavBg_COLOR];
+//    //在此写（在viewWillAppear里写），有3级以上vc，vc消失时，delegate为重新代理，依然支持右滑返回功能
+//    //self.navigationController.interactivePopGestureRecognizer.delegate = self;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

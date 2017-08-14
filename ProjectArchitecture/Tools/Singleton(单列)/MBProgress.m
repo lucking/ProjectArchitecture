@@ -9,9 +9,9 @@
 #import "MBProgress.h"
 
 @implementation MBProgress
-//实例化
-Singleton_Instance_method_Impl(MBProgress)
-
+////实例化
+//Singleton_Instance_method_Impl(MBProgress)
+//
 //// 同上
 //+ (MBProgress *)singletonShare
 //{

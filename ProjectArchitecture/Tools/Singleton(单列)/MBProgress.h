@@ -14,9 +14,9 @@
     //	MBProgressHUD *_hudView;
 }
 @property (nonatomic, strong) MBProgressHUD *hudView;
-//创建实例
-Singleton_Instance_method_Interface(MBProgress)
-
+////创建实例
+//Singleton_Instance_method_Interface(MBProgress)
+//
 //// 单例：同上
 //+ (MBProgress *)singletonShare;
 //
