@@ -68,6 +68,7 @@
 		6868F4E71E5BE6DF00852BB8 /* AATestVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868F4E61E5BE6DF00852BB8 /* AATestVController.m */; };
 		6868F4EA1E5BEB0B00852BB8 /* TestAAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868F4E91E5BEB0B00852BB8 /* TestAAView.m */; };
 		6868F4F01E5BF15200852BB8 /* ZMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868F4EF1E5BF15200852BB8 /* ZMTabBar.m */; };
+		687090331F441EDF002E5D64 /* TestVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 687090321F441EDF002E5D64 /* TestVController.m */; };
 		687B04601ED2BAE100A5FEDA /* UIImageView+HTRoundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 687B045F1ED2BAE100A5FEDA /* UIImageView+HTRoundImage.m */; };
 		687B04631ED2BB0C00A5FEDA /* UIImage+HTRoundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 687B04621ED2BB0C00A5FEDA /* UIImage+HTRoundImage.m */; };
 		687B046C1ED2C9B400A5FEDA /* TestConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 687B046B1ED2C9B400A5FEDA /* TestConst.m */; };
@@ -407,6 +408,8 @@
 		6868F4E91E5BEB0B00852BB8 /* TestAAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAAView.m; sourceTree = "<group>"; };
 		6868F4EE1E5BF15200852BB8 /* ZMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTabBar.h; sourceTree = "<group>"; };
 		6868F4EF1E5BF15200852BB8 /* ZMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTabBar.m; sourceTree = "<group>"; };
+		687090311F441EDF002E5D64 /* TestVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVController.h; sourceTree = "<group>"; };
+		687090321F441EDF002E5D64 /* TestVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVController.m; sourceTree = "<group>"; };
 		687B045E1ED2BAE100A5FEDA /* UIImageView+HTRoundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HTRoundImage.h"; sourceTree = "<group>"; };
 		687B045F1ED2BAE100A5FEDA /* UIImageView+HTRoundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HTRoundImage.m"; sourceTree = "<group>"; };
 		687B04611ED2BB0C00A5FEDA /* UIImage+HTRoundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HTRoundImage.h"; sourceTree = "<group>"; };
@@ -1988,6 +1991,8 @@
 				68F7C1C71E34BBA8009B2101 /* HomeOtherVC */,
 				68F7C1C81E34BBA8009B2101 /* HomeViewController.h */,
 				68F7C1C91E34BBA8009B2101 /* HomeViewController.m */,
+				687090311F441EDF002E5D64 /* TestVController.h */,
+				687090321F441EDF002E5D64 /* TestVController.m */,
 				6868F4E51E5BE6DF00852BB8 /* AATestVController.h */,
 				6868F4E61E5BE6DF00852BB8 /* AATestVController.m */,
 				68C13E781E5D2909008AB244 /* BBTestVController.h */,
@@ -2482,6 +2487,7 @@
 				6828EB311E654C8A00CCFD82 /* UIAlertView+ZMAdd.m in Sources */,
 				68C0F00D1ECA81FA0060556C /* TableView_SystemCheck.m in Sources */,
 				68F7C1A51E34BBA2009B2101 /* NoWiFiView.m in Sources */,
+				687090331F441EDF002E5D64 /* TestVController.m in Sources */,
 				68DC733F1E71388F009B6691 /* ZMTitleLable.m in Sources */,
 				684988F21EB02E2E00FCB42F /* Network_VController.m in Sources */,
 				682121F81EC4514500BC4CE6 /* SelectDayCell.m in Sources */,
