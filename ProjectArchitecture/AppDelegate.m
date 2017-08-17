@@ -90,8 +90,6 @@ static AppDelegate *_singleInstance;
     NSDate *myDate2 = [NSDate stringToDateWithDateStr:@"2017-08-16 08:26:26" format:@"YYYY-MM-dd hh:mm:ss"];
     NSLog(@"---> 1.1_2：string to date = %@",myDate2);
     
-    
-    
     //date To String
     NSString *dateStr1 = [NSDate dateToStringWithDate:[NSDate date] format:@"YYYY-MM-dd hh:mm:ss"];
     NSLog(@"---> 1.2：date to string = %@",dateStr1);
@@ -102,29 +100,10 @@ static AppDelegate *_singleInstance;
 
     //时间戳 to dateStr
     NSString *dateStr2 = [NSDate timeIntervalWithString:timestampStr dateFormatStatus:DFStyleYYYYMMddHHmmss];
-    NSLog(@"---> 2.2：时间戳 to dateStr = %@ \n ",dateStr2);
+    NSLog(@"---> 2.2_1：时间戳 to dateStr = %@ ",dateStr2);
 
-    
-    
-    NSString* string = @"20110826134106";
-    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    [inputFormatter setDateFormat:@"yyyyMMddHHmmss"];
-    NSDate* inputDate = [inputFormatter dateFromString:string];
-    NSLog(@"date = %@", inputDate);
-    
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[NSLocale currentLocale]];
-    [outputFormatter setDateFormat:@"yyyy年MM月dd日 HH时mm分ss秒"];
-    
-    NSDate* inputDate2 = [outputFormatter dateFromString:string];
-    NSLog(@"date2 = %@", inputDate2);
-
-    
-    
-    NSString *str = [outputFormatter stringFromDate:inputDate];
-    NSLog(@"testDate:%@ \n \n ", str);
-    
+    NSString *dateStr2_2 = [NSDate timestampWithString:timestampStr format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 2.2_2：时间戳 to dateStr = %@ \n ",dateStr2_2);
     
     
     

@@ -81,7 +81,6 @@
 
 /**
  date 转换为 string
- 
  @param myDate      时间
  @param format   时间格式
  @return dateStr
@@ -93,10 +92,8 @@
     NSString *dateStr= [dateFM stringFromDate:myDate];
     return dateStr;
 }
-
 /**
  string 转换为 date
-
  @param timeStr 时间字符串
  @param format 时间格式
  @return NSDate
@@ -236,7 +233,6 @@
 
 /**
  将某个时间转化成 时间戳
-
  @param formatTime 时间字符串
  @param format 时间格式
  @return 时间戳
