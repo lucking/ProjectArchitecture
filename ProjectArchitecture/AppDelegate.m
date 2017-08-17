@@ -18,6 +18,7 @@
 #import "NSData+ZMAdd.h"
 #import "Person.h"
 #import "DeviceInfo.h"
+#import "NSDate+ZMAdd.h"
 
 @interface AppDelegate () {
     
@@ -58,14 +59,74 @@ static AppDelegate *_singleInstance;
 }
 
 
+
+
+
 //测试
 - (void)test {
     //测试 配置网络状态
     [NetworkReachability netWorkReachabilityStatus];
-    
     // 设备信息管理
     NSLog(@"---> randomUUID_1= %@ ",[DeviceInfo randomUUID]);
     NSLog(@"---> randomUUID_2= %@ ",[DeviceInfo randomUUID]);
+    
+    
+    NSDate *datenow = [NSDate date];//现在时间
+    NSLog(@"---> datenow= %@ ",datenow);
+    
+
+    NSString *dateStr_1 = [NSDate timeIntervalWithString:@"1296035591" dateFormatStatus:DFStyleYYYYMMddHHmmss];
+    NSString *dateStr_12 = [NSDate timeIntervalWithString:@"1502953200" dateFormatStatus:DFStyleYYYYMMddHHmmss];
+    NSString *dateStr_2 = [NSDate timestampSwitchTime:1296035591 andFormatter:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> dateStr_1 = %@ \n ",dateStr_1);
+    NSLog(@"---> dateStr_12 = %@ \n ",dateStr_12);
+    NSLog(@"---> dateStr_2 = %@ \n ",dateStr_2);
+
+    
+    //string to date
+    NSDate *myDate1 = [NSDate stringToDateWithDateStr:@"20110826134106" format:@"yyyyMMddHHmmss"];
+    NSLog(@"---> 1.1_1：string to date = %@",myDate1);
+
+    NSDate *myDate2 = [NSDate stringToDateWithDateStr:@"2017-08-16 08:26:26" format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 1.1_2：string to date = %@",myDate2);
+    
+    
+    
+    //date To String
+    NSString *dateStr1 = [NSDate dateToStringWithDate:[NSDate date] format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 1.2：date to string = %@",dateStr1);
+
+    //dateStr to 时间戳
+    NSString *timestampStr = [NSDate timeSwitchTimestamp:dateStr1 andFormatter:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 2.1：dateStr to 时间戳 = %@",timestampStr);
+
+    //时间戳 to dateStr
+    NSString *dateStr2 = [NSDate timeIntervalWithString:timestampStr dateFormatStatus:DFStyleYYYYMMddHHmmss];
+    NSLog(@"---> 2.2：时间戳 to dateStr = %@ \n ",dateStr2);
+
+    
+    
+    NSString* string = @"20110826134106";
+    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
+    [inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [inputFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSDate* inputDate = [inputFormatter dateFromString:string];
+    NSLog(@"date = %@", inputDate);
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[NSLocale currentLocale]];
+    [outputFormatter setDateFormat:@"yyyy年MM月dd日 HH时mm分ss秒"];
+    
+    NSDate* inputDate2 = [outputFormatter dateFromString:string];
+    NSLog(@"date2 = %@", inputDate2);
+
+    
+    
+    NSString *str = [outputFormatter stringFromDate:inputDate];
+    NSLog(@"testDate:%@ \n \n ", str);
+    
+    
+    
     
 //    Person *pp = [[Person alloc] init];
 //    [pp setValue:@"aaaa" forKey:@"firstName"];

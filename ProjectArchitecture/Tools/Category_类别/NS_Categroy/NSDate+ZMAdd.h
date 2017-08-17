@@ -34,6 +34,15 @@ typedef NS_ENUM (NSInteger, MonthDayFormatStatus) {
 // 获取当前日期
 +(NSString*)getCurrentDateWithFormatter:(NSString *)Formatter;
 
+
+// date 转换为 string
++ (NSString *)dateToStringWithDate:(NSDate *)myDate format:(NSString *)format;
+
+// string 转换为 date
++ (NSDate* )stringToDateWithDateStr:(NSString *)timeStr format:(NSString *)format;
+
+
+
 // 获取与当前日期 相差的日期
 +(NSString*)getDateSetYear:(NSInteger)year SetMonth:(NSInteger)month SetDay:(NSInteger)day;
 
@@ -44,7 +53,14 @@ typedef NS_ENUM (NSInteger, MonthDayFormatStatus) {
 + (NSString *)dateFormatWithDate:(NSDate*)date dateFormatStatus:(DateFormatStatus)state;
 
 // 时间戳 转换为 日期时间 选取不同格式
-+ (NSTimeInterval)timeIntervalWithString:(NSString *)string dateFormatStatus:(DateFormatStatus)state;
++ (NSString *)timeIntervalWithString:(NSString *)string dateFormatStatus:(DateFormatStatus)state;
+// 同上：自定义时间格式
++ (NSString *)timestampWithString:(NSString *)string format:(NSString *)format;
+
+// 时间戳 转换为 日期时间
++ (NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format;
+// 将某个时间转化成 时间戳
++ (NSString *)timeSwitchTimestamp:(NSString *)formatTime andFormatter:(NSString *)format;
 
 
 

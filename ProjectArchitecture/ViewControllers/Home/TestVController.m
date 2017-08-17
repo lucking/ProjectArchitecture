@@ -24,7 +24,7 @@
     [self nav_titleView];
 }
 
-
+//http://blog.csdn.net/u010212550/article/details/51547259
 - (void)nav_titleView {
     
     CGFloat ScreenWidth= [UIScreen mainScreen].bounds.size.width;

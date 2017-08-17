@@ -26,6 +26,30 @@
     NSLog(@"dateStr44 = %@ ",dateStr44);
     
     
+    
+    NSDate *datenow = [NSDate date];//现在时间
+    NSLog(@"---> datenow= %@ ",datenow);
+    
+    
+    NSString *dateStr_1 = [NSDate timeIntervalWithString:@"1296035591" dateFormatStatus:DFStyleYYYYMMddHHmmss];
+    NSString *dateStr_12 = [NSDate timeIntervalWithString:@"1502953200" dateFormatStatus:DFStyleYYYYMMddHHmmss];
+    NSString *dateStr_2 = [NSDate timestampSwitchTime:1296035591 andFormatter:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> dateStr_1 = %@ \n ",dateStr_1);
+    NSLog(@"---> dateStr_12 = %@ \n ",dateStr_12);
+    NSLog(@"---> dateStr_2 = %@ \n ",dateStr_2);
+    
+    // date To String
+    NSString *dateStr1 = [NSDate dateToStringWithDate:[NSDate date] format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> date to string = %@",dateStr1);
+    
+    //dateStr to 时间戳
+    NSString *timestampStr = [NSDate timeSwitchTimestamp:dateStr1 andFormatter:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> dateStr to 时间戳 = %@",timestampStr);
+    
+    //时间戳 to dateStr
+    NSString *dateStr2 = [NSDate timeIntervalWithString:timestampStr dateFormatStatus:DFStyleYYYYMMddHHmmss];
+    NSLog(@"---> 时间戳 to dateStr = %@ \n ",dateStr2);
+    
 }
 
 
@@ -52,6 +76,49 @@
     
     return getDate;
 }
+
+
+
+/**
+ date 转换为 string
+ 
+ @param myDate      时间
+ @param format   时间格式
+ @return dateStr
+ */
++ (NSString *)dateToStringWithDate:(NSDate *)myDate format:(NSString *)format{
+    
+    NSDateFormatter *dateFM = [[NSDateFormatter alloc] init];
+    [dateFM setDateFormat:format];
+    NSString *dateStr= [dateFM stringFromDate:myDate];
+    return dateStr;
+}
+
+/**
+ string 转换为 date
+
+ @param timeStr 时间字符串
+ @param format 时间格式
+ @return NSDate
+ */
++ (NSDate *)stringToDateWithDateStr:(NSString *)timeStr format:(NSString *)format {
+
+    NSDateFormatter *dateFM = [[NSDateFormatter alloc] init];
+    [dateFM setLocale:[NSLocale currentLocale]];
+    [dateFM setDateFormat:format];
+    NSDate* date = [dateFM dateFromString:timeStr];
+    return [NSDate worldTimeToChinaTime:date];
+}
+
+//将世界时间转化为中国区时间
++ (NSDate *)worldTimeToChinaTime:(NSDate *)date
+{
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [timeZone secondsFromGMTForDate:date];
+    NSDate *localeDate = [date  dateByAddingTimeInterval:interval];
+    return localeDate;
+}
+
 
 
 // 获取与当前日期 相差的日期
@@ -107,26 +174,89 @@
 
 
 /**
- * 时间戳 转换为 日期时间 选取不同格式
+ * 时间戳 转换为 日期时间 （24小时制）
+ 
  @param string 时间戳
  @param state 日期时间格式
- *  使用方式  [NSString timeIntervalWithString:string dateFormatStatus:DFStyleYYYYMMdd];
+ @return 日期
  */
-+ (NSTimeInterval)timeIntervalWithString:(NSString *)string dateFormatStatus:(DateFormatStatus)state
++ (NSString *)timeIntervalWithString:(NSString *)string dateFormatStatus:(DateFormatStatus)state
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设置时区
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    
-    //[dateFormatter setDateFormat:style];
     // 设置时间的格式
     if (state == DFStyleMMdd) {                 dateFormatter.dateFormat = @"MM/dd";
     }else if (state == DFStyleYYYYMMdd) {       dateFormatter.dateFormat = @"yyyy-MM-dd";
     }else if (state == DFStyleHHmmss ) {        dateFormatter.dateFormat = @"HH:mm:ss";
     }else if (state == DFStyleYYYYMMddHHmmss ) {dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     }
-    NSDate *date = [dateFormatter dateFromString:string];
-    return date.timeIntervalSince1970 * 1000;
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[string integerValue]];
+    NSString *timespStr = [dateFormatter stringFromDate:confromTimesp];
+
+    return timespStr;
 }
+// 同上：自定义时间格式
++ (NSString *)timestampWithString:(NSString *)string format:(NSString *)format
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设置时区
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    // 设置时间的格式
+    [dateFormatter setDateFormat:format];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[string integerValue]];
+    NSString *timespStr = [dateFormatter stringFromDate:confromTimesp];
+    return timespStr;
+}
+
+
+
+/**
+ 时间戳 转换为 日期时间  (12小时制)
+ 
+ @param timestamp 时间戳：例如 1296035591、1502926804
+ @param format    设置你想要的格式//（@"YYYY-MM-dd hh:mm:ss"）-,hh与HH的区别:分别表示12小时制,24小时制
+ @return 日期
+ */
++ (NSString *)timestampSwitchTime:(NSInteger)timestamp andFormatter:(NSString *)format {
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:format];
+    //设置时区
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [formatter setTimeZone:timeZone];
+    NSDate *confromDate = [NSDate dateWithTimeIntervalSince1970:timestamp];
+
+    NSString *dateStr = [formatter stringFromDate:confromDate];
+    return dateStr;
+}
+
+/**
+ 将某个时间转化成 时间戳
+
+ @param formatTime 时间字符串
+ @param format 时间格式
+ @return 时间戳
+ */
++ (NSString *)timeSwitchTimestamp:(NSString *)formatTime andFormatter:(NSString *)format {
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:format];
+    
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [formatter setTimeZone:timeZone];
+    NSDate* date = [formatter dateFromString:formatTime]; //将字符串按formatter转成NSDate
+    //时间转时间戳的方法:
+    NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
+    
+    return [NSString stringWithFormat:@"%ld",(long)timeSp];
+}
+
 
 
 
