@@ -27,7 +27,7 @@
 
 #pragma mark //==========================="   getURl 验证签名：密钥加密  "================================
 // 字典不排序_拼接url
-+ (NSString *)getURlStringOfIP:(NSString *)url params:(NSDictionary *)params;
++ (NSString *)getURLStringWithIP:(NSString *)url params:(NSDictionary *)params;
 // 字典排序_拼接url
 + (NSString *)getURlStringOfIP:(NSString *)url sortParams:(NSDictionary *)params;
 // 验证签名：密钥加密

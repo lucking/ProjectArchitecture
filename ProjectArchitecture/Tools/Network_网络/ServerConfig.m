@@ -56,7 +56,7 @@ static NSString *ServerEnvironment;
 
 #pragma mark ======================"  getURl  "==============================
 //字典不排序_拼接url
-+ (NSString *)getURlStringOfIP:(NSString *)url params:(NSDictionary *)params {
++ (NSString *)getURLStringWithIP:(NSString *)url params:(NSDictionary *)params {
     
     if (params !=nil) {
         NSArray *keysArray = [params allKeys]; //获取所有的键（allKeys）存到数组

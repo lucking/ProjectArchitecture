@@ -83,7 +83,7 @@
     URL = [NSString removeStringEmpty:URL];
     NSLog(@"--->请求url: %@",URL);
     NSLog(@"--->请求参数: %@",params);
-    NSLog(@"--->完整的url: %@ \n ",[ServerConfig getURlStringOfIP:URL params:params]);
+    NSLog(@"--->完整的url: %@ \n ",[ServerConfig getURLStringWithIP:URL params:params]);
     
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
@@ -313,7 +313,7 @@
         [HHudProgress hudShowErrorMsg:[error localizedDescription] afterDelay:Hud_ErrorTime];
 	}
     
-    [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+    //[HHudProgress hudShowLoadingMsg:@"请稍候..."];
 }
 
 /**

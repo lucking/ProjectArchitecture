@@ -13,7 +13,6 @@
 #import "ServerURL.h"
 
 @interface Network_VController ()
-//@property (nonatomic, copy) NSString *type;
 @end
 
 @implementation Network_VController
@@ -64,10 +63,10 @@
 
 //例一：AFNetworking 原始请求方式 没有封装
 - (void)case1 {
-    __block NSURLSessionDataTask *dataTask = nil;
     NSDictionary *params = @{@"cid":@"remen",};
     NSString *urlStr = @"http://zhekou.yijia.com/lws/view/ichuanyi/suit_list_data_get.php";
     
+    __block NSURLSessionDataTask *dataTask = nil;
     dataTask = [[NetworkSession sharedSessionManager] GET:urlStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSLog(@"---> responseObject: %@", responseObject);
@@ -117,14 +116,13 @@
     
     [ServerConfig configServer:@"01"];
 
-    __block NSURLSessionDataTask *dataTask = nil;
     NSDictionary *params = @{@"cid":@"remen",};
+    __block NSURLSessionDataTask *dataTask = nil;
     dataTask = [NetworkManager requestGetURL:CityTravel_URL withParameters:params hudShow:YES success:^(id data) {
         NSLog(@"---> data = %@ \n \n", data);
         
     } failure:^(NSError *error) {
     }];
-    
     
     //NSString *const  CityTravel_URL = @"/v2/index/";
     // http://api.breadtrip.com/v2/index/
@@ -219,7 +217,6 @@ static NSString *type = @"";
  },
  
  
- 
 */
     
     NSString *appcode= @"a1bb20a436404ce894a06dad76bfa5c7";
@@ -232,7 +229,7 @@ static NSString *type = @"";
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: url]  cachePolicy:1  timeoutInterval:  5];
     request.HTTPMethod  =  method;
-    [request addValue:  [NSString  stringWithFormat:@"APPCODE %@" ,  appcode]  forHTTPHeaderField:  @"Authorization"];
+    [request addValue:[NSString stringWithFormat:@"APPCODE %@" ,appcode] forHTTPHeaderField:  @"Authorization"];
     NSURLSession *requestSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     NSURLSessionDataTask *task = [requestSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable body , NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
@@ -249,6 +246,20 @@ static NSString *type = @"";
 }
 //例七：
 - (void)case7 {
+    
+    //http://open.onehou.com:8880/quotes/real?token=xxx&obj=SH600000&field=Obj,ShiJian,ZuiXinJia
+    
+    
+//    NSDictionary *params = @{@"cid":@"remen",};
+    NSString *urlStr = @"http://open.onehou.com:8880/quotes/real?token=xxx&obj=SH600000&field=Obj,ShiJian,ZuiXinJia";
+    
+    __block NSURLSessionDataTask *dataTask = nil;
+    dataTask = [NetworkManager GetURL:urlStr withParameters:nil hudShow:YES success:^(id data) {
+        NSLog(@"---> data = %@ \n \n", data);
+        
+    } failure:^(NSError *error) {
+    }];
+
     
 }
 //例八：
