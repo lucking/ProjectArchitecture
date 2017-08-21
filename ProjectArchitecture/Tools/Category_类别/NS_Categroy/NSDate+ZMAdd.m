@@ -50,6 +50,12 @@
     NSString *dateStr2 = [NSDate timeIntervalWithString:timestampStr dateFormatStatus:DFStyleYYYYMMddHHmmss];
     NSLog(@"---> 时间戳 to dateStr = %@ \n ",dateStr2);
     
+    /*
+     * 注意：hh与HH的区别
+     
+     hh：表示12小时制
+     HH：表示24小时制
+     */
 }
 
 
@@ -171,7 +177,7 @@
 
 
 /**
- * 时间戳 转换为 日期时间 （24小时制）
+ * 时间戳 转换为 日期时间
  
  @param string 时间戳
  @param state 日期时间格式
@@ -180,7 +186,6 @@
 + (NSString *)timeIntervalWithString:(NSString *)string dateFormatStatus:(DateFormatStatus)state
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //设置时区
     [dateFormatter setLocale:[NSLocale currentLocale]];
     // 设置时间的格式
     if (state == DFStyleMMdd) {                 dateFormatter.dateFormat = @"MM/dd";
@@ -209,7 +214,7 @@
 
 
 /**
- 时间戳 转换为 日期时间  (12小时制)
+ 时间戳 转换为 日期时间
  
  @param timestamp 时间戳：例如 1296035591、1502926804
  @param format    设置你想要的格式//（@"YYYY-MM-dd hh:mm:ss"）-,hh与HH的区别:分别表示12小时制,24小时制
