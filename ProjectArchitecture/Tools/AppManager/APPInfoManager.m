@@ -12,7 +12,21 @@ static NSMutableDictionary *infoDict ;
 
 @implementation APPInfoManager
 
-Singleton_Instance_method_Impl(APPInfoManager);
+//Singleton_Instance_method_Impl(APPInfoManager);
+
+
+/**
+ *  @return 返回一个实例
+ */
++ (APPInfoManager *)singleton
+{
+    static APPInfoManager *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
 
 
 - (void)testUse{

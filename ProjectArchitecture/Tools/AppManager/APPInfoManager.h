@@ -6,19 +6,22 @@
 //  Copyright © 2016年 ZM. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "Singleton.h"
 
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 
-
-@interface APPInfoManager : Singleton
+@interface APPInfoManager : NSObject
 {
     
 }
 //创建实例
-Singleton_Instance_method_Interface(APPInfoManager);
+//Singleton_Instance_method_Interface(APPInfoManager);
+// 单例
++ (APPInfoManager *)singleton;
+
 
 /**
  *  方便在基类中处理公共逻辑，例如猿题库的：数据版本号信息就统一在基类中处理。

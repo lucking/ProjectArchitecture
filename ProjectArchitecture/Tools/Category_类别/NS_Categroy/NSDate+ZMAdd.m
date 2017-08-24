@@ -27,6 +27,7 @@
     
     
     
+    
     NSDate *datenow = [NSDate date];//现在时间
     NSLog(@"---> datenow= %@ ",datenow);
     
@@ -38,17 +39,24 @@
     NSLog(@"---> dateStr_12 = %@ \n ",dateStr_12);
     NSLog(@"---> dateStr_2 = %@ \n ",dateStr_2);
     
-    // date To String
+    
+    //1.1、string to date
+    NSDate *myDate1 = [NSDate stringToDateWithDateStr:@"20110826134106" format:@"yyyyMMddHHmmss"];
+    NSLog(@"---> 1.1_1：string to date = %@",myDate1);
+    NSDate *myDate2 = [NSDate stringToDateWithDateStr:@"2017-08-16 08:26:26" format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 1.1_2：string to date = %@",myDate2);
+    //1.2、date To String
     NSString *dateStr1 = [NSDate dateToStringWithDate:[NSDate date] format:@"YYYY-MM-dd hh:mm:ss"];
-    NSLog(@"---> date to string = %@",dateStr1);
+    NSLog(@"---> 1.2：date to string = %@",dateStr1);
     
-    //dateStr to 时间戳
+    //2.1、dateStr to 时间戳
     NSString *timestampStr = [NSDate timeSwitchTimestamp:dateStr1 andFormatter:@"YYYY-MM-dd hh:mm:ss"];
-    NSLog(@"---> dateStr to 时间戳 = %@",timestampStr);
-    
-    //时间戳 to dateStr
+    NSLog(@"---> 2.1：dateStr to 时间戳 = %@",timestampStr);
+    //2.2时间戳 to dateStr
     NSString *dateStr2 = [NSDate timeIntervalWithString:timestampStr dateFormatStatus:DFStyleYYYYMMddHHmmss];
-    NSLog(@"---> 时间戳 to dateStr = %@ \n ",dateStr2);
+    NSLog(@"---> 2.2_1：时间戳 to dateStr = %@ ",dateStr2);
+    NSString *dateStr2_2 = [NSDate timestampWithString:timestampStr format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 2.2_2：时间戳 to dateStr = %@ \n ",dateStr2_2);
     
     /*
      * 注意：hh与HH的区别

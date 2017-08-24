@@ -34,7 +34,8 @@ typedef enum DeviceStyle
 // 判断是否是模拟器
 + (BOOL)isSimulator;
 
-
+//系统版本
++ (NSString *)systemVersion;
 
 //获取当前系统UUID
 + (NSString *)getUUID;

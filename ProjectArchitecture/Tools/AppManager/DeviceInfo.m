@@ -126,6 +126,40 @@
 }
 
 
+
+#define IS_IOS_Version floorf([[UIDevice currentDevice].systemVersion floatValue])
+#define IS_IOS_5    (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 5.0 ? 1:0)
+#define IS_IOS_6    (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 6.0 ? 1:0)
+#define IS_IOS_7    (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 7.0 ? 1:0)
+#define IS_IOS_8    (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 8.0 ? 1:0)
+#define IS_IOS_9    (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 9.0 ? 1:0)
+#define IS_IOS_10   (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 10.0 ? 1:0)
+#define IS_IOS_11   (floorf([[UIDevice currentDevice].systemVersion floatValue]) == 11.0 ? 1:0)
+//系统版本
++ (NSString *)systemVersion {
+    
+    float systemVersion = floorf([[UIDevice currentDevice].systemVersion floatValue]);
+    NSString *version = [NSString stringWithFormat:@"%.1f",systemVersion];
+    
+//    if (systemVersion < 6.0) {                                      return @"IOS_5";
+//        
+//    }else if ((systemVersion >= 6.0 ) && (systemVersion < 7.0)){    return @"IOS_6";
+//        
+//    }else if ((systemVersion >= 7.0 ) && (systemVersion < 8.0)){    return @"IOS_7";
+//        
+//    }else if ((systemVersion >= 8.0 ) && (systemVersion < 9.0)){    return @"IOS_8";
+//        
+//    }else if ((systemVersion >= 9.0 ) && (systemVersion < 10.0)){   return @"IOS_9";
+//        
+//    }else if ((systemVersion >= 10.0 ) && (systemVersion < 11.0)){  return @"IOS_10";
+//        
+//    }else {
+//        return @"IOS_11";
+//    }
+    return version;
+}
+
+
 //获取当前系统UUID：刷机或重装系统后uuid还是会改变
 + (NSString *)getUUID
 {
