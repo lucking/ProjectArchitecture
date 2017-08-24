@@ -69,7 +69,6 @@ static AppDelegate *_singleInstance;
     
   
     NSLog(@"---> systemVersion= %@ ",[DeviceInfo systemVersion]);
-
     NSLog(@"---> appVersion= %@ ",[[APPInfoManager singleton] appVersion]);
 
 //    Person *pp = [[Person alloc] init];
