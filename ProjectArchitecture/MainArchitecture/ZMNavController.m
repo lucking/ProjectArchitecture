@@ -105,6 +105,7 @@
     [navBar setBarTintColor:NavBg_COLOR];
 }
 
+#pragma mark - /************************  以下测试 为使用案例  **************************/
 - (void)testSetUI {
     self.view.backgroundColor = [UIColor purpleColor];
 
@@ -114,16 +115,15 @@
      *  在本类 ZMNavController  里使用： self.navigationBar
      */
 
-    //1.navigationBar下（0，0）开始
-    // self.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
+    //navigationBar下（0，0）开始
     
-    //2.导航栏下的起始坐标设置为(0,0)
+    //1.导航栏下的起始坐标设置为(0,0)
     // self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    //3.自适应  （ 去掉：UITableView 、UIScrollView、UIWebView 空白间隙问题 ）
+    //2.自适应  （ 去掉：UITableView 、UIScrollView、UIWebView 空白间隙问题 ）
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    //4.右滑返回的代理
+    //3.右滑返回的代理
     self.interactivePopGestureRecognizer.delegate = self;
     
     // 添加 通知：恢复_滑动返回功能
@@ -161,9 +161,19 @@
     //iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     //NSLog(@"---> onBack ");
 
+
+    /**
+     *  修改状态栏 背景颜色
+     */
+    //黑底白字
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    //白底黑字
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+    
+    
     
     /**
-     *  修改状态栏 背景颜色 改变UINavigationBar的颜色
+     *  修改导航栏 背景颜色 改变UINavigationBar的颜色
      */
     // 方式一：
     UIImage *BgImg = [UIImage imageNamed:@"BgImg"];
@@ -185,7 +195,9 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage imageNamed:@"pink.png"]]; //显示真实的图片高度
     
     // 设置状态栏 背景颜色 方式二：
-    self.navigationBar.barTintColor = [UIColor greenColor];
+    self.navigationBar.translucent = NO;//navigationBar的毛玻璃效果 (设置背景色使用，设为YES颜色会变淡)
+    self.navigationBar.barTintColor = [UIColor brownColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor brownColor];
     //同上
     // [self.navigationBar setBarTintColor:[UIColor magentaColor]];
     
@@ -202,9 +214,7 @@
                                  [UIColor whiteColor],NSForegroundColorAttributeName,
                                  [UIFont boldSystemFontOfSize:18],NSFontAttributeName, nil];
     [self.navigationBar setTitleTextAttributes:titleChange];
-    //self.navigationController.navigationBar.titleTextAttributes = titleChange;
-    
-    
+    //self.navigationController.navigationBar.titleTextAttributes = titleChange;    
     
     //修改 NavBar 返回键的颜色
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;

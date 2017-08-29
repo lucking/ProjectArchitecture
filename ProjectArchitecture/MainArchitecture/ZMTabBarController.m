@@ -174,7 +174,6 @@
     [navVC.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                  [UIColor whiteColor],NSForegroundColorAttributeName,
                                                  [UIFont boldSystemFontOfSize:18],NSFontAttributeName, nil]];
-    
     return navVC.tabBarItem;
 }
 

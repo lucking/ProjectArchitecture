@@ -249,7 +249,6 @@ static NSString *type = @"";
     
     //http://open.onehou.com:8880/quotes/real?token=xxx&obj=SH600000&field=Obj,ShiJian,ZuiXinJia
     
-    
 //    NSDictionary *params = @{@"cid":@"remen",};
     NSString *urlStr = @"http://open.onehou.com:8880/quotes/real?token=xxx&obj=SH600000&field=Obj,ShiJian,ZuiXinJia";
     
