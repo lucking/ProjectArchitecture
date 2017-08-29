@@ -115,15 +115,16 @@
      *  在本类 ZMNavController  里使用： self.navigationBar
      */
 
-    //navigationBar下（0，0）开始
+    //1.navigationBar下（0，0）开始
+    // self.navigationBar.translucent = YES;//navigationBar的毛玻璃效果
     
-    //1.导航栏下的起始坐标设置为(0,0)
+    //2.导航栏下的起始坐标设置为(0,0)
     // self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    //2.自适应  （ 去掉：UITableView 、UIScrollView、UIWebView 空白间隙问题 ）
+    //3.自适应  （ 去掉：UITableView 、UIScrollView、UIWebView 空白间隙问题 ）
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    //3.右滑返回的代理
+    //4.右滑返回的代理
     self.interactivePopGestureRecognizer.delegate = self;
     
     // 添加 通知：恢复_滑动返回功能
@@ -163,7 +164,7 @@
 
 
     /**
-     *  修改状态栏 背景颜色
+     *  修改状态栏 背景颜色 
      */
     //黑底白字
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
@@ -198,6 +199,9 @@
     self.navigationBar.translucent = NO;//navigationBar的毛玻璃效果 (设置背景色使用，设为YES颜色会变淡)
     self.navigationBar.barTintColor = [UIColor brownColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor brownColor];
+    //同上
+    // [self.navigationBar setBarTintColor:[UIColor magentaColor]];
+
     //同上
     // [self.navigationBar setBarTintColor:[UIColor magentaColor]];
     
