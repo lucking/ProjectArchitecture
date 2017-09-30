@@ -174,8 +174,7 @@
 - (NSArray *)titleArray {
     if (_titleArray == nil) {
         _titleArray = @[@"公司介绍",@"产品理念",@"联系方式",@"合作伙伴"];
-    }
-    return _titleArray;
+    }return _titleArray;
 }
 
 

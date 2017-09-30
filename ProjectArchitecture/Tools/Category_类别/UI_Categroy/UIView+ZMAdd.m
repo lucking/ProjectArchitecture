@@ -214,16 +214,47 @@
     [UIView commitAnimations];
 }
 
+-(void)endAnimation
+{
+
+}
 // 系统方法
 - (void)aaa {
     
     //1.
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(endAnimation)];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self cache:YES];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     // 内容
     [UIView commitAnimations];
+    
+    
+    UIView *myView=[[UIView alloc] init];
+    //旋转动画：方式一
+    [UIView animateWithDuration:0.05 animations:^{
+        myView.transform= CGAffineTransformMakeRotation(M_PI_2);
+    }];
+    //旋转动画：方式二
+    //创建一个CGAffineTransform  transform对象、设置旋转度数
+    CGAffineTransform transform;
+    transform = CGAffineTransformRotate(myView.transform,M_PI_2);
+    [UIView beginAnimations:@"rotate" context:nil];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationDelegate:self];
+    [myView setTransform:transform];//获取transform的值
+    [UIView commitAnimations];      //关闭动画
+     //旋转动画：方式三
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI * 2.0];
+    rotationAnimation.duration = 0.2;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = 1; //ULLONG_MAX
+    [myView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
+
     
     
     //2.

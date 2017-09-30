@@ -172,7 +172,6 @@
 #define APPDelegateWindow   (((AppDelegate*)[UIApplication sharedApplication].delegate).window)
 
 // 懒加载
-//#define HT_LAZY(object, assignment) (object = object ?: assignment)
 #define ZM_LAZY(object, assignment) (object = object ?: assignment)
 
 

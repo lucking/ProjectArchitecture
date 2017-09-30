@@ -7,6 +7,8 @@
 //
 
 #import "ProductVCAA.h"
+#import "BaseHeader.h"
+#import "UIView+ZMFrame.h"
 
 @interface ProductVCAA ()
 
@@ -27,6 +29,10 @@
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
     
+    NSLog(@"---SSWIDTH = %.2f",SSWIDTH);
+    NSLog(@"---SSHEIGHT= %.2f",SSHEIGHT);
+    NSLog(@"---self.view.width= %.2f",self.view.width);
+    NSLog(@"---self.view.height= %.2f \n ",self.view.height);
 
 }
 

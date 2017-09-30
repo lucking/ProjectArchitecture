@@ -19,7 +19,8 @@
 #import "Masonry.h"
 #import "ServerURL.h"
 
-#define PAGE_OFFSET 10
+#define PAGE_OFFSET 100
+#define ItemWIDTH  ((SSWIDTH-20)/3.f)
 
 @interface ZMCarouselView ()<iCarouselDelegate,iCarouselDataSource>
 {
@@ -107,6 +108,7 @@
 }
 -(UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
     CGFloat viewWidth = SSWIDTH - 2*PAGE_OFFSET;
+    viewWidth = ItemWIDTH;
     if (view == nil) {
         
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, self.height)];
@@ -151,7 +153,7 @@
         {
             if (self.carousel.type == iCarouselTypeCustom)
             {
-                return 0.0;
+                return 1.0;
             }
             return value;
         }
@@ -179,13 +181,10 @@
                                                                             RequestURLkey:model.html_url,
                                                                             NavBarStyleTypekey:@(kNavBarStyleNomal)}];
 //    CityBannerWebVController *currentVC = [[CityBannerWebVController alloc] init];
-    
     CityBannerWebVController *currentVC = [[CityBannerWebVController alloc] initWithViewModel:viewModel];;
 
 //    currentVC.viewModel = viewModel;
     [[UIViewController getCurrentVC].navigationController pushViewController:currentVC animated:YES];
-
-    
     if (self.clickItemOperationBlock) {
         self.clickItemOperationBlock(index);
     }
@@ -221,7 +220,10 @@
 - (UIImageView *)placeholderImageView
 {
     return ZM_LAZY(_placeholderImageView, ({
-        UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, SSWIDTH - 2*PAGE_OFFSET, self.height)];
+        
+        CGFloat viewWidth =SSWIDTH - 2*PAGE_OFFSET;
+        viewWidth = ItemWIDTH;
+        UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, viewWidth, self.height)];
         view.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:view];
         view;

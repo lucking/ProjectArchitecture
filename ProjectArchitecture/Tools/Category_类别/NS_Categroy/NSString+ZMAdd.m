@@ -164,6 +164,8 @@
     NSLog(@"--->10: 首字母大写：%@  \n ",[str9 capitalizedString]);
     
     
+    
+    
 #pragma mark 11.判断是否包含：前缀、后缀
 #pragma mark
     NSString *string= @"I love China";
@@ -222,7 +224,6 @@
     
     
 }
-
 
 
 // 字符串拼接

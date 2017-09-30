@@ -128,14 +128,12 @@
                                                      selectImgName:@"mine_bottom_click"];
     // 调整tabbar
     [self setUpTabBar];
-    
     self.zmTabBar.items = @[tabBarItem_1,
                             tabBarItem_2,
                             tabBarItem_3,
                             tabBarItem_4];
     //设置默认 显示项
     self.zmTabBar.selectedItem = tabBarItem_1;
-    
     /**
      *  更换系统自带的tabbar：利用 KVC 把系统的 tabBar 类型改为自定义类型。
      *  注意：替换的位置必须在 设置 items 的后面
