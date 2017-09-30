@@ -20,6 +20,7 @@
 #import "ServerURL.h"
 
 #define PAGE_OFFSET 100
+//图片宽度
 #define ItemWIDTH  ((SSWIDTH-20)/3.f)
 
 @interface ZMCarouselView ()<iCarouselDelegate,iCarouselDataSource>
@@ -37,14 +38,31 @@
 @implementation ZMCarouselView
 
 #pragma mark - initview
+//有布局加载
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        
         [self carousel];
     }
     return self;
 }
+//无布局加载
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [self carousel];
+    }
+    return self;
+}
+//文件加载
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self carousel];
+    }
+    return self;
+
+}
+//xib加载
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -211,7 +229,7 @@
         carousel.delegate = self;
         carousel.dataSource = self;
         carousel.pagingEnabled = YES;
-        carousel.autoscroll = 0.2;
+//        carousel.autoscroll = 0.2;
         carousel.type = iCarouselTypeCustom;
         [self addSubview:carousel];
         carousel;

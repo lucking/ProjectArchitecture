@@ -175,7 +175,6 @@
 #define ZM_LAZY(object, assignment) (object = object ?: assignment)
 
 
-
 //NSLog 分割线    //使用  NSLog(@"----->:%@",message);
 #define NSLogline(format, ...) do {      \
 				fprintf(stderr,  "<%s : %d> %s\n" ,  \
