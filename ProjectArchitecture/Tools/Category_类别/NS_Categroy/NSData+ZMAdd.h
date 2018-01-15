@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (ZMAdd)
-
++ (void)nowTest;
 
 #pragma mark ----------------"  1. NSData 与 NSString  字符串与数据 "---------------------------------
 //  NSString－>NSData

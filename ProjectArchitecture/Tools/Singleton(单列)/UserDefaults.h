@@ -39,8 +39,8 @@ Singleton_Instance_method_Interface(UserDefaults);
 @property (nonatomic, copy) NSString *userImgURLStr;// 头像
 
 @property (nonatomic, assign) BOOL isLogin; // 是否登录
-
-
+@property (nonatomic, assign) int networkType;  //
+@property (nonatomic, assign) NSInteger netWorkStatus; //
 
 #pragma mark-  
 

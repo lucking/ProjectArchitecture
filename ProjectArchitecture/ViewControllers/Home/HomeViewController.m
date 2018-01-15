@@ -36,23 +36,34 @@ static NSString *_cellId = @"CellCC_Id";
 @implementation HomeViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-	//[super viewWillAppear:animated];
+    [super viewWillAppear:animated];
     //[self.navigationController setNavigationBarHidden:NO animated:YES]; //显示_navBar
+    //[self.navigationController setNavigationBarHidden:YES animated:YES]; //隐藏_navBar
     self.tabBarController.tabBar.hidden = NO;
 }
 - (void)viewDidAppear:(BOOL)animated {
 }
 - (void)viewWillDisappear:(BOOL)animated {
-    //[self.navigationController setNavigationBarHidden:YES animated:YES]; //隐藏_navBar
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// 初始化UI
 	[self initUI];
-    
-}
+    //UITabBar 高度由49pt变成了83pt
+    //NavTabBar 高度由20pt变成了44pt
+    CGFloat statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    NSLog(@"---statusBarHeight= %f",statusBarHeight);
+    // <8x ---statusBarHeight= 20.000000
+    // =8x ---statusBarHeight= 44.000000
+    //在其他型号的iPhone上StatusBar是20,在iPhone X上StatusBar的高度是44，
+    //当你设置了这个属性的时候：Navigation bar height是140,否则 Navigation bar height是88
+    if (@available(iOS 11.0, *)) {
+        //self.navigationController.navigationBar.prefersLargeTitles = true;
+    } else {
+        // Fallback on earlier versions
+    }
 
+}
 //例一：
 - (void)case1 {
     TestViewController* pushVC= [[TestViewController alloc] init];
@@ -155,7 +166,7 @@ static NSString *_cellId = @"CellCC_Id";
         if (i==6) { title = @"LoginVC"; }
         if (i==7) { title = @"TestVC"; }
 
-        [self addBtnTitle:title frame:CGRectMake(10, 30+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 30+ (35+10)*i+ 40, width, 35) Tag:i];
     }
     [self.view addSubview:self.dateLabel];
 }

@@ -33,12 +33,9 @@
 #define FFHelveticaFont(font)           [UIFont fontWithName:@"Helvetica" size:font];
 #define FFHelveticaBoldFont(font)       [UIFont fontWithName:@"Helvetica-Bold" size:font];
 
-
 //======================="  UIImage  "=================================
 
 #define  IMG(imageName)  [UIImage imageNamed:imageName]
-
-
 
 //======================="  UIColor  "=================================
 

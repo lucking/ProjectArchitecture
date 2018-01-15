@@ -96,7 +96,61 @@
     //    BBTestVController* pushVC= [[BBTestVController alloc] init];
     //    [self.navigationController pushViewController:pushVC animated:YES];
 }
-
+- (void)configViewWillAppear {
+    
+    //--->同时别忘了在info plist里面将View controller-based status bar appearance设置成NO，（默认是YES）
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];//白字
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO]; //黑字
+    
+    //    self.navigationController.navigationBar.barTintColor    = Gray_FAFAFA; 
+    //    self.navigationController.navigationBar.backgroundColor = Gray_FAFAFA;
+    //    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    //    [self.navigationController.navigationBar setShadowImage:[self createImageWithColor:Gray_CCCCCC]];
+    
+    //系统返回按钮：隐藏文字、自定义文字、返回按钮的颜色
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];  
+    self.navigationController.navigationBar.topItem.title = @"";
+    
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    //将title 文字的颜色改为透明
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:0.01],
+                                 NSForegroundColorAttributeName:[UIColor clearColor]};
+    [item setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    [item setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+    
+    
+    //    //无效
+    //    UIImage *image = [UIImage imageNamed:@"backBlack1"]; //navigationbar_back
+    //    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //    [self.navigationItem.backBarButtonItem setImage:image];
+    //    [self.navigationItem.backBarButtonItem setLandscapeImagePhone:image];
+    
+    //方式一：对当前根视图 的VC生效 
+    //系统返回按钮：隐藏文字、自定义文字、返回按钮的颜色
+    UIImage *image = [UIImage imageNamed:@"backBlack1"]; //navigationbar_back
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar setBackIndicatorImage:image];
+    [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:image];
+    
+    //    //方式二：对所有根视图 的VC生效
+    //    UIImage *image = [UIImage imageNamed:@"backBlack1"]; 
+    //    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //    [[UINavigationBar appearance] setTintColor:[UIColor clearColor]];
+    //    [[UINavigationBar appearance] setBackIndicatorImage:image];
+    //    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:image];
+    
+    //    //方式三：对所有根视图 的VC生效（同方式二）
+    //    UIImage *image = [UIImage imageNamed:@"backBlack1"]; //navigationbar_back
+    //    UINavigationBar * navigationBar = [UINavigationBar appearance];
+    //    //返回按钮的箭头颜色
+    //    [navigationBar setTintColor:[UIColor whiteColor]];
+    //    //设置返回样式图片
+    //    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //    [navigationBar setBackIndicatorImage:image];
+    //    [navigationBar setBackIndicatorTransitionMaskImage:image];    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //标题
@@ -106,7 +160,6 @@
     [self initUI];
     
 }
-
 #pragma mark ---------" UI_VC：控件视图 "------------
 #pragma
 - (void)UI_VC {

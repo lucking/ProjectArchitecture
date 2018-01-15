@@ -9,12 +9,14 @@
 #import "AFHTTPSessionManager.h"
 
 typedef NS_ENUM(NSUInteger, NetworkStates) {
-    NetworkStatesNone, // 没有网络
-    NetworkStates2G,    // 2G
-    NetworkStates3G,    // 3G
-    NetworkStates4G,    // 4G
-    NetworkStatesWIFI   // WiFi
+    NetworkStatesNone   =0, // 没有网络
+    NetworkStates2G     =1, // 2G
+    NetworkStates3G     =2, // 3G
+    NetworkStates4G     =3, // 4G
+    NetworkStatesWIFI   =5  // WiFi
 };
+
+
 
 @interface NetworkSession : AFHTTPSessionManager
 {

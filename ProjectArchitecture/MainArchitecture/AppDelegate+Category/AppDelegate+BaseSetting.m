@@ -29,16 +29,14 @@
 - (void)BaseSetting {
     
     // 沙盒文件 路径
-    UIWindow *rootWindow =  [AppDelegate singleton].window;
-    NSLog(@"---> rootWindow = %@ \n ",rootWindow);
+    //UIWindow *rootWindow =  [AppDelegate singleton].window;
+    //NSLog(@"---> rootWindow = %@ \n ",rootWindow);
     NSLog(@"---> HomeDirectoryPath = %@ \n \n ",HomeDirectoryPath);
-    
     
     //1.改变启动画面停留的时间
     [NSThread sleepForTimeInterval:1.0];
     //3.监控网络状态
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        
         NSLog(@"-- Reachability_status_0: %@", AFStringFromNetworkReachabilityStatus(status));
     }];
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];

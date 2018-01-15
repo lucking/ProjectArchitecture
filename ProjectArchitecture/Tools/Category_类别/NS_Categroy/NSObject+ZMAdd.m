@@ -90,7 +90,7 @@
 	}
 	return methodNames;
 }
-//获取成员变量列表
+//获取成员变量列表：数组
 - (NSArray *)ivarNameList {
 
 	NSMutableArray* ivarNames = [[NSMutableArray alloc] init];
@@ -99,14 +99,33 @@
 	Ivar *ivarList = class_copyIvarList([self class], &count);
 	for (unsigned int i = 0; i<count; i++) {
 		Ivar myIvar = ivarList[i];
+        //获取Ivar的名称
 		const char *ivarName = ivar_getName(myIvar);
-
 		NSString* name = [NSString stringWithUTF8String:ivarName];
 		[ivarNames addObject:name];
 	}
 	return ivarNames;
 }
 
+//获取成员变量列表：字典
+- (NSDictionary *)ivarDic {
+
+    NSMutableDictionary* ivarDic = [[NSMutableDictionary alloc] init];
+    unsigned int count;
+
+    Ivar *ivarList = class_copyIvarList([self class], &count);
+    for (unsigned int i = 0; i<count; i++) {
+        Ivar myIvar = ivarList[i];
+        //获取Ivar的名称
+        const char *ivarName = ivar_getName(myIvar);
+        //获取Ivar的类型
+        const char *ivarType = ivar_getTypeEncoding(myIvar);
+        NSString* name = [NSString stringWithUTF8String:ivarName];
+        NSString* type = [NSString stringWithUTF8String:ivarType];
+        [ivarDic setObject:name forKey:type];
+    }
+    return ivarDic;
+}
 
 
 #pragma mark 字典转模型方法

@@ -39,7 +39,6 @@
     }];
     //更多数据
     _travelMoreDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        
         return [[[self.services getCityTravelService] requestCityTravelMoreDataSignal:CityTravel_URL] doNext:^(id  _Nullable result) {
             //接收数据_travelData
             self.travelData = result[TravelDatakey];
@@ -48,8 +47,6 @@
     }];
     _travelMoreConnectionErrors = _travelMoreDataCommand.errors;
 }
-
-
 
 //执行请求
 - (RACSignal *)executeRequestDataSignal:(id)input

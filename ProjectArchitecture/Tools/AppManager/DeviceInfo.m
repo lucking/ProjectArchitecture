@@ -26,7 +26,92 @@
     NSLog(@"---> currentDeviceStyle = %d ",[DeviceInfo currentDeviceStyle]);
     NSLog(@"---> UUID = %@ ",[DeviceInfo getUUID]);
 
+    //将“UIStatusBarSignalStrengthItemView”替换为“UIStatusBarDataNetworkItemView”和“signalStrengthRaw”与“wifiStrengthBars”。不幸的是“wifiStrengthRaw”总是返回0.
+    //看起来很棒 - 但是，这不会算作使用私有API，因此被拒绝吗？
+    //是的，它将被拒绝，因为它使用私有变量。
 }
+
+/**
+ *  @return 返回一个实例
+ */
++ (DeviceInfo *)singleton
+{
+    static DeviceInfo *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
+//获取设备：电量的等级，0.00~1.00
+- (float)getDeviceBatterLevel {
+    //通过UIDevice获取电池的状态转换。
+    UIDevice *device = [UIDevice currentDevice];
+    device.batteryMonitoringEnabled = YES;//开启了监视电池状态的功能
+    return device.batteryLevel;
+}
+
+//获取设备：电池的充电信息
+- (DeviceBatteryStateType)getDeviceBatterState {
+
+    UIDevice *device = [UIDevice currentDevice];
+    device.batteryMonitoringEnabled = YES;
+    DeviceBatteryStateType batteryStateType;
+    //switch判断类型
+    switch (device.batteryState) {
+        case UIDeviceBatteryStateUnknown:
+            batteryStateType = DeviceBatteryStateTypeUnknown;//无法获得充电状态
+            break;
+        case UIDeviceBatteryStateUnplugged:
+            batteryStateType = DeviceBatteryStateTypeUnplugged;//非充电状态
+            break;
+        case UIDeviceBatteryStateCharging:
+            batteryStateType = DeviceBatteryStateTypeCharging;//充电状态
+            break;
+        case UIDeviceBatteryStateFull:
+            batteryStateType = DeviceBatteryStateTypeFull;//充满状态
+            break;
+        default:
+            batteryStateType = DeviceBatteryStateTypeUnusual;//其他异常状态
+            break;
+    }
+    return batteryStateType;
+}
+
+//获取设备：Wifi信号强度(在Wifi状态下返回字符串类型的1,2,3...)
+- (NSString *)getDeviceWifiSignalStrength {
+    //获取application对象
+    UIApplication *app = [UIApplication sharedApplication];
+    //获取statusBar和foregroundView保存信息的数组
+    NSArray *subviews = [[[app valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
+    NSString *dataNetworkItemView = nil;
+
+    for (id child in subviews) {//获取网络返回码
+        if ([child isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]]) {
+            dataNetworkItemView = child;
+            break;
+        }
+    }
+    return [dataNetworkItemView valueForKey:@"_wifiStrengthBars"];//取到wifi状态时对应的信号强度的字符串
+}
+
+//您可以使用以下信号获得信号强度：
+- (void)getSignalStrength {
+    UIApplication *app = [UIApplication sharedApplication];
+    NSArray *subviews = [[[app valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
+    NSString *dataNetworkItemView = nil;
+    for (id subview in subviews) {
+        if([subview isKindOfClass:[NSClassFromString(@"UIStatusBarSignalStrengthItemView") class]]) {
+            dataNetworkItemView = subview;
+            break;
+        }
+    }
+    int signalStrength = [[dataNetworkItemView valueForKey:@"signalStrengthRaw"] intValue];
+    NSLog(@"signal %d \n ", signalStrength);
+}
+
+
 
 
 // 获取设备IP地址
@@ -56,7 +141,6 @@
     return address;
 }
 
-
 // 判断手机型号_1
 + (NSString *)ISIPHONEXX {
     NSLog(@"---> SSWIDTH = %@",@(SSWIDTH));
@@ -68,16 +152,17 @@
     }else if (IS_IPHONE6){  return @"IS_IPHONE6";
         
     }else if (IS_IPHONE6p){ return @"IS_IPHONE6p";
+        
+    }else if (IS_IPHONE8X){ return @"IS_IPHONE8X";
     }
     return @"IS_IPHONExx未知";
 }
 //判断手机型号_2
 + (int)currentDeviceStyle
 {
-    
     float Height = [UIScreen mainScreen].bounds.size.height;
     float Width = [UIScreen mainScreen].bounds.size.width;
-    //    NSLog(@"Height=%f __ Width=%f", Height, Width);
+    //NSLog(@"Height=%f __ Width=%f", Height, Width);
     if ([[UIDevice currentDevice].model isEqualToString:@"iPad"]) {
         return iPad_Device;
     }else {

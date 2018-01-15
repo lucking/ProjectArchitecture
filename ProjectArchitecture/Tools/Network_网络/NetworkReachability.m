@@ -64,7 +64,7 @@
                 break;
         }
     }];
-    NSLog(@"--->netState = %d",netState);
+    //NSLog(@"--->netState = %d",netState);
     return netState;
 }
 

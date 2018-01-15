@@ -16,7 +16,7 @@ pod 'YYCategories', '~> 1.0.4'
 pod 'YYImage', '~> 1.0.4'
 pod 'YYWebImage', '~> 1.0.5'
 pod 'ReactiveCocoa', '~> 2.5'
-pod 'RealReachability', '~> 1.1.8'
+pod 'RealReachability'
 
 end
  

@@ -21,10 +21,11 @@
  */
 - (NSArray *)methodNameList;
 /**
- *  获取成员变量列表
+ *  获取成员变量列表：数组
  */
 - (NSArray *)ivarNameList;
-
+//  获取成员变量列表：字典
+- (NSDictionary *)ivarDic;
 
 /**
  *  字典转模型方法

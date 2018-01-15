@@ -39,19 +39,15 @@
 
 static ZMDownloadManager *_downloadManager;
 
-+ (instancetype)allocWithZone:(struct _NSZone *)zone
-{
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
     static dispatch_once_t onceToken;
-    
     dispatch_once(&onceToken, ^{
         _downloadManager = [super allocWithZone:zone];
     });
-    
     return _downloadManager;
 }
 
-- (nonnull id)copyWithZone:(nullable NSZone *)zone
-{
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
     return _downloadManager;
 }
 
@@ -61,7 +57,6 @@ static ZMDownloadManager *_downloadManager;
     dispatch_once(&onceToken, ^{
         _downloadManager = [[self alloc] init];
     });
-    
     return _downloadManager;
 }
 //#define DirectoryPath	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
@@ -91,11 +86,9 @@ static ZMDownloadManager *_downloadManager;
         NSLog(@"----该资源已下载完成");
         return;
     }
-    
     NSLog(@"--->1: 从指定位置到尾部：%@",[url substringFromIndex:(url.length-10)]);
     NSLog(@"--->url = %@",url);
     NSLog(@"--->ZMFileName(url) = %@ \n \n ",ZMFileName(url));
-    
 //    // 暂停
 //    if ([self.tasks valueForKey:ZMFileName(url)]) {
 //        
@@ -108,13 +101,10 @@ static ZMDownloadManager *_downloadManager;
     [self createCacheDirectory];
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
-    
     // 创建流
     NSOutputStream *stream = [NSOutputStream outputStreamToFileAtPath:ZMFileFullpath(url) append:YES];
-    
     // 创建请求
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    
     // 设置请求头
     NSString *range = [NSString stringWithFormat:@"bytes=%zd-", DownloadLength(url)];
     [request setValue:range forHTTPHeaderField:@"Range"];
@@ -123,7 +113,6 @@ static ZMDownloadManager *_downloadManager;
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request];
     NSUInteger taskIdentifier = arc4random() % ((arc4random() % 10000 + arc4random() % 10000));
     [task setValue:@(taskIdentifier) forKeyPath:@"taskIdentifier"];
-    
     // 保存任务
     [self.tasks setValue:task forKey:ZMFileName(url)];
     
@@ -156,7 +145,6 @@ static ZMDownloadManager *_downloadManager;
 {
     NSURLSessionDataTask *task = [self getTask:url];
     [task resume];
-    
     [self getSessionModel:task.taskIdentifier].stateBlock(DownloadStateStart);
 }
 
@@ -167,7 +155,6 @@ static ZMDownloadManager *_downloadManager;
 {
     NSURLSessionDataTask *task = [self getTask:url];
     [task suspend];
-    
     [self getSessionModel:task.taskIdentifier].stateBlock(DownloadStateSuspended);
 }
 
@@ -223,9 +210,8 @@ static ZMDownloadManager *_downloadManager;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:ZMCachesDirectory]) {
         
-        //		NSString *movePath = [[NSBundle mainBundle] pathForResource:@"603894" ofType:@"wmv"];
-        //		NSURL *localURL = [NSURL fileURLWithPath:movePath];
-        
+        // NSString *movePath = [[NSBundle mainBundle] pathForResource:@"603894" ofType:@"wmv"];
+        // NSURL *localURL = [NSURL fileURLWithPath:movePath];
         NSFileManager *fileManager = [NSFileManager defaultManager];
         if ([fileManager fileExistsAtPath:ZMFileFullpath(url)]) {
             return ZMFileFullpath(url);
@@ -255,7 +241,6 @@ static ZMDownloadManager *_downloadManager;
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:TotalLengthFullpath];
             [dict removeObjectForKey:ZMFileName(url)];
             [dict writeToFile:TotalLengthFullpath atomically:YES];
-            
         }
     }
 }
@@ -292,7 +277,6 @@ static ZMDownloadManager *_downloadManager;
  */
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
-    
     ZMSessionModel *sessionModel = [self getSessionModel:dataTask.taskIdentifier];
     // 打开流
     [sessionModel.stream open];
@@ -317,10 +301,8 @@ static ZMDownloadManager *_downloadManager;
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
     ZMSessionModel *sessionModel = [self getSessionModel:dataTask.taskIdentifier];
-    
     // 写入数据
     [sessionModel.stream write:data.bytes maxLength:data.length];
-    
     // 下载进度
     NSUInteger receivedSize = DownloadLength(sessionModel.url);
     NSUInteger expectedSize = sessionModel.totalLength;
@@ -330,7 +312,7 @@ static ZMDownloadManager *_downloadManager;
 }
 
 /**
- * 请求完毕（成功|失败）
+ * 请求完毕（成功/失败）
  */
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
@@ -344,11 +326,9 @@ static ZMDownloadManager *_downloadManager;
         // 下载失败
         sessionModel.stateBlock(DownloadStateFailed);
     }
-    
     // 关闭流
     [sessionModel.stream close];
     sessionModel.stream = nil;
-    
     // 清除任务
     [self.tasks removeObjectForKey:ZMFileName(sessionModel.url)];
     [self.sessionModels removeObjectForKey:@(task.taskIdentifier).stringValue];

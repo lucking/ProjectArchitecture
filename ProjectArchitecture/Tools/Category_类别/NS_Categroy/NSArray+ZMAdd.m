@@ -54,10 +54,7 @@
     [self sort22];
     [self sort33];
     
-    
-    
-    
-    
+
     // 数量、最小值、最大值、平均值、求和
     NSArray *array1= [NSArray arrayWithObjects:@"2.0",@"2.3",@"3.0",@"4.0",@"10",nil];
     

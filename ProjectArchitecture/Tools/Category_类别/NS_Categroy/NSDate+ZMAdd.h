@@ -63,6 +63,16 @@ typedef NS_ENUM (NSInteger, MonthDayFormatStatus) {
 + (NSString *)timeSwitchTimestamp:(NSString *)formatTime andFormatter:(NSString *)format;
 
 
+//--设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制  YYYY-MM-dd HH:mm:ss SSS
+//获取当前时间戳：需要设置时间格式
++ (NSString *)timeSwitchTimestampFormatter:(NSString *)format;
+//获取当前时间戳
++ (NSString *)getNowTimestamp;
+//获取当前时间戳：(以秒为单位)
++ (NSString *)getNowTimestampOfSecond;
+//获取当前时间戳：(以毫秒为单位）
++ (NSString *)getNowTimestampOfMillisecond;
+
 
 /**
  * 获取每月的_日期数组

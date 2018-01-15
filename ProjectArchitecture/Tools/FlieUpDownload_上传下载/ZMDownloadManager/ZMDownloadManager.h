@@ -18,7 +18,6 @@
 @property (nonatomic, strong) NSMutableDictionary *tasks;
 
 
-
 /**
  *  单例：@return 返回单例对象
  */

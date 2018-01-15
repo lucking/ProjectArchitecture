@@ -2,8 +2,8 @@
 //  HTConst.m
 //  HeartTrip
 //
-//  Created by 熊彬 on 16/9/13.
-//  Copyright © 2016年 BinBear. All rights reserved.
+//  Created by ZM on 16/9/13.
+//  Copyright © 2016年 ZM. All rights reserved.
 //
 
 #import "HTConst.h"

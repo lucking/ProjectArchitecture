@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 typedef enum DeviceStyle
 {
     iPhone4_Device,
@@ -17,10 +18,32 @@ typedef enum DeviceStyle
     unknown_Device
 }DeviceStyle;
 
+typedef NS_ENUM(NSUInteger, DeviceBatteryStateType) {
+    DeviceBatteryStateTypeUnknown   =0, //无法获得充电状态
+    DeviceBatteryStateTypeUnplugged =1, //非充电状态
+    DeviceBatteryStateTypeCharging  =2, //充电状态
+    DeviceBatteryStateTypeFull      =3, //充满状态
+    DeviceBatteryStateTypeUnusual   =4  //其他异常状态
+};
+
 @interface DeviceInfo : NSObject
 {
     
 }
+// 单例
++ (DeviceInfo *)singleton;
+
+// 获取设备：电池电量信息
+- (float)getDeviceBatterLevel;
+// 获取设备：电池的充电信息
+- (DeviceBatteryStateType)getDeviceBatterState;
+
+//获取设备：Wifi信号强度(在Wifi状态下返回字符串类型的1,2,3...)
+- (NSString *)getDeviceWifiSignalStrength;
+//您可以使用以下信号获得信号强度：
+- (void)getSignalStrength;
+
+
 // 获取设备IP地址
 +(NSString *)getIPAddress;
 

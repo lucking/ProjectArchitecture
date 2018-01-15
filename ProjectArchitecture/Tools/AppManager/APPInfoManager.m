@@ -14,6 +14,19 @@ static NSMutableDictionary *infoDict ;
 
 //Singleton_Instance_method_Impl(APPInfoManager);
 
+- (void)testUse{
+
+    //    NSUUID* uuid = [[NSUUID alloc]init];
+    //    [uuid getUUIDBytes:nil];
+    NNSLog(@"NNSLog");
+
+    NSLog(@"---> currentSystemVersion = %@ ",[APPInfoManager currentSystemVersion]);
+    NSLog(@"---> currentAPPVersion = %@ ",[APPInfoManager currentAPPVersion]);
+    NSLog(@"---> cellularProvider = %@ ",[APPInfoManager cellularProvider]);
+
+    NSLog(@"---> getBatteryState = %@ ",[APPInfoManager getBatteryState]);
+    NSLog(@"---> getBatteryLevel = %f \n\n ",[APPInfoManager getBatteryLevel]);
+}
 
 /**
  *  @return 返回一个实例
@@ -27,15 +40,6 @@ static NSMutableDictionary *infoDict ;
     });
     return instance;
 }
-
-
-- (void)testUse{
-    
-    NSUUID* uuid = [[NSUUID alloc]init];
-    
-    [uuid getUUIDBytes:nil];
-}
-
 
 #pragma mark 获取系统配置文件
 - (NSDictionary *)getInfoDictionary{
@@ -52,11 +56,8 @@ static NSMutableDictionary *infoDict ;
     return [infoDict objectForKey:key];
 }
 
-
-
 // Version
 - (NSString *)appVersion{
-    
     NSString *Versionid = [[self getInfoDictionary] objectForKey:@"CFBundleVersion"];
     return Versionid;
 }
@@ -69,7 +70,6 @@ static NSMutableDictionary *infoDict ;
     return [[self getInfoDictionary] objectForKey:@"CFBundleIdentifier"];
 }
 
-
 // CFBundleInfoPlistURL
 - (NSString *)CFBundleInfoPlistURL{
     return [[self getInfoDictionary] objectForKey:@"CFBundleInfoPlistURL"];
@@ -78,25 +78,7 @@ static NSMutableDictionary *infoDict ;
  *  ......
  */
 
-
-
-
-
 //============================"    "=============================
-
-- (void)test {
-    
-    NNSLog(@"NNSLog");
-    
-    NSLog(@"---> currentSystemVersion = %@ ",[APPInfoManager currentSystemVersion]);
-    NSLog(@"---> currentAPPVersion = %@ ",[APPInfoManager currentAPPVersion]);
-    NSLog(@"---> cellularProvider = %@ ",[APPInfoManager cellularProvider]);
-    
-    NSLog(@"---> getBatteryState = %@ ",[APPInfoManager getBatteryState]);
-    NSLog(@"---> getBatteryLevel = %f \n\n ",[APPInfoManager getBatteryLevel]);
-    
-}
-
 
 //获取当前系统版本号
 + (NSString *)currentSystemVersion

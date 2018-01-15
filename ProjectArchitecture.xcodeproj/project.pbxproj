@@ -14,6 +14,18 @@
 		6803458D1E6EB36E00237CF7 /* UISearchBar+ZMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6803458C1E6EB36E00237CF7 /* UISearchBar+ZMAdd.m */; };
 		6806E97B1EB065F200BAD4C3 /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806E97A1EB065F200BAD4C3 /* NetworkReachability.m */; };
 		6807143C1ECD2C22003B5712 /* Placeholder_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807143B1ECD2C22003B5712 /* Placeholder_VC.m */; };
+		6807CC8720026BF200E397C7 /* MyException.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC6D20026BF100E397C7 /* MyException.m */; };
+		6807CC8820026BF200E397C7 /* NSArray+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC6F20026BF100E397C7 /* NSArray+ZMAvoidCrash.m */; };
+		6807CC8920026BF200E397C7 /* NSAttributedString+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7120026BF100E397C7 /* NSAttributedString+ZMAvoidCrash.m */; };
+		6807CC8A20026BF200E397C7 /* NSDictionary+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7320026BF100E397C7 /* NSDictionary+ZMAvoidCrash.m */; };
+		6807CC8B20026BF200E397C7 /* NSMutableArray+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7520026BF100E397C7 /* NSMutableArray+ZMAvoidCrash.m */; };
+		6807CC8C20026BF200E397C7 /* NSMutableAttributedString+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7720026BF100E397C7 /* NSMutableAttributedString+ZMAvoidCrash.m */; };
+		6807CC8D20026BF200E397C7 /* NSMutableDictionary+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7920026BF100E397C7 /* NSMutableDictionary+ZMAvoidCrash.m */; };
+		6807CC8E20026BF200E397C7 /* NSMutableString+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7B20026BF100E397C7 /* NSMutableString+ZMAvoidCrash.m */; };
+		6807CC8F20026BF200E397C7 /* NSObject+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7D20026BF100E397C7 /* NSObject+ZMAvoidCrash.m */; };
+		6807CC9020026BF200E397C7 /* NSString+ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC7F20026BF100E397C7 /* NSString+ZMAvoidCrash.m */; };
+		6807CC9220026BF200E397C7 /* ZMAvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC8320026BF100E397C7 /* ZMAvoidCrash.m */; };
+		6807CC9320026BF200E397C7 /* ZMAvoidCrashStubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807CC8620026BF100E397C7 /* ZMAvoidCrashStubProxy.m */; };
 		680BE2931ED3C3A8002032A1 /* CALayer+ZMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 680BE2921ED3C3A8002032A1 /* CALayer+ZMAdd.m */; };
 		680E473B1EB1816E0036A956 /* UIView+ZMFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 680E473A1EB1816E0036A956 /* UIView+ZMFrame.m */; };
 		680E473E1EB182040036A956 /* UITableView+ZMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 680E473D1EB182040036A956 /* UITableView+ZMAdd.m */; };
@@ -65,6 +77,7 @@
 		684988EF1EB02D4B00FCB42F /* NSArray_VController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684988EE1EB02D4B00FCB42F /* NSArray_VController.m */; };
 		684988F21EB02E2E00FCB42F /* Network_VController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684988F11EB02E2E00FCB42F /* Network_VController.m */; };
 		684CC6BC1EC070930042F56D /* SelectCheckModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 684CC6BB1EC070930042F56D /* SelectCheckModel.m */; };
+		685B25381F8DBF2B00CE6AF7 /* ZMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 685B25371F8DBF2B00CE6AF7 /* ZMNavigationBar.m */; };
 		6868F4E71E5BE6DF00852BB8 /* AATestVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868F4E61E5BE6DF00852BB8 /* AATestVController.m */; };
 		6868F4EA1E5BEB0B00852BB8 /* TestAAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868F4E91E5BEB0B00852BB8 /* TestAAView.m */; };
 		6868F4F01E5BF15200852BB8 /* ZMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6868F4EF1E5BF15200852BB8 /* ZMTabBar.m */; };
@@ -322,6 +335,31 @@
 		6806E97A1EB065F200BAD4C3 /* NetworkReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkReachability.m; sourceTree = "<group>"; };
 		6807143A1ECD2C22003B5712 /* Placeholder_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Placeholder_VC.h; sourceTree = "<group>"; };
 		6807143B1ECD2C22003B5712 /* Placeholder_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Placeholder_VC.m; sourceTree = "<group>"; };
+		6807CC6C20026BF100E397C7 /* MyException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyException.h; sourceTree = "<group>"; };
+		6807CC6D20026BF100E397C7 /* MyException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyException.m; sourceTree = "<group>"; };
+		6807CC6E20026BF100E397C7 /* NSArray+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC6F20026BF100E397C7 /* NSArray+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7020026BF100E397C7 /* NSAttributedString+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7120026BF100E397C7 /* NSAttributedString+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7220026BF100E397C7 /* NSDictionary+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7320026BF100E397C7 /* NSDictionary+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7420026BF100E397C7 /* NSMutableArray+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7520026BF100E397C7 /* NSMutableArray+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7620026BF100E397C7 /* NSMutableAttributedString+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7720026BF100E397C7 /* NSMutableAttributedString+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7820026BF100E397C7 /* NSMutableDictionary+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7920026BF100E397C7 /* NSMutableDictionary+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7A20026BF100E397C7 /* NSMutableString+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7B20026BF100E397C7 /* NSMutableString+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7C20026BF100E397C7 /* NSObject+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7D20026BF100E397C7 /* NSObject+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC7E20026BF100E397C7 /* NSString+ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZMAvoidCrash.h"; sourceTree = "<group>"; };
+		6807CC7F20026BF100E397C7 /* NSString+ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZMAvoidCrash.m"; sourceTree = "<group>"; };
+		6807CC8220026BF100E397C7 /* ZMAvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAvoidCrash.h; sourceTree = "<group>"; };
+		6807CC8320026BF100E397C7 /* ZMAvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAvoidCrash.m; sourceTree = "<group>"; };
+		6807CC8420026BF100E397C7 /* ZMAvoidCrashProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAvoidCrashProtocol.h; sourceTree = "<group>"; };
+		6807CC8520026BF100E397C7 /* ZMAvoidCrashStubProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMAvoidCrashStubProxy.h; sourceTree = "<group>"; };
+		6807CC8620026BF100E397C7 /* ZMAvoidCrashStubProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMAvoidCrashStubProxy.m; sourceTree = "<group>"; };
 		680BE2911ED3C3A8002032A1 /* CALayer+ZMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ZMAdd.h"; sourceTree = "<group>"; };
 		680BE2921ED3C3A8002032A1 /* CALayer+ZMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ZMAdd.m"; sourceTree = "<group>"; };
 		680E47391EB1816E0036A956 /* UIView+ZMFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZMFrame.h"; sourceTree = "<group>"; };
@@ -363,6 +401,7 @@
 		682BD0C01F32C1C70035603B /* NSObject+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
 		682CB8F31EA5F6760078C76A /* ZMString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMString.h; sourceTree = "<group>"; };
 		682CB8F41EA5F6760078C76A /* ZMString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMString.m; sourceTree = "<group>"; };
+		682E5B1320010440003223A2 /* ZMProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMProtocol.h; sourceTree = "<group>"; };
 		682ECD2F1F1EED4A00B38732 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		682ECD301F1EED4A00B38732 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		682ECD341F1EEDCA00B38732 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
@@ -402,6 +441,8 @@
 		684988F11EB02E2E00FCB42F /* Network_VController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network_VController.m; sourceTree = "<group>"; };
 		684CC6BA1EC070930042F56D /* SelectCheckModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCheckModel.h; sourceTree = "<group>"; };
 		684CC6BB1EC070930042F56D /* SelectCheckModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCheckModel.m; sourceTree = "<group>"; };
+		685B25361F8DBF2B00CE6AF7 /* ZMNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNavigationBar.h; sourceTree = "<group>"; };
+		685B25371F8DBF2B00CE6AF7 /* ZMNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNavigationBar.m; sourceTree = "<group>"; };
 		6868F4E51E5BE6DF00852BB8 /* AATestVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATestVController.h; sourceTree = "<group>"; };
 		6868F4E61E5BE6DF00852BB8 /* AATestVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AATestVController.m; sourceTree = "<group>"; };
 		6868F4E81E5BEB0B00852BB8 /* TestAAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAAView.h; sourceTree = "<group>"; };
@@ -866,6 +907,38 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		6807CC6B20026BF100E397C7 /* ZMException */ = {
+			isa = PBXGroup;
+			children = (
+				6807CC6C20026BF100E397C7 /* MyException.h */,
+				6807CC6D20026BF100E397C7 /* MyException.m */,
+				6807CC6E20026BF100E397C7 /* NSArray+ZMAvoidCrash.h */,
+				6807CC6F20026BF100E397C7 /* NSArray+ZMAvoidCrash.m */,
+				6807CC7020026BF100E397C7 /* NSAttributedString+ZMAvoidCrash.h */,
+				6807CC7120026BF100E397C7 /* NSAttributedString+ZMAvoidCrash.m */,
+				6807CC7220026BF100E397C7 /* NSDictionary+ZMAvoidCrash.h */,
+				6807CC7320026BF100E397C7 /* NSDictionary+ZMAvoidCrash.m */,
+				6807CC7420026BF100E397C7 /* NSMutableArray+ZMAvoidCrash.h */,
+				6807CC7520026BF100E397C7 /* NSMutableArray+ZMAvoidCrash.m */,
+				6807CC7620026BF100E397C7 /* NSMutableAttributedString+ZMAvoidCrash.h */,
+				6807CC7720026BF100E397C7 /* NSMutableAttributedString+ZMAvoidCrash.m */,
+				6807CC7820026BF100E397C7 /* NSMutableDictionary+ZMAvoidCrash.h */,
+				6807CC7920026BF100E397C7 /* NSMutableDictionary+ZMAvoidCrash.m */,
+				6807CC7A20026BF100E397C7 /* NSMutableString+ZMAvoidCrash.h */,
+				6807CC7B20026BF100E397C7 /* NSMutableString+ZMAvoidCrash.m */,
+				6807CC7C20026BF100E397C7 /* NSObject+ZMAvoidCrash.h */,
+				6807CC7D20026BF100E397C7 /* NSObject+ZMAvoidCrash.m */,
+				6807CC7E20026BF100E397C7 /* NSString+ZMAvoidCrash.h */,
+				6807CC7F20026BF100E397C7 /* NSString+ZMAvoidCrash.m */,
+				6807CC8220026BF100E397C7 /* ZMAvoidCrash.h */,
+				6807CC8320026BF100E397C7 /* ZMAvoidCrash.m */,
+				6807CC8420026BF100E397C7 /* ZMAvoidCrashProtocol.h */,
+				6807CC8520026BF100E397C7 /* ZMAvoidCrashStubProxy.h */,
+				6807CC8620026BF100E397C7 /* ZMAvoidCrashStubProxy.m */,
+			);
+			path = ZMException;
+			sourceTree = "<group>";
+		};
 		681281A21ECECAF800DFB772 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +972,14 @@
 				684988F11EB02E2E00FCB42F /* Network_VController.m */,
 			);
 			path = OtherVCs;
+			sourceTree = "<group>";
+		};
+		682E5B1220010421003223A2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				682E5B1320010440003223A2 /* ZMProtocol.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		682ECD2E1F1EED3500B38732 /* 单元测试 */ = {
@@ -1085,26 +1166,12 @@
 		68B5146A1ECAF07E0000FDD6 /* ReactiveCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				682E5B1220010421003223A2 /* Protocol */,
 				68E7DEDF1ED67A5700E9D3DC /* Base */,
 				68E7DEE41ED6827E00E9D3DC /* City */,
 				681281A21ECECAF800DFB772 /* Tool */,
-				68B514741ECB037E0000FDD6 /* Protocol */,
 			);
 			path = ReactiveCocoa;
-			sourceTree = "<group>";
-		};
-		68B514711ECB018A0000FDD6 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		68B514741ECB037E0000FDD6 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		68C0EFFF1ECA81C10060556C /* UITableView_VC */ = {
@@ -1291,6 +1358,7 @@
 			children = (
 				68F7BDF01E34A81E009B2101 /* AppDelegate.h */,
 				68F7BDF11E34A81E009B2101 /* AppDelegate.m */,
+				68F042331ECBE7420085449D /* BaseHeader.h */,
 				68B5146A1ECAF07E0000FDD6 /* ReactiveCocoa */,
 				6868F4F71E5C1C5100852BB8 /* TestVControllers */,
 				68F7C2281E34BBAF009B2101 /* MainArchitecture */,
@@ -1431,13 +1499,13 @@
 		68F7C0521E34BB18009B2101 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				6807CC6B20026BF100E397C7 /* ZMException */,
 				68F7C0541E34BB18009B2101 /* AppConfig */,
 				687B046D1ED2CB7F00A5FEDA /* AppManager */,
 				68F2CC801EC2BDA2007D8C4E /* MJRefreshTools */,
 				68F7C0C71E34BB18009B2101 /* Singleton(单列) */,
 				68F7C0BE1E34BB18009B2101 /* Network_网络 */,
 				68F7C06B1E34BB18009B2101 /* Category_类别 */,
-				68B514711ECB018A0000FDD6 /* Protocol */,
 				68F7C0B01E34BB18009B2101 /* Extension */,
 				68F7C05B1E34BB18009B2101 /* BaseKit */,
 				68F7C0981E34BB18009B2101 /* DataManager_数据管理 */,
@@ -1454,7 +1522,6 @@
 				68F042341ECBEBC30085449D /* AppConst.h */,
 				68F042351ECBEBC30085449D /* AppConst.m */,
 				68F042321ECBE7420085449D /* AppMacro.h */,
-				68F042331ECBE7420085449D /* BaseHeader.h */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -2142,6 +2209,8 @@
 				6868F4EF1E5BF15200852BB8 /* ZMTabBar.m */,
 				6822609E1E5A99C000F00C0D /* ZMUpperButton.h */,
 				6822609F1E5A99C000F00C0D /* ZMUpperButton.m */,
+				685B25361F8DBF2B00CE6AF7 /* ZMNavigationBar.h */,
+				685B25371F8DBF2B00CE6AF7 /* ZMNavigationBar.m */,
 				68F88BBC1EA9936B00689268 /* BBaseViewController.h */,
 				68F88BBD1EA9936B00689268 /* BBaseViewController.m */,
 			);
@@ -2390,10 +2459,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				68F7C1431E34BB9D009B2101 /* MJExtensionConfig.m in Sources */,
+				6807CC8720026BF200E397C7 /* MyException.m in Sources */,
 				68F7C21B1E34BBA8009B2101 /* GuidepageViewController.m in Sources */,
 				68F7C2231E34BBA8009B2101 /* NewsTableVC.m in Sources */,
 				6868F4EA1E5BEB0B00852BB8 /* TestAAView.m in Sources */,
+				6807CC8C20026BF200E397C7 /* NSMutableAttributedString+ZMAvoidCrash.m in Sources */,
 				68E7DF191ED6CB6200E9D3DC /* ZMWebViewModel.m in Sources */,
+				6807CC8920026BF200E397C7 /* NSAttributedString+ZMAvoidCrash.m in Sources */,
 				68F7C1BD1E34BBA3009B2101 /* YzmTextField.m in Sources */,
 				68E7DF061ED6831900E9D3DC /* CityTravelViewModel.m in Sources */,
 				68C0F00C1ECA81FA0060556C /* TableVC_CheckMoreBox.m in Sources */,
@@ -2405,6 +2477,7 @@
 				68F7C0F51E34BB18009B2101 /* UIImage+ZMAdd.m in Sources */,
 				68F7BDFB1E34A81E009B2101 /* ProjectArchitecture.xcdatamodeld in Sources */,
 				68F7C1BB1E34BBA3009B2101 /* ZMTradeInputView.m in Sources */,
+				6807CC9220026BF200E397C7 /* ZMAvoidCrash.m in Sources */,
 				68F2CC7F1EC2BC7D007D8C4E /* CollectDealView.m in Sources */,
 				68C13E7A1E5D2909008AB244 /* BBTestVController.m in Sources */,
 				68F2CC901EC2FFBC007D8C4E /* ItemCollectionView.m in Sources */,
@@ -2469,6 +2542,7 @@
 				68F7C1A41E34BBA2009B2101 /* LetfRightTextView.m in Sources */,
 				68E7DF0B1ED684AB00E9D3DC /* CityBannerWebVController.m in Sources */,
 				6834F9FB1E5F1C42002CBA93 /* AAView.m in Sources */,
+				6807CC8E20026BF200E397C7 /* NSMutableString+ZMAvoidCrash.m in Sources */,
 				68F7C1AB1E34BBA2009B2101 /* ICarouselView.m in Sources */,
 				68F7C0F21E34BB18009B2101 /* UIButton+ZMAdd.m in Sources */,
 				68B514701ECAFCD20000FDD6 /* NSObject+PushMessage.m in Sources */,
@@ -2479,13 +2553,16 @@
 				68F7C1131E34BB18009B2101 /* SingletonManager.m in Sources */,
 				68F7C1461E34BB9D009B2101 /* Finance.m in Sources */,
 				68C0F0141ECA82330060556C /* UIApplication_VC.m in Sources */,
+				6807CC9320026BF200E397C7 /* ZMAvoidCrashStubProxy.m in Sources */,
 				68A6B5C21E63C54A002F3B24 /* TestViewController.m in Sources */,
 				68F7C2241E34BBA8009B2101 /* ProductVCAA.m in Sources */,
 				68F7C1A01E34BBA2009B2101 /* BLDatePickerView.m in Sources */,
 				68F7C1141E34BB18009B2101 /* Dispatch_Thread.m in Sources */,
+				6807CC8F20026BF200E397C7 /* NSObject+ZMAvoidCrash.m in Sources */,
 				68226AA81E5FDCFB0065FDC3 /* AAObject.m in Sources */,
 				6828EB311E654C8A00CCFD82 /* UIAlertView+ZMAdd.m in Sources */,
 				68C0F00D1ECA81FA0060556C /* TableView_SystemCheck.m in Sources */,
+				6807CC8D20026BF200E397C7 /* NSMutableDictionary+ZMAvoidCrash.m in Sources */,
 				68F7C1A51E34BBA2009B2101 /* NoWiFiView.m in Sources */,
 				687090331F441EDF002E5D64 /* TestVController.m in Sources */,
 				68DC733F1E71388F009B6691 /* ZMTitleLable.m in Sources */,
@@ -2515,6 +2592,7 @@
 				68CD265F1E723EE700D4AEBF /* LoginManager.m in Sources */,
 				681281A91ECECB5600DFB772 /* HTConst.m in Sources */,
 				682ECD391F1EEF3400B38732 /* LoginSuccessVC.m in Sources */,
+				6807CC8820026BF200E397C7 /* NSArray+ZMAvoidCrash.m in Sources */,
 				68E7DEFD1ED682F300E9D3DC /* ZMCityTravelProtocolImpl.m in Sources */,
 				68CD26601E723EE700D4AEBF /* LoginViewController.m in Sources */,
 				6803458A1E6EA71E00237CF7 /* UISearchBar_VC.m in Sources */,
@@ -2538,6 +2616,7 @@
 				687B04791ED2CE5900A5FEDA /* ServerURL.m in Sources */,
 				68F627591F20A80300B915B5 /* Function.m in Sources */,
 				68CFC60E1E77EDB3002EB232 /* SelectModel.m in Sources */,
+				6807CC9020026BF200E397C7 /* NSString+ZMAvoidCrash.m in Sources */,
 				68E7DF1C1ED6CB8B00E9D3DC /* ZMBaseViewController.m in Sources */,
 				68E7DF181ED6CB6200E9D3DC /* ZMViewModel.m in Sources */,
 				68E7DEFC1ED682F300E9D3DC /* Traveller.m in Sources */,
@@ -2562,6 +2641,7 @@
 				68C0F0101ECA81FA0060556C /* TableView_VC_CheckMoreBox.m in Sources */,
 				687B04601ED2BAE100A5FEDA /* UIImageView+HTRoundImage.m in Sources */,
 				683898611E5EE65600F19EB1 /* UIView_VController.m in Sources */,
+				6807CC8B20026BF200E397C7 /* NSMutableArray+ZMAvoidCrash.m in Sources */,
 				68F7C1011E34BB18009B2101 /* NSData+CommonCrypto.m in Sources */,
 				68F7C1061E34BB18009B2101 /* GTMBase64.m in Sources */,
 				68F7C1031E34BB18009B2101 /* ZMAES.m in Sources */,
@@ -2598,6 +2678,7 @@
 				682260A01E5A99C000F00C0D /* ZMUpperButton.m in Sources */,
 				68BB78F41F1DF8BE00434B70 /* TXHandleCrash.m in Sources */,
 				68F7C0ED1E34BB18009B2101 /* NSObject+AlertView.m in Sources */,
+				685B25381F8DBF2B00CE6AF7 /* ZMNavigationBar.m in Sources */,
 				68E7DEE31ED67A9500E9D3DC /* ZMIntegrationWebView.m in Sources */,
 				68F7C2331E34BBAF009B2101 /* ZMNavController.m in Sources */,
 				6828EB251E6522A500CCFD82 /* ZMDownloadManager.m in Sources */,
@@ -2605,6 +2686,7 @@
 				68F042361ECBEBC30085449D /* AppConst.m in Sources */,
 				68F7C1181E34BB18009B2101 /* UserDefaults.m in Sources */,
 				68F7C1A71E34BBA2009B2101 /* TitleView.m in Sources */,
+				6807CC8A20026BF200E397C7 /* NSDictionary+ZMAvoidCrash.m in Sources */,
 				68F7C1B21E34BBA2009B2101 /* ZMSpaceLabel.m in Sources */,
 				68C0F01D1ECA888D0060556C /* NSNotificationCenter_VC.m in Sources */,
 				68A2B6A41E4B17E10021A11A /* NSData+ZMAdd.m in Sources */,

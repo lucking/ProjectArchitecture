@@ -79,13 +79,39 @@
     NSLog(@"length2 = %f ",length2);
     NSLog(@"length3 = %f \n ",length3);
     
+}
+
++ (void)nowTest {
+    //Byte 转化为 NSData
+    Byte byte[] = {0x55, 0x07, 0x02, 0x01, 0x1A, 0x01, 0xAA};
+    NSData *data1 = [NSData dataWithBytes:byte length:7];
+
+    //NSData 转化为 Byte
+    NSString *testString = @"1234567890";
+    NSData *testData1 = [testString dataUsingEncoding: NSUTF8StringEncoding];
+    Byte *testByte = (Byte *)[testData1 bytes];
     
+    for(int i=0;i<[testData1 length];i++)
+    printf("testByte_%d = %s",i,testByte);
     
+    NSLog(@"---data1= %@",data1);
+    NSLog(@"---testByte= %s \n ",testByte);
 
     
-}
-- (NSString *)dataFilePath{
+    //int 转化为 NSData
+    int i = 150;
+    NSData *data2 = [NSData dataWithBytes:&i length: sizeof(i)];
     
+    //NSData 转化为 int
+    int age;
+    [data2 getBytes: &age length: sizeof(age)];
+    NSLog(@"---age= %d \n \n ",age);
+    //作者：跑调的安眠曲 链接：http://www.jianshu.com/p/596ca5567edd
+   
+
+}
+
+- (NSString *)dataFilePath{
     NSString *imagePath= [NSHomeDirectory() stringByAppendingPathComponent:@"Default-568h@2x.png"];
     return imagePath;
 }

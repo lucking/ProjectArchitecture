@@ -2,8 +2,8 @@
 //  UIImage+HTRoundImage.m
 //  HeartTrip
 //
-//  Created by 熊彬 on 16/10/9.
-//  Copyright © 2016年 BinBear. All rights reserved.
+//  Created by ZM on 16/10/9.
+//  Copyright © 2016年 ZM. All rights reserved.
 //
 
 #import "UIImage+HTRoundImage.h"

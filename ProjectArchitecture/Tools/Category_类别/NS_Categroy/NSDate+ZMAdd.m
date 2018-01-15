@@ -24,10 +24,7 @@
     NSLog(@"dateStr22 = %@ ",dateStr22);
     NSLog(@"dateStr33 = %@ ",dateStr33);
     NSLog(@"dateStr44 = %@ ",dateStr44);
-    
-    
-    
-    
+
     NSDate *datenow = [NSDate date];//现在时间
     NSLog(@"---> datenow= %@ ",datenow);
     
@@ -42,8 +39,8 @@
     
     //1.1、string to date
     NSDate *myDate1 = [NSDate stringToDateWithDateStr:@"20110826134106" format:@"yyyyMMddHHmmss"];
-    NSLog(@"---> 1.1_1：string to date = %@",myDate1);
     NSDate *myDate2 = [NSDate stringToDateWithDateStr:@"2017-08-16 08:26:26" format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 1.1_1：string to date = %@",myDate1);
     NSLog(@"---> 1.1_2：string to date = %@",myDate2);
     //1.2、date To String
     NSString *dateStr1 = [NSDate dateToStringWithDate:[NSDate date] format:@"YYYY-MM-dd hh:mm:ss"];
@@ -54,8 +51,8 @@
     NSLog(@"---> 2.1：dateStr to 时间戳 = %@",timestampStr);
     //2.2时间戳 to dateStr
     NSString *dateStr2 = [NSDate timeIntervalWithString:timestampStr dateFormatStatus:DFStyleYYYYMMddHHmmss];
-    NSLog(@"---> 2.2_1：时间戳 to dateStr = %@ ",dateStr2);
     NSString *dateStr2_2 = [NSDate timestampWithString:timestampStr format:@"YYYY-MM-dd hh:mm:ss"];
+    NSLog(@"---> 2.2_1：时间戳 to dateStr = %@ ",dateStr2);
     NSLog(@"---> 2.2_2：时间戳 to dateStr = %@ \n ",dateStr2_2);
     
     /*
@@ -262,12 +259,69 @@
     NSDate* date = [formatter dateFromString:formatTime]; //将字符串按formatter转成NSDate
     //时间转时间戳的方法:
     NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
-    
     return [NSString stringWithFormat:@"%ld",(long)timeSp];
 }
 
 
 
+//--设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制  YYYY-MM-dd HH:mm:ss SSS
+//获取当前时间戳：需要设置时间格式
++ (NSString *)timeSwitchTimestampFormatter:(NSString *)format {
+    
+    NSDateFormatter *dateFM = [[NSDateFormatter alloc] init];
+    [dateFM setDateFormat:format];
+    NSString *dateStr= [dateFM stringFromDate:[NSDate date]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:format];
+    
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [formatter setTimeZone:timeZone];
+    NSDate* date = [formatter dateFromString:dateStr]; //将字符串按formatter转成NSDate
+    //时间转时间戳的方法:
+    NSInteger timeSp = [[NSNumber numberWithDouble:[date timeIntervalSince1970]] integerValue];
+    return [NSString stringWithFormat:@"%ld",(long)timeSp];
+}
+//获取当前时间戳
++ (NSString *)getNowTimestamp {
+        
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a= [dat timeIntervalSince1970];
+    NSString*timeSP = [NSString stringWithFormat:@"%0.f", a];//转为字符型
+    return timeSP;
+}
+//获取当前时间戳：(以秒为单位)
++ (NSString *)getNowTimestampOfSecond {
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    //设置时区,这个对于时间的处理有时很重要
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [formatter setTimeZone:timeZone];
+    NSDate *dateNow = [NSDate date];//现在时间,你可以输出来看下是什么格式
+    NSString *timeSP = [NSString stringWithFormat:@"%ld", (long)[dateNow timeIntervalSince1970]];
+    return timeSP;
+}
+//获取当前时间戳：(以毫秒为单位）
++ (NSString *)getNowTimestampOfMillisecond {
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss.SSSS"];  //YYYY-MM-dd HH:mm:ss.SSSS 或 YYYYMMddHHmmssSSSS
+    //设置时区,这个对于时间的处理有时很重要
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [formatter setTimeZone:timeZone];
+    
+    NSTimeInterval nowtime = [[NSDate date] timeIntervalSince1970]*1000;
+    long long theTime = [[NSNumber numberWithDouble:nowtime] longLongValue];
+    NSString *timeSP = [NSString stringWithFormat:@"%llu",theTime];
+    return timeSP;
+}
 
 
 /**
