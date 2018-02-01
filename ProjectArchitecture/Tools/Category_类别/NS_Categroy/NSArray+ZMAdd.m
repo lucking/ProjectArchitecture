@@ -11,7 +11,7 @@
 
 @implementation NSArray (ZMAdd)
 
-- (void)testArray {
+- (void)test {
     
     NSArray* sortArray = [[NSArray alloc] initWithObjects:@"1",@"3",@"4",@"7",@"8",@"2",@"6",@"5",@"37",@"9",@"12",@"16",@"88",@"25",@"",nil];
     

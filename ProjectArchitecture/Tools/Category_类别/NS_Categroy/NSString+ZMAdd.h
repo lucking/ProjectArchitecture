@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 // ============================"  格式化 数据类型  "==============================
 #define  NNSStringInt(myInt)		[NSString stringWithFormat:@"%d",myInt]		// Int

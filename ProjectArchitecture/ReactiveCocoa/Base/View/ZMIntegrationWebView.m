@@ -8,7 +8,7 @@
 
 #import "ZMIntegrationWebView.h"
 
-static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
+static void *ZMIntegrationWebBrowserContext = &ZMIntegrationWebBrowserContext;
 
 @interface ZMIntegrationWebView ()<UIAlertViewDelegate>{
     NSString *webTitle;
@@ -57,7 +57,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
             [self.wkWebView setAutoresizesSubviews:YES];
             [self.wkWebView.scrollView setAlwaysBounceVertical:YES];
             [self addSubview:self.wkWebView];
-            [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:FTDIntegrationWebBrowserContext];
+            [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:ZMIntegrationWebBrowserContext];
             [self.wkWebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
         } else {
             [self.uiWebView setFrame:frame];
@@ -152,13 +152,13 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
 {
     _delegate = delegate;
     
-    _delegateFlags.didTitle = [delegate respondsToSelector:@selector(FTD_WebView:title:)];
-    _delegateFlags.didshouldStartLoad = [delegate respondsToSelector:@selector(FTD_WebView:shouldStartLoadWithURL:)];
-    _delegateFlags.didStartLoad = [delegate respondsToSelector:@selector(FTD_WebViewDidStartLoad:)];
-    _delegateFlags.didFinishLoad = [delegate respondsToSelector:@selector(FTD_WebView:didFinishLoadingURL:)];
-    _delegateFlags.didFailToLoad = [delegate respondsToSelector:@selector(FTD_WebView:didFailToLoadURL:error:)];
+    _delegateFlags.didTitle = [delegate respondsToSelector:@selector(ZM_WebView:title:)];
+    _delegateFlags.didshouldStartLoad = [delegate respondsToSelector:@selector(ZM_WebView:shouldStartLoadWithURL:)];
+    _delegateFlags.didStartLoad = [delegate respondsToSelector:@selector(ZM_WebViewDidStartLoad:)];
+    _delegateFlags.didFinishLoad = [delegate respondsToSelector:@selector(ZM_WebView:didFinishLoadingURL:)];
+    _delegateFlags.didFailToLoad = [delegate respondsToSelector:@selector(ZM_WebView:didFailToLoadURL:error:)];
 }
-- (void)FTD_stringByEvaluatingJavaScriptFromString:(NSString *)jsString
+- (void)ZM_stringByEvaluatingJavaScriptFromString:(NSString *)jsString
 {
     if(self.wkWebView) {
         [self.wkWebView evaluateJavaScript:jsString completionHandler:nil];
@@ -172,7 +172,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
     if(webView == self.uiWebView) {
         
         if (_delegateFlags.didStartLoad) {
-            [self.delegate FTD_WebViewDidStartLoad:self];
+            [self.delegate ZM_WebViewDidStartLoad:self];
         }
     }
 }
@@ -187,7 +187,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
             
             //back delegate
             if (_delegateFlags.didshouldStartLoad) {
-                [self.delegate FTD_WebView:self shouldStartLoadWithURL:request.URL];
+                [self.delegate ZM_WebView:self shouldStartLoadWithURL:request.URL];
             }
             return YES;
         } else {
@@ -206,7 +206,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
         }
         //back delegate
         if (_delegateFlags.didFinishLoad) {
-            [self.delegate FTD_WebView:self didFinishLoadingURL:self.uiWebView.request.URL];
+            [self.delegate ZM_WebView:self didFinishLoadingURL:self.uiWebView.request.URL];
         }
     }
 }
@@ -219,7 +219,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
         }
         //back delegate
         if (_delegateFlags.didFailToLoad) {
-            [self.delegate FTD_WebView:self didFailToLoadURL:self.uiWebView.request.URL error:error];
+            [self.delegate ZM_WebView:self didFailToLoadURL:self.uiWebView.request.URL error:error];
         }
     }
 }
@@ -229,7 +229,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
     if(webView == self.wkWebView) {
         //back delegate
         if (_delegateFlags.didStartLoad) {
-            [self.delegate FTD_WebViewDidStartLoad:self];
+            [self.delegate ZM_WebViewDidStartLoad:self];
         }
         
     }
@@ -239,7 +239,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
     if(webView == self.wkWebView) {
         //back delegate
         if (_delegateFlags.didFinishLoad) {
-            [self.delegate FTD_WebView:self didFinishLoadingURL:self.wkWebView.URL];
+            [self.delegate ZM_WebView:self didFinishLoadingURL:self.wkWebView.URL];
         }
         
     }
@@ -250,7 +250,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
     if(webView == self.wkWebView) {
         //back delegate
         if (_delegateFlags.didFailToLoad) {
-            [self.delegate FTD_WebView:self didFailToLoadURL:self.wkWebView.URL error:error];
+            [self.delegate ZM_WebView:self didFailToLoadURL:self.wkWebView.URL error:error];
         }
         
     }
@@ -262,7 +262,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
         //back delegate
         if (_delegateFlags.didFailToLoad) {
             
-            [self.delegate FTD_WebView:self didFailToLoadURL:self.wkWebView.URL error:error];
+            [self.delegate ZM_WebView:self didFailToLoadURL:self.wkWebView.URL error:error];
         }
         
     }
@@ -290,7 +290,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
 -(BOOL)callback_webViewShouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(NSInteger)navigationType {
     //back delegate
     if (_delegateFlags.didshouldStartLoad) {
-        [self.delegate FTD_WebView:self shouldStartLoadWithURL:request.URL];
+        [self.delegate ZM_WebView:self shouldStartLoadWithURL:request.URL];
     }
     return YES;
 }
@@ -320,7 +320,7 @@ static void *FTDIntegrationWebBrowserContext = &FTDIntegrationWebBrowserContext;
     }else if ([keyPath isEqualToString:@"title"]){
         webTitle = self.wkWebView.title;
         if (_delegateFlags.didTitle) {
-            [self.delegate FTD_WebView:self title:webTitle];
+            [self.delegate ZM_WebView:self title:webTitle];
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];

@@ -14,9 +14,7 @@
 - (void)testUse {
     
     [self degreesToRadian:30];
-    [self radianToDegrees:M_PI_2];
-    
-    
+    [self radianToDegrees:M_PI_2];    
 }
 
 // 角度转换弧度

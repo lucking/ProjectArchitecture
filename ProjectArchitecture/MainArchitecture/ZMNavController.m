@@ -105,10 +105,43 @@
     [navBar setBarTintColor:NavBg_COLOR];
 }
 
+#pragma mark 初始化导航栏主题
+- (void)setNavTheme
+{
+    // 1.设置导航栏背景
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage resizeImage:@"NavigationBar_Background.png"] forBarMetrics:UIBarMetricsDefault];
+    // 状态栏
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    // 2.设置导航栏文字属性
+    NSMutableDictionary *barAttrs = [NSMutableDictionary dictionary];
+    [barAttrs setObject:[UIColor darkGrayColor] forKey:NSForegroundColorAttributeName];
+    [barAttrs setObject:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:NSShadowAttributeName];
+    [bar setTitleTextAttributes:barAttrs];
+    
+    // 3.按钮
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    [item setBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Normal.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [item setBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Pressed.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
+    NSMutableDictionary *itemAttrs = [NSMutableDictionary dictionaryWithDictionary:barAttrs];
+    [itemAttrs setObject:[UIFont boldSystemFontOfSize:13] forKey:NSFontAttributeName];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateHighlighted];
+    [item setTitleTextAttributes:itemAttrs forState:UIControlStateDisabled];
+    
+    // 4.返回按钮
+    [item setBackButtonBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Back_Normal.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [item setBackButtonBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Back_Pressed.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+}
+
+
+
 #pragma mark - /************************  以下测试 为使用案例  **************************/
 - (void)testSetUI {
+    
     self.view.backgroundColor = [UIColor purpleColor];
-
     /*  “ 注意 ！！”
      *
      *  在继承 UIViewController 里使用： self.navigationController.navigationBar 
@@ -158,23 +191,21 @@
 
     
     // 没有效果
-    //[[UINavigationBar appearance] setTintColor:NavBg_COLOR];//UIColorWithRGBA(227, 0, 42, 1.0)
+    //[[UINavigationBar appearance] setTintColor:NavBg_COLOR];//UIColorRGBA(227, 0, 42, 1.0)
     //iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     //NSLog(@"---> onBack ");
 
 
     /**
-     *  修改状态栏 背景颜色 
+     *  状态栏：修改背景颜色 
      */
     //黑底白字
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     //白底黑字
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
-    
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];    
     
     /**
-     *  修改导航栏 背景颜色 改变UINavigationBar的颜色
+     *  导航栏：修改背景颜色 改变UINavigationBar的颜色
      */
     // 方式一：
     UIImage *BgImg = [UIImage imageNamed:@"BgImg"];
@@ -260,39 +291,6 @@
     //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(systemItemBtn)];
     //    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
 
-}
-- (void)contactMenu{
-    
-}
-#pragma mark 初始化导航栏主题
-- (void)setNavTheme
-{
-    // 1.设置导航栏背景
-    UINavigationBar *bar = [UINavigationBar appearance];
-    [bar setBackgroundImage:[UIImage resizeImage:@"NavigationBar_Background.png"] forBarMetrics:UIBarMetricsDefault];
-    // 状态栏
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
-    // 2.设置导航栏文字属性
-    NSMutableDictionary *barAttrs = [NSMutableDictionary dictionary];
-    [barAttrs setObject:[UIColor darkGrayColor] forKey:NSForegroundColorAttributeName];
-    [barAttrs setObject:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:NSShadowAttributeName];
-    [bar setTitleTextAttributes:barAttrs];
-    
-    // 3.按钮
-    UIBarButtonItem *item = [UIBarButtonItem appearance];
-    [item setBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Normal.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [item setBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Pressed.png"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-    
-    NSMutableDictionary *itemAttrs = [NSMutableDictionary dictionaryWithDictionary:barAttrs];
-    [itemAttrs setObject:[UIFont boldSystemFontOfSize:13] forKey:NSFontAttributeName];
-    [item setTitleTextAttributes:itemAttrs forState:UIControlStateNormal];
-    [item setTitleTextAttributes:itemAttrs forState:UIControlStateHighlighted];
-    [item setTitleTextAttributes:itemAttrs forState:UIControlStateDisabled];
-    
-    // 4.返回按钮
-    [item setBackButtonBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Back_Normal.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [item setBackButtonBackgroundImage:[UIImage stretchableImage:@"BarButtonItem_Back_Pressed.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 }
 
 

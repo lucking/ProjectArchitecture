@@ -11,8 +11,6 @@
 #import "AppDelegate.h"
 #import "TestViewController.h"
 #import "ZMCache.h"
-#import "DatePickerView.h"
-#import "BLDatePickerView.h"
 
 #import "RegisterViewController.h"
 #import "CityTravelNotesController.h"
@@ -22,14 +20,10 @@
 static NSString *_cellId = @"CellCC_Id";
 //static CGFloat rowHeight = 200;  // cell的高度
 
-@interface HomeViewController ()<BLDatePickerViewDelegate>
+@interface HomeViewController ()
 {
-//	NSTimer* timer;
     Ivar aa;
 }
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) DatePickerView *datePickerView;
-@property (nonatomic, strong) BLDatePickerView *BLdatePicker;
 @property (nonatomic, strong) UILabel *dateLabel;
 @end
 
@@ -40,6 +34,9 @@ static NSString *_cellId = @"CellCC_Id";
     //[self.navigationController setNavigationBarHidden:NO animated:YES]; //显示_navBar
     //[self.navigationController setNavigationBarHidden:YES animated:YES]; //隐藏_navBar
     self.tabBarController.tabBar.hidden = NO;
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBar.hidden = NO;
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
 }
@@ -111,13 +108,6 @@ static NSString *_cellId = @"CellCC_Id";
 }
 //例八：
 - (void)case8 {
-    //日期选择
-    [self.BLdatePicker bl_show];
-    //获取日期
-    self.datePickerView.dateStringBlock = ^(NSString *dateString) {
-        NSLog(@"---> destDateString = %@",dateString);
-    };
-
 }
 //例九：
 - (void)case9 {
@@ -133,24 +123,7 @@ static NSString *_cellId = @"CellCC_Id";
     self.navigationController.tabBarItem.badgeValue = nil;
 }
 
-#pragma mark - - lazy load
-// 第一步
-- (BLDatePickerView *)BLdatePicker{
-    if (!_BLdatePicker) {
-        _BLdatePicker = [[BLDatePickerView alloc] init];
-        _BLdatePicker.pickViewDelegate = self;
-        [_BLdatePicker bl_setUpDefaultDateWithYear:2016 month:9 day:8];
-    }
-    return _BLdatePicker;
-}
-
-#pragma mark - - BLDatePickerViewDelegate
-// 第三步
-- (void)bl_selectedDateResultWithYear:(NSString *)year
-                                month:(NSString *)month
-                                  day:(NSString *)day{
-    _dateLabel.text = [NSString stringWithFormat:@"%@-%@-%@",year,month,day];
-}
+#pragma mark -- lazy load
 
 - (void)initUI {
     
@@ -192,20 +165,6 @@ static NSString *_cellId = @"CellCC_Id";
     }
 }
 
-- (DatePickerView *)datePickerView {
-    if (_datePickerView==nil) {
-        _datePickerView = [[DatePickerView alloc] initWithFrame:CGRectMake(10, SSHEIGHT-250, SSWIDTH-20, 230)];
-        _datePickerView.backgroundColor = White_COLOR;
-        _datePickerView.layer.cornerRadius = 5.f;
-        _datePickerView.clipsToBounds = YES;
-        
-        _datePickerView.datePickerMode= UIDatePickerModeDate;
-        _datePickerView.dateFormatterString = @"yyyy-MM-dd";
-        [self.view addSubview:_datePickerView];
-        //[_datePickerView dismissView];
-    }
-    return _datePickerView;
-}
 - (UILabel *)dateLabel{
     if (!_dateLabel) {
         _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 280, 150, 40)];

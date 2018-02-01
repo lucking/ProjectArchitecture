@@ -99,6 +99,9 @@ static AppDelegate *_singleInstance;
     NSString *timestamp = [NSDate getNowTimestamp];
     NSLog(@"---> timestamp.length= %ld ",timestamp.length);
 
+    if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)) {
+        
+    }
     
 //    Person *pp = [[Person alloc] init];
 //    [pp setValue:@"aaaa" forKey:@"firstName"];

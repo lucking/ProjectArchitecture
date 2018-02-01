@@ -27,7 +27,7 @@
 		self.layer.cornerRadius = 3;
 		self.layer.masksToBounds= YES;
 		self.layer.borderWidth  = 1;
-		self.layer.borderColor  = Gray_cccccc.CGColor;
+		self.layer.borderColor  = Gray_CCCCCC.CGColor;
 
 		myWidth	= self.frame.size.width;
 		myHeight= self.frame.size.height;
@@ -36,7 +36,7 @@
 		self.leftImgView.backgroundColor = Clear_COLOR;
 		self.rightBtn.backgroundColor = Clear_COLOR;
 		self.mainText.backgroundColor = Clear_COLOR;
-		self.rightLine.backgroundColor = Gray_cccccc;
+		self.rightLine.backgroundColor = Gray_CCCCCC;
 
 		self.mainText.font = FFont(14);
 		self.mainText.textColor = Black_COLOR;
@@ -55,7 +55,7 @@
 		[[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidEndEditingNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notificate){
 
 			if ([notificate.object isEqual:self.mainText]){
-				self.layer.borderColor  = Gray_cccccc.CGColor;
+				self.layer.borderColor  = Gray_CCCCCC.CGColor;
 			}
 		}];
 

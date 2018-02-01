@@ -137,7 +137,7 @@
     Btn1.titleLabel.font= [UIFont systemFontOfSize:15];
     Btn1.tag = tag;
     [Btn1 setTitle:title forState:UIControlStateNormal];
-    [Btn1 setTitleColor:Color_F44336 forState:UIControlStateNormal];
+    [Btn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [Btn1 addTarget:self action:@selector(myBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:Btn1];
     

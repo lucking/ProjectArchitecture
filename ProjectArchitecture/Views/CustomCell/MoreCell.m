@@ -18,14 +18,16 @@
     if (self) {
         myWidth = SSWIDTH - 10;
         myHeight= rowHeight;
-        
+        NSSLog(@"myWidth = %f", myWidth);
+        NSSLog(@"myHeight= %f", myHeight);
     }
     return self;
 }
 
 
+#pragma mark -- lazy load
+
 - (UIImageView *)imgView {
-    
     if (_imgView==nil) {
         float yy = 10, wh = (myHeight-yy*2);
         _imgView = [[UIImageView alloc]initWithFrame:CGRectMake(10, yy, wh, wh)];
@@ -43,13 +45,10 @@
     return _titleLab;
 }
 
-
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLab.text = title;
 }
-
-
 - (void)setImgName:(NSString *)imgName {
     _imgName = imgName;
     self.imgView.image = [UIImage imageNamed:imgName];

@@ -20,8 +20,6 @@
 		myWidth=	self.frame.size.width;
 		myHeight=	self.frame.size.height;
 
-
-
 	}
 	return self;
 	

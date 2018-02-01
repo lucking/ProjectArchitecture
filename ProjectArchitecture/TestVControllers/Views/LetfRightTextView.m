@@ -80,7 +80,7 @@
 - (UIView *)topLine {
     if (_topLine==nil) {
         _topLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SSWIDTH, 0.5f)];
-        _topLine.backgroundColor= Gray_cccccc;
+        _topLine.backgroundColor= Gray_CCCCCC;
         _topLine.alpha= 1.0;
         [self addSubview:_topLine];
     }
@@ -90,7 +90,7 @@
 - (UIView *)bottomLine {
     if (_bottomLine==nil) {
         _bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, myHeight-1, SSWIDTH, 1.0f)];
-        _bottomLine.backgroundColor= Gray_cccccc;
+        _bottomLine.backgroundColor= Gray_CCCCCC;
         _bottomLine.alpha= 1.0;
         [self addSubview:_bottomLine];
     }
@@ -100,7 +100,7 @@
 - (UIView *)verticalLine {
     if (_verticalLine==nil) {
         _verticalLine = [[UIView alloc]initWithFrame:CGRectMake(_titleLab.right-1, 0, 1.0f, myHeight)];
-        _verticalLine.backgroundColor= Gray_cccccc;
+        _verticalLine.backgroundColor= Gray_CCCCCC;
         _verticalLine.alpha= 1.0;
         [self addSubview:_verticalLine];
     }

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
 
 @class ZMIntegrationWebView;
@@ -18,23 +17,23 @@
 /**
  *  webview内容的标题
  */
-- (void)FTD_WebView:(ZMIntegrationWebView *)webview title:(NSString *)title;
+- (void)ZM_WebView:(ZMIntegrationWebView *)webview title:(NSString *)title;
 /**
  *  webview监听
  */
-- (void)FTD_WebView:(ZMIntegrationWebView *)webview shouldStartLoadWithURL:(NSURL *)URL;
+- (void)ZM_WebView:(ZMIntegrationWebView *)webview shouldStartLoadWithURL:(NSURL *)URL;
 /**
  *  webview开始加载
  */
-- (void)FTD_WebViewDidStartLoad:(ZMIntegrationWebView *)webview;
+- (void)ZM_WebViewDidStartLoad:(ZMIntegrationWebView *)webview;
 /**
  *  webview加载完成
  */
-- (void)FTD_WebView:(ZMIntegrationWebView *)webview didFinishLoadingURL:(NSURL *)URL;
+- (void)ZM_WebView:(ZMIntegrationWebView *)webview didFinishLoadingURL:(NSURL *)URL;
 /**
  *  webview加载失败
  */
-- (void)FTD_WebView:(ZMIntegrationWebView *)webview didFailToLoadURL:(NSURL *)URL error:(NSError *)error;
+- (void)ZM_WebView:(ZMIntegrationWebView *)webview didFailToLoadURL:(NSURL *)URL error:(NSError *)error;
 @end
 
 
@@ -43,10 +42,9 @@
 @interface ZMIntegrationWebView : UIView<WKNavigationDelegate, WKUIDelegate, UIWebViewDelegate>
 
 #pragma mark - Public Properties
-
-#pragma mark - Public Properties
+#pragma mark 
 /**
- *  FTDIntegrationWebView代理
+ *  ZMIntegrationWebView代理
  */
 @property (nonatomic, weak) id <ZMIntegrationWebViewDelegate> delegate;
 /**
@@ -98,7 +96,7 @@
 /**
  *  加载本地js方法: @param jsString js字符串
  */
-- (void)FTD_stringByEvaluatingJavaScriptFromString:(NSString *)jsString;
+- (void)ZM_stringByEvaluatingJavaScriptFromString:(NSString *)jsString;
 
 
 @end

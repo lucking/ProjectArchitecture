@@ -7,18 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Singleton.h"
-
+#import <UIKit/UIKit.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 
 @interface APPInfoManager : NSObject
-{
-    
-}
-//创建实例
-//Singleton_Instance_method_Interface(APPInfoManager);
 // 单例
 + (APPInfoManager *)singleton;
 

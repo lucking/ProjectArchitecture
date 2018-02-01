@@ -19,13 +19,10 @@
 		myHeight= 60.f;
 //		NSSLog(@"myWidth = %f", myWidth);
 //		NSSLog(@"myHeight= %f", myHeight);
-        
         [self addSubview:self.label];
-
 	}
 	return self;
 }
-
 
 /**
  *  数据模型赋值
@@ -33,11 +30,8 @@
 - (void)setPhotoModel:(Photo *)photoModel {
 
 	_photoModel = photoModel;
-
-	self.label.text = _photoModel.name;
-//	self.label.text = @"高清照相机";
+    self.label.text = _photoModel.name; //@"高清照相机";
 }
-
 //
 - (UILabel *)label {
 	if (_label==nil) {
@@ -47,5 +41,12 @@
 	}
 	return _label;
 }
+
+
+void (^configureCellBlock)(PhotoCell*, Photo*) = ^(PhotoCell* cell, Photo* photo) {
+    cell.label.text = photo.name;
+};
+
+
 
 @end

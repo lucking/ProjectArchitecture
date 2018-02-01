@@ -15,12 +15,10 @@
 	self = [super initWithFrame:frame];
 	if (self){
 		//[self NOwifieview];// 公共初始化方法
-
 		[self setBackgroundView:self.BgView];
 		[self.BgView addSubview:self.bgWifiBtn];
 		[self.BgView addSubview:self.bgImageV];
 		self.BgView.hidden = YES;
-
 	}
 	return self;
 }

@@ -41,7 +41,7 @@
     // 开始加载
     @weakify(self);
     [[self
-      rac_signalForSelector:@selector(FTD_WebViewDidStartLoad:)
+      rac_signalForSelector:@selector(ZM_WebViewDidStartLoad:)
       fromProtocol:@protocol(ZMIntegrationWebViewDelegate)]
     	subscribeNext:^(RACTuple *tuple) {
             @strongify(self)
@@ -54,7 +54,7 @@
         }];
     // 加载完成
     [[self
-      rac_signalForSelector:@selector(FTD_WebView:didFinishLoadingURL:)
+      rac_signalForSelector:@selector(ZM_WebView:didFinishLoadingURL:)
       fromProtocol:@protocol(ZMIntegrationWebViewDelegate)]
     	subscribeNext:^(RACTuple *tuple) {
             @strongify(self)
@@ -65,7 +65,7 @@
 //                    if (self.viewModel.webType == kWebFindDetailType) {
 //                        
 //                        NSString *jsMethod = @"document.getElementById(\"download\").remove();document.querySelector(\"header.has-banner\").style.marginTop = 0;";
-//                        [self.webView FTD_stringByEvaluatingJavaScriptFromString:jsMethod];
+//                        [self.webView ZM_stringByEvaluatingJavaScriptFromString:jsMethod];
 //                    }
 //                    
 //                });
@@ -73,7 +73,7 @@
         }];
     // 加载失败
     [[self
-      rac_signalForSelector:@selector(FTD_WebView:didFailToLoadURL:error:)
+      rac_signalForSelector:@selector(ZM_WebView:didFailToLoadURL:error:)
       fromProtocol:@protocol(ZMIntegrationWebViewDelegate)]
     	subscribeNext:^(RACTuple *tuple) {
             @strongify(self)
@@ -90,7 +90,7 @@
         RAC(self.navigationItem,title) = RACObserve(self.viewModel, title);
     }else{
         [[self
-          rac_signalForSelector:@selector(FTD_WebView:title:)
+          rac_signalForSelector:@selector(ZM_WebView:title:)
           fromProtocol:@protocol(ZMIntegrationWebViewDelegate)]
          subscribeNext:^(RACTuple *tuple) {
 //             @strongify(self)
@@ -128,7 +128,6 @@
 - (ZMIntegrationWebView *)webView
 {
     return ZM_LAZY(_webView, ({
-        
         ZMIntegrationWebView *view = [ZMIntegrationWebView new];
         [self.view addSubview:view];
         view;

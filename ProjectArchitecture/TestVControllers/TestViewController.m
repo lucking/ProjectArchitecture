@@ -86,7 +86,16 @@
     if (_ttableView!= nil) {
         [_ttableView reloadData];
     }
-    
+    //设置状态栏颜色
+    [self setStatusBarBackgroundColor:[UIColor yellowColor]];
+    [self setStatusBarBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.3f]];
+}
+#pragma mark- 设置状态栏颜色
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
 }
 
 - (void)test {

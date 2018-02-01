@@ -25,22 +25,6 @@
 #define IS_IPOD ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
 
 
-//判断手机类型： 横、竖屏_皆可用
-#define CurrentMode  [UIScreen instancesRespondToSelector:@selector(currentMode)]
-
-#define iPhone4 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 960),  [[UIScreen mainScreen] currentMode].size) : NO)
-#define iPhone5 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
-#define iPhone6 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
-#define iPhone6p (CurrentMode ? CGSizeEqualToSize(CGSizeMake(1920, 1080),[[UIScreen mainScreen] currentMode].size) : NO)
-#define iPhoneX (CurrentMode ? CGSizeEqualToSize(CGSizeMake(1125, 2436),[[UIScreen mainScreen] currentMode].size) : NO)
-
-//判断手机类型： 竖屏可用（默认的）
-#define  IS_IPHONE45   (([[UIScreen mainScreen] bounds].size.width-320)?NO:YES)
-#define  IS_IPHONE4    (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
-#define  IS_IPHONE5    (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
-#define  IS_IPHONE6    (([[UIScreen mainScreen] bounds].size.width-375)?NO:YES)
-#define  IS_IPHONE6p   (([[UIScreen mainScreen] bounds].size.width-414)?NO:YES)
-#define  IS_IPHONE8X   (([[UIScreen mainScreen] bounds].size.height-812)?NO:YES)
 
 
 

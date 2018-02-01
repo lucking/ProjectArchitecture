@@ -9,5 +9,5 @@
 #import "BaseObject.h"
 
 @implementation BaseObject
-
+MJCodingImplementation
 @end

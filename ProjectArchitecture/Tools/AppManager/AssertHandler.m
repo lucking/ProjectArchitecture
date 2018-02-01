@@ -13,9 +13,7 @@
 
 - (void)testUse{
     
-
     // 自定义NSAssertionHandler后,程序能够获得断言失败后的信息,但是程序可以继续运行,不会强制退出程序.
-    
     
     //断点配置：给线程添加处理类
     AssertHandler *myHandler = [[AssertHandler alloc] init];

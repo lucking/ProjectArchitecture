@@ -73,7 +73,7 @@
     [self.backgroundImageView HT_setImageWithCornerRadius:5 imageURL:[NSURL URLWithString:model.cover_image] placeholder:@"tripdisplay_photocell_placeholder" size:CGSizeMake(SSWIDTH-20,170)];
     
     self.titleLabel.text = model.name;
-    self.blueLine.image = [UIImage HT_setRadius:1 size:CGSizeMake(3, 23) borderColor:nil borderWidth:0 backgroundColor:UIColorWithRGB(80, 189, 203)];
+    self.blueLine.image = [UIImage HT_setRadius:1 size:CGSizeMake(3, 23) borderColor:nil borderWidth:0 backgroundColor:UIColorRGB(80, 189, 203)];
     self.timeLabel.text = [self subTimeStringWithViewModel:model];
     self.placeLabel.text = model.popular_place_str;
     self.avatarLabel.text = [NSString stringWithFormat:@"by %@",model.user.name];
