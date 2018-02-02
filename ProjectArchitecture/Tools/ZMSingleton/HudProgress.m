@@ -8,7 +8,6 @@
 
 #import "HudProgress.h"
 #import "AppDelegate.h"
-#import "BaseHeader.h"
 #import "YYWebImage.h"
 #define  IMGNmae(imageName)  [UIImage imageNamed:imageName]
 
@@ -36,7 +35,7 @@ Singleton_Instance_method_Impl(HudProgress)
     
     UIWindow * window1 = [[UIApplication sharedApplication] keyWindow];
 
-    UIWindow * window2 = [AppDelegate singleton].window;
+    UIWindow * window2 = [AppDelegate shareInstance].window;
     
     UIWindow * window3 = ZM_APPDelegate.window;
     

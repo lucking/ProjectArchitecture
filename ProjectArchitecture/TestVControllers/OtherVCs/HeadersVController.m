@@ -7,25 +7,7 @@
 //
 
 #import "HeadersVController.h"
-
-//7.2设置 view 圆角和边框
-#define RRadiusBorderView(View, Radius, Width, Color)\
-\
-[View.layer setCornerRadius:(Radius)];\
-[View.layer setMasksToBounds:YES];\
-[View.layer setBorderWidth:(Width)];\
-[View.layer setBorderColor:[Color CGColor]]
-
-
-//7.1设置 view 圆角
-#define RRadiusView(View, Radius)\
-\
-[View.layer setCornerRadius:(Radius)];\
-[View.layer setMasksToBounds:YES];\
-
-// 设置随机颜色
-#define RandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
-
+#import "TestColorHeader.h"
 
 @interface HeadersVController ()
 

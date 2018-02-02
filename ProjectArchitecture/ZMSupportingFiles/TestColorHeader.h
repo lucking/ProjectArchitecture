@@ -11,15 +11,11 @@
 
 
 // app中测试使用，可删除
-
-
-#define     Black_COLOR         [UIColor blackColor]    // 黑色
-#define     Gray_COLOR            [UIColor grayColor]     // 灰色
-#define     CyanColor            [UIColor cyanColor]     // 靛蓝
-#define     MagentaColor        [UIColor magentaColor]
+#define     CyanColor           [UIColor cyanColor]     // 靛蓝
+#define     MagentaColor        [UIColor magentaColor]  // 磁红
 #define     Yellow_COLOR        [UIColor yellowColor]   // 黄色
 #define     OrangeColor         [UIColor orangeColor]   // 橙色
-#define     Red_COLOR            [UIColor redColor]      // 红色
+#define     Red_COLOR           [UIColor redColor]      // 红色
 //---------------------"  蓝、绿   "-------------------
 // 蓝色
 #define BuleColorAA     UIColorRGB(3,91,166)
@@ -53,25 +49,13 @@
 
 
 
-
-
 //---------------------"   橙色、黄色   "-------------------
-// 导航栏
-//#define     NavBg_COLOR            UIColorRGB(255,120,2)
-#define     NavBg_COLOR            UIColorRGB(33,150,243)
 //
 #define  Orange_ff7800            UIColorRGB(255,120,0)
 #define  Orange_AA                UIColorRGB(255,187,6)
 #define  Orange_BB                UIColorRGB(255,180,70)
 #define  Orange_CC                UIColorRGB(240,155,5)   // 深橙色
 #define  OrangeColorAA            UIColorRGB(243,157,3)   // 橙色
-
-
-//TabBar按钮
-#define Color_normal     UIColorRGB(149,149,149) //默认：标题颜色
-#define Color_select     UIColorRGB(255,152,0)   //选中：标题颜色
-#define Color_tabBar     UIColorRGB(239,239,239) //tabBar颜色
-
 
 /************"  部分Material Design的配色颜色值规范  "*************/
 

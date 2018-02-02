@@ -8,6 +8,7 @@
 
 #import "CheckmarkCell.h"
 #import "UIView+ZMFrame.h"
+#import "TestColorHeader.h"
 
 @interface CheckmarkCell()
 {

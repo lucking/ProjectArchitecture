@@ -9,7 +9,6 @@
 #import "NetworkSession.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "APPInfoManager.h"
-#import "AppMacro.h"
 #import "DeviceInfo.h"
 #import "NSObject+ZMAdd.h"
 
@@ -113,7 +112,7 @@
 
     UIApplication *application= [UIApplication sharedApplication];
     id subviews;
-    if (IS_IPHONE8X) {
+    if (IS_IPHONEX) {
         NSLog(@"---[DeviceInfo ISIPHONEXX]= IS_IPHONE8X");
         if ([[application valueForKeyPath:@"_statusBar"] isKindOfClass:NSClassFromString(@"UIStatusBar_Modern")]) {
 

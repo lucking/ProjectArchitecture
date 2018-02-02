@@ -7,7 +7,6 @@
 //
 
 #import "ZMCircleProgressView.h"
-#import "AppMacro.h"
 
 @implementation ZMCircleProgressView
 

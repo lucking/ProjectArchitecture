@@ -379,7 +379,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 	NSString *arrayCount = [NSString stringWithFormat:@"%ld",(unsigned long)[objectArray count]];
 	[self putString:arrayCount withId:countKey intoTable:tableName];
 
-	NSSLog(@"-----> arrayCount = %@",arrayCount);
+	NSLog(@"-----> arrayCount = %@",arrayCount);
 
 	for (int i = 0; i < [objectArray count]; i++) {
 		NSString* Id = [NSString stringWithFormat:@"%d",i];
@@ -402,7 +402,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 
 	NSString *countKey = [NSString stringWithFormat:@"%@Key",tableName];
 	NSInteger arrayCount = [[self getStringById:countKey fromTable:tableName] integerValue];
-	NSSLog(@"-----> arrayCount = %ld",(long)arrayCount);
+	NSLog(@"-----> arrayCount = %ld",(long)arrayCount);
 
 	for (int i = 0; i < arrayCount; i++) {
 		NSString* objectId = [NSString stringWithFormat:@"%d",i];

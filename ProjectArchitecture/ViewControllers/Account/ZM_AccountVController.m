@@ -14,7 +14,6 @@
 #import "NSString+ZMAdd.h"
 #import "UILabel+ZMAdd.h"
 #import "TabelTextFieldVController.h"
-#import "AppMacro.h"
 
 @interface ZM_AccountVController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 {

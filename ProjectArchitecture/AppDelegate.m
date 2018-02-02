@@ -32,7 +32,7 @@
 @implementation AppDelegate
 
 static AppDelegate *_singleInstance;
-+(AppDelegate *)singleton {
++(AppDelegate *)shareInstance {
     return _singleInstance;
 }
 
@@ -128,7 +128,7 @@ static AppDelegate *_singleInstance;
     //        [self gotoMainPage];
     //
     //    }else{
-    //        NSSLog(@"第一次进入_开始：引导页");
+    //        NSLog(@"第一次进入_开始：引导页");
     //        [UserDefaults storageBool:YES Key:@"firstLaunch"];//第一次进入：保存进入标识
     //        GuidepageViewController *GuideVC= [[GuidepageViewController alloc]init];
     //        self.window.rootViewController = GuideVC;
@@ -136,14 +136,6 @@ static AppDelegate *_singleInstance;
     
 }
 
-// 配置IQKeyboardManager
-- (void)configurationIQKeyboard
-{
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.shouldResignOnTouchOutside = YES;
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    manager.enableAutoToolbar = NO;
-}
 // 配置网络状态
 - (void)configurationNetWorkStatus
 {
@@ -157,33 +149,7 @@ static AppDelegate *_singleInstance;
                                 distinctUntilChanged];
 }
 
-//3.自定义：注册避免崩溃函数
-- (void)configZMAvoidCrash {
-    /*
-     *  [AvoidCrash becomeEffective]、[AvoidCrash makeAllEffective]
-     *  是全局生效。若你只需要部分生效，你可以单个进行处理，比如:
-     *  [NSArray avoidCrashExchangeMethod];
-     *  [NSMutableArray avoidCrashExchangeMethod];
-     *  ......
-     */    
-    //启动防止崩溃功能(注意区分becomeEffective和makeAllEffective的区别)
-    //具体区别请看 AvoidCrash.h中的描述
-    //建议在didFinishLaunchingWithOptions最初始位置调用 上面的方法
-    [ZMAvoidCrash makeAllEffective];
-    
-    //若出现unrecognized selector sent to instance并且控制台输出:
-    //-[__NSCFConstantString initWithName:age:height:weight:]: unrecognized selector sent to instance
-    //你可以将@"__NSCFConstantString"添加到如下数组中，当然，你也可以将它的父类添加到下面数组中
-    //比如，对于部分字符串，继承关系如下
-    //__NSCFConstantString --> __NSCFString --> NSMutableString --> NSString
-    //你可以将上面四个类随意一个添加到下面的数组中，建议直接填入 NSString
-    NSArray *noneSelClassStrings = @[@"NSString"
-                                     ];
-    [ZMAvoidCrash setupNoneSelClassStringsArr:noneSelClassStrings];
-    
-    //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
-}
+
 - (void)dealwithCrashMessage:(NSNotification *)note {
     //不论在哪个线程中导致的crash，这里都是在主线程
     
@@ -194,7 +160,7 @@ static AppDelegate *_singleInstance;
 
 #pragma mark 进入主题主页
 - (void)gotoMainPage {
-    NSSLog(@"进入主页_gotoMainPage");
+    NSLog(@"进入主页_gotoMainPage");
     self.tabBarVC = [[ZMTabBarController alloc] init];
     self.window.rootViewController = self.tabBarVC;
 }

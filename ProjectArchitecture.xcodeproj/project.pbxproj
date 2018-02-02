@@ -84,6 +84,29 @@
 		6895AFED2024578D0082ACE8 /* ZM_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895AFEB2024578D0082ACE8 /* ZM_AccountModel.m */; };
 		6895AFF3202458B60082ACE8 /* ZM_HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895AFF2202458B60082ACE8 /* ZM_HomeView.m */; };
 		6895AFF6202458CD0082ACE8 /* ZM_HomeDetailVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895AFF5202458CD0082ACE8 /* ZM_HomeDetailVController.m */; };
+		6895B00120245F370082ACE8 /* ShareConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895AFF920245F360082ACE8 /* ShareConst.m */; };
+		6895B00220245F370082ACE8 /* UIViewController+UMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895AFFB20245F360082ACE8 /* UIViewController+UMShare.m */; };
+		6895B00320245F370082ACE8 /* UMShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895AFFD20245F360082ACE8 /* UMShareManager.m */; };
+		6895B00420245F370082ACE8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6895AFFF20245F360082ACE8 /* icon.png */; };
+		6895B00520245F370082ACE8 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6895B00020245F360082ACE8 /* logo.png */; };
+		6895B03E202462CB0082ACE8 /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B01E202462CB0082ACE8 /* WebViewJavascriptBridge.m */; };
+		6895B03F202462CB0082ACE8 /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B020202462CB0082ACE8 /* WebViewJavascriptBridge_JS.m */; };
+		6895B040202462CB0082ACE8 /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B022202462CB0082ACE8 /* WebViewJavascriptBridgeBase.m */; };
+		6895B041202462CB0082ACE8 /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B024202462CB0082ACE8 /* WKWebViewJavascriptBridge.m */; };
+		6895B042202462CB0082ACE8 /* MonitorURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B027202462CB0082ACE8 /* MonitorURLProtocol.m */; };
+		6895B043202462CB0082ACE8 /* WebViewMonitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6895B028202462CB0082ACE8 /* WebViewMonitor.framework */; };
+		6895B044202462CB0082ACE8 /* WebViewTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B02A202462CB0082ACE8 /* WebViewTracker.m */; };
+		6895B045202462CB0082ACE8 /* WKWebViewTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B02C202462CB0082ACE8 /* WKWebViewTracker.m */; };
+		6895B046202462CB0082ACE8 /* ZM_WebConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B02E202462CB0082ACE8 /* ZM_WebConst.m */; };
+		6895B047202462CB0082ACE8 /* ZM_WebManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B031202462CB0082ACE8 /* ZM_WebManager.m */; };
+		6895B048202462CB0082ACE8 /* ZM_WebTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B033202462CB0082ACE8 /* ZM_WebTest.m */; };
+		6895B049202462CB0082ACE8 /* ZM_WKCookieTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B035202462CB0082ACE8 /* ZM_WKCookieTool.m */; };
+		6895B04A202462CB0082ACE8 /* NSTimer+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B038202462CB0082ACE8 /* NSTimer+Web.m */; };
+		6895B04B202462CB0082ACE8 /* UIView+WebFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B03A202462CB0082ACE8 /* UIView+WebFrame.m */; };
+		6895B04C202462CB0082ACE8 /* ZMWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B03C202462CB0082ACE8 /* ZMWebProgressLayer.m */; };
+		6895B04F202463F60082ACE8 /* NSObject+ZMWebAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B04E202463F60082ACE8 /* NSObject+ZMWebAlertView.m */; };
+		6895B052202471FF0082ACE8 /* AppDelegate+UM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895B050202471FF0082ACE8 /* AppDelegate+UM.m */; };
+		6895B054202472260082ACE8 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6895B053202472260082ACE8 /* UMMobClick.framework */; };
 		689D98611E5FC18500E99888 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 689D98601E5FC18500E99888 /* Rectangle.m */; };
 		68A2B6B01E4B1F620021A11A /* TabelTextFieldVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A2B6AF1E4B1F620021A11A /* TabelTextFieldVController.m */; };
 		68A6B5BC1E63C449002F3B24 /* NumeralVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A6B5BB1E63C449002F3B24 /* NumeralVController.m */; };
@@ -195,9 +218,7 @@
 		68ECCED920236F30004E371C /* AssertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCE9A20236F30004E371C /* AssertHandler.m */; };
 		68ECCEDA20236F30004E371C /* CatchCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCE9C20236F30004E371C /* CatchCrash.m */; };
 		68ECCEDB20236F30004E371C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCE9E20236F30004E371C /* DeviceInfo.m */; };
-		68ECCEDC20236F30004E371C /* NSDictionary+TXHandleCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCEA020236F30004E371C /* NSDictionary+TXHandleCrash.m */; };
 		68ECCEDD20236F30004E371C /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCEA220236F30004E371C /* NSMutableArray+Extension.m */; };
-		68ECCEDE20236F30004E371C /* TXHandleCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCEA420236F30004E371C /* TXHandleCrash.m */; };
 		68ECCEDF20236F30004E371C /* UIColor+APPTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCEA620236F30004E371C /* UIColor+APPTheme.m */; };
 		68ECCEE020236F30004E371C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCEA920236F30004E371C /* NetworkManager.m */; };
 		68ECCEE120236F30004E371C /* NetworkReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ECCEAB20236F30004E371C /* NetworkReachability.m */; };
@@ -445,6 +466,49 @@
 		6895AFF2202458B60082ACE8 /* ZM_HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZM_HomeView.m; sourceTree = "<group>"; };
 		6895AFF4202458CD0082ACE8 /* ZM_HomeDetailVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZM_HomeDetailVController.h; sourceTree = "<group>"; };
 		6895AFF5202458CD0082ACE8 /* ZM_HomeDetailVController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZM_HomeDetailVController.m; sourceTree = "<group>"; };
+		6895AFF820245F360082ACE8 /* ShareConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareConst.h; sourceTree = "<group>"; };
+		6895AFF920245F360082ACE8 /* ShareConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareConst.m; sourceTree = "<group>"; };
+		6895AFFA20245F360082ACE8 /* UIViewController+UMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UMShare.h"; sourceTree = "<group>"; };
+		6895AFFB20245F360082ACE8 /* UIViewController+UMShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UMShare.m"; sourceTree = "<group>"; };
+		6895AFFC20245F360082ACE8 /* UMShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMShareManager.h; sourceTree = "<group>"; };
+		6895AFFD20245F360082ACE8 /* UMShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMShareManager.m; sourceTree = "<group>"; };
+		6895AFFF20245F360082ACE8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6895B00020245F360082ACE8 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		6895B01D202462CB0082ACE8 /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		6895B01E202462CB0082ACE8 /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		6895B01F202462CB0082ACE8 /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
+		6895B020202462CB0082ACE8 /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
+		6895B021202462CB0082ACE8 /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
+		6895B022202462CB0082ACE8 /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
+		6895B023202462CB0082ACE8 /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		6895B024202462CB0082ACE8 /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
+		6895B026202462CB0082ACE8 /* MonitorURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorURLProtocol.h; sourceTree = "<group>"; };
+		6895B027202462CB0082ACE8 /* MonitorURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorURLProtocol.m; sourceTree = "<group>"; };
+		6895B028202462CB0082ACE8 /* WebViewMonitor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebViewMonitor.framework; sourceTree = "<group>"; };
+		6895B029202462CB0082ACE8 /* WebViewTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewTracker.h; sourceTree = "<group>"; };
+		6895B02A202462CB0082ACE8 /* WebViewTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewTracker.m; sourceTree = "<group>"; };
+		6895B02B202462CB0082ACE8 /* WKWebViewTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewTracker.h; sourceTree = "<group>"; };
+		6895B02C202462CB0082ACE8 /* WKWebViewTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewTracker.m; sourceTree = "<group>"; };
+		6895B02D202462CB0082ACE8 /* ZM_WebConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_WebConst.h; sourceTree = "<group>"; };
+		6895B02E202462CB0082ACE8 /* ZM_WebConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZM_WebConst.m; sourceTree = "<group>"; };
+		6895B02F202462CB0082ACE8 /* ZM_WebHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_WebHeader.h; sourceTree = "<group>"; };
+		6895B030202462CB0082ACE8 /* ZM_WebManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_WebManager.h; sourceTree = "<group>"; };
+		6895B031202462CB0082ACE8 /* ZM_WebManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZM_WebManager.m; sourceTree = "<group>"; };
+		6895B032202462CB0082ACE8 /* ZM_WebTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_WebTest.h; sourceTree = "<group>"; };
+		6895B033202462CB0082ACE8 /* ZM_WebTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZM_WebTest.m; sourceTree = "<group>"; };
+		6895B034202462CB0082ACE8 /* ZM_WKCookieTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_WKCookieTool.h; sourceTree = "<group>"; };
+		6895B035202462CB0082ACE8 /* ZM_WKCookieTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZM_WKCookieTool.m; sourceTree = "<group>"; };
+		6895B037202462CB0082ACE8 /* NSTimer+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Web.h"; sourceTree = "<group>"; };
+		6895B038202462CB0082ACE8 /* NSTimer+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Web.m"; sourceTree = "<group>"; };
+		6895B039202462CB0082ACE8 /* UIView+WebFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebFrame.h"; sourceTree = "<group>"; };
+		6895B03A202462CB0082ACE8 /* UIView+WebFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebFrame.m"; sourceTree = "<group>"; };
+		6895B03B202462CB0082ACE8 /* ZMWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMWebProgressLayer.h; sourceTree = "<group>"; };
+		6895B03C202462CB0082ACE8 /* ZMWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMWebProgressLayer.m; sourceTree = "<group>"; };
+		6895B04D202463F60082ACE8 /* NSObject+ZMWebAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZMWebAlertView.h"; sourceTree = "<group>"; };
+		6895B04E202463F60082ACE8 /* NSObject+ZMWebAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZMWebAlertView.m"; sourceTree = "<group>"; };
+		6895B050202471FF0082ACE8 /* AppDelegate+UM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UM.m"; sourceTree = "<group>"; };
+		6895B051202471FF0082ACE8 /* AppDelegate+UM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UM.h"; sourceTree = "<group>"; };
+		6895B053202472260082ACE8 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		689D985F1E5FC18500E99888 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
 		689D98601E5FC18500E99888 /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
 		68A2B6AE1E4B1F620021A11A /* TabelTextFieldVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabelTextFieldVController.h; sourceTree = "<group>"; };
@@ -651,19 +715,14 @@
 		68ECCE9520236F2F004E371C /* AppConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConst.m; sourceTree = "<group>"; };
 		68ECCE9620236F2F004E371C /* APPInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPInfoManager.h; sourceTree = "<group>"; };
 		68ECCE9720236F2F004E371C /* APPInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPInfoManager.m; sourceTree = "<group>"; };
-		68ECCE9820236F30004E371C /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		68ECCE9920236F30004E371C /* AssertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssertHandler.h; sourceTree = "<group>"; };
 		68ECCE9A20236F30004E371C /* AssertHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssertHandler.m; sourceTree = "<group>"; };
 		68ECCE9B20236F30004E371C /* CatchCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatchCrash.h; sourceTree = "<group>"; };
 		68ECCE9C20236F30004E371C /* CatchCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatchCrash.m; sourceTree = "<group>"; };
 		68ECCE9D20236F30004E371C /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
 		68ECCE9E20236F30004E371C /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
-		68ECCE9F20236F30004E371C /* NSDictionary+TXHandleCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TXHandleCrash.h"; sourceTree = "<group>"; };
-		68ECCEA020236F30004E371C /* NSDictionary+TXHandleCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TXHandleCrash.m"; sourceTree = "<group>"; };
 		68ECCEA120236F30004E371C /* NSMutableArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extension.h"; sourceTree = "<group>"; };
 		68ECCEA220236F30004E371C /* NSMutableArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extension.m"; sourceTree = "<group>"; };
-		68ECCEA320236F30004E371C /* TXHandleCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXHandleCrash.h; sourceTree = "<group>"; };
-		68ECCEA420236F30004E371C /* TXHandleCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXHandleCrash.m; sourceTree = "<group>"; };
 		68ECCEA520236F30004E371C /* UIColor+APPTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+APPTheme.h"; sourceTree = "<group>"; };
 		68ECCEA620236F30004E371C /* UIColor+APPTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+APPTheme.m"; sourceTree = "<group>"; };
 		68ECCEA820236F30004E371C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -731,7 +790,6 @@
 		68ECCF7A202375C4004E371C /* ZM_FontHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_FontHeader.h; sourceTree = "<group>"; };
 		68ECCF7B202375C4004E371C /* ZM_MacroHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZM_MacroHeader.h; sourceTree = "<group>"; };
 		68EE8D561ECB0A8100808D8C /* ArchitecturePrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArchitecturePrefixHeader.pch; path = ../ArchitecturePrefixHeader.pch; sourceTree = "<group>"; };
-		68F042331ECBE7420085449D /* BaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHeader.h; sourceTree = "<group>"; };
 		68F2CC6E1EC2B3ED007D8C4E /* CheckmarkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckmarkCell.h; sourceTree = "<group>"; };
 		68F2CC6F1EC2B3ED007D8C4E /* CheckmarkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckmarkCell.m; sourceTree = "<group>"; };
 		68F2CC741EC2BB81007D8C4E /* CollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectCell.h; sourceTree = "<group>"; };
@@ -848,6 +906,8 @@
 				6812819D1ECEB89100DFB772 /* WebKit.framework in Frameworks */,
 				68F7BE3D1E34B01B009B2101 /* libiconv.2.4.0.tbd in Frameworks */,
 				68F7BE3B1E34B014009B2101 /* libsqlite3.0.tbd in Frameworks */,
+				6895B054202472260082ACE8 /* UMMobClick.framework in Frameworks */,
+				6895B043202462CB0082ACE8 /* WebViewMonitor.framework in Frameworks */,
 				68F7BE391E34B00E009B2101 /* libz.1.1.3.tbd in Frameworks */,
 				C6732D45E202E688C7B9A508 /* libPods-ProjectArchitecture.a in Frameworks */,
 			);
@@ -1206,6 +1266,92 @@
 				6895AFF2202458B60082ACE8 /* ZM_HomeView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6895AFF720245F360082ACE8 /* UMTool */ = {
+			isa = PBXGroup;
+			children = (
+				6895AFF820245F360082ACE8 /* ShareConst.h */,
+				6895AFF920245F360082ACE8 /* ShareConst.m */,
+				6895AFFA20245F360082ACE8 /* UIViewController+UMShare.h */,
+				6895AFFB20245F360082ACE8 /* UIViewController+UMShare.m */,
+				6895AFFC20245F360082ACE8 /* UMShareManager.h */,
+				6895AFFD20245F360082ACE8 /* UMShareManager.m */,
+				6895AFFE20245F360082ACE8 /* UMTestImage */,
+			);
+			path = UMTool;
+			sourceTree = "<group>";
+		};
+		6895AFFE20245F360082ACE8 /* UMTestImage */ = {
+			isa = PBXGroup;
+			children = (
+				6895AFFF20245F360082ACE8 /* icon.png */,
+				6895B00020245F360082ACE8 /* logo.png */,
+			);
+			path = UMTestImage;
+			sourceTree = "<group>";
+		};
+		6895B019202462CB0082ACE8 /* ZM_WebTools */ = {
+			isa = PBXGroup;
+			children = (
+				6895B036202462CB0082ACE8 /* ZMWebProgress */,
+				6895B025202462CB0082ACE8 /* WebViewMonitor */,
+				6895B01C202462CB0082ACE8 /* WebViewJavascriptBridge */,
+				6895B04D202463F60082ACE8 /* NSObject+ZMWebAlertView.h */,
+				6895B04E202463F60082ACE8 /* NSObject+ZMWebAlertView.m */,
+				6895B02D202462CB0082ACE8 /* ZM_WebConst.h */,
+				6895B02E202462CB0082ACE8 /* ZM_WebConst.m */,
+				6895B02F202462CB0082ACE8 /* ZM_WebHeader.h */,
+				6895B030202462CB0082ACE8 /* ZM_WebManager.h */,
+				6895B031202462CB0082ACE8 /* ZM_WebManager.m */,
+				6895B032202462CB0082ACE8 /* ZM_WebTest.h */,
+				6895B033202462CB0082ACE8 /* ZM_WebTest.m */,
+				6895B034202462CB0082ACE8 /* ZM_WKCookieTool.h */,
+				6895B035202462CB0082ACE8 /* ZM_WKCookieTool.m */,
+			);
+			path = ZM_WebTools;
+			sourceTree = "<group>";
+		};
+		6895B01C202462CB0082ACE8 /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				6895B01D202462CB0082ACE8 /* WebViewJavascriptBridge.h */,
+				6895B01E202462CB0082ACE8 /* WebViewJavascriptBridge.m */,
+				6895B01F202462CB0082ACE8 /* WebViewJavascriptBridge_JS.h */,
+				6895B020202462CB0082ACE8 /* WebViewJavascriptBridge_JS.m */,
+				6895B021202462CB0082ACE8 /* WebViewJavascriptBridgeBase.h */,
+				6895B022202462CB0082ACE8 /* WebViewJavascriptBridgeBase.m */,
+				6895B023202462CB0082ACE8 /* WKWebViewJavascriptBridge.h */,
+				6895B024202462CB0082ACE8 /* WKWebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
+			sourceTree = "<group>";
+		};
+		6895B025202462CB0082ACE8 /* WebViewMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				6895B026202462CB0082ACE8 /* MonitorURLProtocol.h */,
+				6895B027202462CB0082ACE8 /* MonitorURLProtocol.m */,
+				6895B028202462CB0082ACE8 /* WebViewMonitor.framework */,
+				6895B029202462CB0082ACE8 /* WebViewTracker.h */,
+				6895B02A202462CB0082ACE8 /* WebViewTracker.m */,
+				6895B02B202462CB0082ACE8 /* WKWebViewTracker.h */,
+				6895B02C202462CB0082ACE8 /* WKWebViewTracker.m */,
+			);
+			path = WebViewMonitor;
+			sourceTree = "<group>";
+		};
+		6895B036202462CB0082ACE8 /* ZMWebProgress */ = {
+			isa = PBXGroup;
+			children = (
+				6895B037202462CB0082ACE8 /* NSTimer+Web.h */,
+				6895B038202462CB0082ACE8 /* NSTimer+Web.m */,
+				6895B039202462CB0082ACE8 /* UIView+WebFrame.h */,
+				6895B03A202462CB0082ACE8 /* UIView+WebFrame.m */,
+				6895B03B202462CB0082ACE8 /* ZMWebProgressLayer.h */,
+				6895B03C202462CB0082ACE8 /* ZMWebProgressLayer.m */,
+			);
+			path = ZMWebProgress;
 			sourceTree = "<group>";
 		};
 		68B5146A1ECAF07E0000FDD6 /* ReactiveCocoa */ = {
@@ -1597,19 +1743,14 @@
 				68ECCE9520236F2F004E371C /* AppConst.m */,
 				68ECCE9620236F2F004E371C /* APPInfoManager.h */,
 				68ECCE9720236F2F004E371C /* APPInfoManager.m */,
-				68ECCE9820236F30004E371C /* AppMacro.h */,
 				68ECCE9920236F30004E371C /* AssertHandler.h */,
 				68ECCE9A20236F30004E371C /* AssertHandler.m */,
 				68ECCE9B20236F30004E371C /* CatchCrash.h */,
 				68ECCE9C20236F30004E371C /* CatchCrash.m */,
 				68ECCE9D20236F30004E371C /* DeviceInfo.h */,
 				68ECCE9E20236F30004E371C /* DeviceInfo.m */,
-				68ECCE9F20236F30004E371C /* NSDictionary+TXHandleCrash.h */,
-				68ECCEA020236F30004E371C /* NSDictionary+TXHandleCrash.m */,
 				68ECCEA120236F30004E371C /* NSMutableArray+Extension.h */,
 				68ECCEA220236F30004E371C /* NSMutableArray+Extension.m */,
-				68ECCEA320236F30004E371C /* TXHandleCrash.h */,
-				68ECCEA420236F30004E371C /* TXHandleCrash.m */,
 				68ECCEA520236F30004E371C /* UIColor+APPTheme.h */,
 				68ECCEA620236F30004E371C /* UIColor+APPTheme.m */,
 			);
@@ -1815,7 +1956,6 @@
 			children = (
 				68F7BDF01E34A81E009B2101 /* AppDelegate.h */,
 				68F7BDF11E34A81E009B2101 /* AppDelegate.m */,
-				68F042331ECBE7420085449D /* BaseHeader.h */,
 				68B5146A1ECAF07E0000FDD6 /* ReactiveCocoa */,
 				6868F4F71E5C1C5100852BB8 /* TestVControllers */,
 				68F7C2281E34BBAF009B2101 /* MainArchitecture */,
@@ -1905,6 +2045,7 @@
 		68F7BE5B1E34B5BE009B2101 /* OpensourceLibs */ = {
 			isa = PBXGroup;
 			children = (
+				6895B053202472260082ACE8 /* UMMobClick.framework */,
 				68F7BE811E34B5BE009B2101 /* FMDB */,
 				68F7BEA81E34B5BE009B2101 /* JSONKit */,
 			);
@@ -1968,7 +2109,9 @@
 				68ECCEA720236F30004E371C /* ZMNetwork */,
 				68ECCE7E20236F2F004E371C /* ZMSingleton */,
 				6807CC6B20026BF100E397C7 /* ZMException */,
+				6895B019202462CB0082ACE8 /* ZM_WebTools */,
 				68F2CC801EC2BDA2007D8C4E /* MJRefreshTools */,
+				6895AFF720245F360082ACE8 /* UMTool */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2173,6 +2316,8 @@
 				68F88BB71EA9931C00689268 /* AppDelegate+BaseSetting.m */,
 				68F88BB81EA9931C00689268 /* AppDelegate+Notification.h */,
 				68F88BB91EA9931C00689268 /* AppDelegate+Notification.m */,
+				6895B051202471FF0082ACE8 /* AppDelegate+UM.h */,
+				6895B050202471FF0082ACE8 /* AppDelegate+UM.m */,
 			);
 			path = "AppDelegate+Category";
 			sourceTree = "<group>";
@@ -2307,11 +2452,13 @@
 				68F7C2181E34BBA8009B2101 /* welcome-1-3.png in Resources */,
 				68F7BE551E34B48C009B2101 /* headerImgE.png in Resources */,
 				68ECCE3F20236C7E004E371C /* prompt_off_icon@2x.png in Resources */,
+				6895B00420245F370082ACE8 /* icon.png in Resources */,
 				68F7C2151E34BBA8009B2101 /* welcome-1-2-568h.png in Resources */,
 				68ECCE3620236C7E004E371C /* off.png in Resources */,
 				68CD265D1E723EE700D4AEBF /* gray_idnumber.png in Resources */,
 				68F7BE591E34B48C009B2101 /* Photo.png in Resources */,
 				68F7BE561E34B48C009B2101 /* headerImgF.png in Resources */,
+				6895B00520245F370082ACE8 /* logo.png in Resources */,
 				68E7DF1F1ED6D69E00E9D3DC /* check@2x.png in Resources */,
 				680345711E6E510700237CF7 /* 2.jpg in Resources */,
 				68ECCE3C20236C7E004E371C /* content_right@3x.png in Resources */,
@@ -2437,6 +2584,7 @@
 				68F7C1BC1E34BBA3009B2101 /* ViewStandard.m in Sources */,
 				68B514601ECACD6D0000FDD6 /* AFNetworkingBase_VC.m in Sources */,
 				6839AB871EB1F3B000960187 /* NSObject+Caculator.m in Sources */,
+				6895B04C202462CB0082ACE8 /* ZMWebProgressLayer.m in Sources */,
 				68F7BFBF1E34B5BE009B2101 /* JSONKit.m in Sources */,
 				687B046C1ED2C9B400A5FEDA /* TestConst.m in Sources */,
 				68E7DF081ED6831900E9D3DC /* ZMViewModelServicesImpl.m in Sources */,
@@ -2460,6 +2608,7 @@
 				6807B61920244BCD00BE7FA2 /* ZM_NewsVController.m in Sources */,
 				68ECCE4220236C7E004E371C /* ZMTradeInputView.m in Sources */,
 				68C0F0171ECA83F20060556C /* UIAlertView_VC.m in Sources */,
+				6895B04A202462CB0082ACE8 /* NSTimer+Web.m in Sources */,
 				6838985B1E5EE4E800F19EB1 /* UIButton_VController.m in Sources */,
 				68ECCEDA20236F30004E371C /* CatchCrash.m in Sources */,
 				68ECCF642023721A004E371C /* EncodeDecode.m in Sources */,
@@ -2473,6 +2622,7 @@
 				682ECD311F1EED4A00B38732 /* User.m in Sources */,
 				68ECCED420236F30004E371C /* ZMOperationQueue.m in Sources */,
 				68E7DEFB1ED682F300E9D3DC /* CityTravelItemModel.m in Sources */,
+				6895B00220245F370082ACE8 /* UIViewController+UMShare.m in Sources */,
 				68ECCEE420236F30004E371C /* ServerConfig.m in Sources */,
 				68ECCE3920236C7E004E371C /* ZMReadProtocolView.m in Sources */,
 				68F7BFB11E34B5BE009B2101 /* FMDatabaseAdditions.m in Sources */,
@@ -2481,6 +2631,7 @@
 				68F2CC761EC2BB81007D8C4E /* CollectCell.m in Sources */,
 				68F7C2111E34BBA8009B2101 /* ZM_MoreVController.m in Sources */,
 				68E7DEEF1ED682D800E9D3DC /* ZMCarouselView.m in Sources */,
+				6895B047202462CB0082ACE8 /* ZM_WebManager.m in Sources */,
 				68F2CC831EC2BDA2007D8C4E /* NSObject+MJRefresh.m in Sources */,
 				6822609D1E5A8E9000F00C0D /* ZMTabBarController.m in Sources */,
 				68E7DF0B1ED684AB00E9D3DC /* CityBannerWebVController.m in Sources */,
@@ -2490,24 +2641,30 @@
 				68ECCF5B2023721A004E371C /* ZMBaseTableController.m in Sources */,
 				68ECCDE120233795004E371C /* LetfRightTextView.m in Sources */,
 				68ECCDF220235B53004E371C /* FatModel.m in Sources */,
+				6895B00120245F370082ACE8 /* ShareConst.m in Sources */,
 				68B514631ECACDFE0000FDD6 /* NSUserDefaults_VC.m in Sources */,
 				68F7C20B1E34BBA8009B2101 /* ZM_HomeAdModel.m in Sources */,
 				68ECCF5C2023721A004E371C /* ZMBaseTableView.m in Sources */,
+				6895B03F202462CB0082ACE8 /* WebViewJavascriptBridge_JS.m in Sources */,
 				68F7C1461E34BB9D009B2101 /* Finance.m in Sources */,
 				68C0F0141ECA82330060556C /* UIApplication_VC.m in Sources */,
 				68ECCEB820236F30004E371C /* NSObject+AlertView.m in Sources */,
 				6807CC9320026BF200E397C7 /* ZMAvoidCrashStubProxy.m in Sources */,
 				68A6B5C21E63C54A002F3B24 /* TestViewController.m in Sources */,
 				68ECCEB920236F30004E371C /* NSObject+Common.m in Sources */,
+				6895B041202462CB0082ACE8 /* WKWebViewJavascriptBridge.m in Sources */,
+				6895B04F202463F60082ACE8 /* NSObject+ZMWebAlertView.m in Sources */,
 				6807CC8F20026BF200E397C7 /* NSObject+ZMAvoidCrash.m in Sources */,
 				68ECCEB420236F30004E371C /* NSArray+ZMAdd.m in Sources */,
 				68226AA81E5FDCFB0065FDC3 /* AAObject.m in Sources */,
 				68ECCEE020236F30004E371C /* NetworkManager.m in Sources */,
 				68C0F00D1ECA81FA0060556C /* TableView_SystemCheck.m in Sources */,
+				6895B046202462CB0082ACE8 /* ZM_WebConst.m in Sources */,
 				68ECCECE20236F30004E371C /* HudProgress.m in Sources */,
 				68ECCEC820236F30004E371C /* UISearchBar+ZMAdd.m in Sources */,
 				68ECCEC720236F30004E371C /* UILabel+ZMAdd.m in Sources */,
 				6807CC8D20026BF200E397C7 /* NSMutableDictionary+ZMAvoidCrash.m in Sources */,
+				6895B048202462CB0082ACE8 /* ZM_WebTest.m in Sources */,
 				68ECCEBD20236F30004E371C /* NSRunLoop+PerformBlock.m in Sources */,
 				687090331F441EDF002E5D64 /* TestVController.m in Sources */,
 				6807B6102024478B00BE7FA2 /* ZMBBaseViewController.m in Sources */,
@@ -2515,6 +2672,7 @@
 				68ECCE2F20236C7E004E371C /* NoWiFiView.m in Sources */,
 				682121F81EC4514500BC4CE6 /* SelectDayCell.m in Sources */,
 				68ECCF742023737A004E371C /* ZMDownloadManager.m in Sources */,
+				6895B042202462CB0082ACE8 /* MonitorURLProtocol.m in Sources */,
 				68F7BDF21E34A81E009B2101 /* AppDelegate.m in Sources */,
 				68ECCE3A20236C7E004E371C /* ZMSpaceLabel.m in Sources */,
 				68ECCED120236F30004E371C /* SingletonManager.m in Sources */,
@@ -2529,6 +2687,7 @@
 				68ECCEC620236F30004E371C /* UIImageView+ZMAdd.m in Sources */,
 				6807B61620244BB400BE7FA2 /* ZM_NewsDetailVController.m in Sources */,
 				68ECCED220236F30004E371C /* Dispatch_Thread.m in Sources */,
+				6895B03E202462CB0082ACE8 /* WebViewJavascriptBridge.m in Sources */,
 				680345741E6E5ADD00237CF7 /* ZMDownloadManager_VC.m in Sources */,
 				68F7C2091E34BBA8009B2101 /* ZM_AccountVController.m in Sources */,
 				68C0F0111ECA81FA0060556C /* UITableView_VC_HeaderStretch.m in Sources */,
@@ -2541,6 +2700,7 @@
 				681281A91ECECB5600DFB772 /* HTConst.m in Sources */,
 				682ECD391F1EEF3400B38732 /* LoginSuccessVC.m in Sources */,
 				6807CC8820026BF200E397C7 /* NSArray+ZMAvoidCrash.m in Sources */,
+				6895B040202462CB0082ACE8 /* WebViewJavascriptBridgeBase.m in Sources */,
 				6807B62E20244E3300BE7FA2 /* ZM_ProductVCBB.m in Sources */,
 				68ECCF542023721A004E371C /* DataHandler.m in Sources */,
 				68E7DEFD1ED682F300E9D3DC /* ZMCityTravelProtocolImpl.m in Sources */,
@@ -2548,6 +2708,7 @@
 				68CD26601E723EE700D4AEBF /* LoginViewController.m in Sources */,
 				6803458A1E6EA71E00237CF7 /* UISearchBar_VC.m in Sources */,
 				68ECCF582023721A004E371C /* KVOManager.m in Sources */,
+				6895B00320245F370082ACE8 /* UMShareManager.m in Sources */,
 				68F42E5D1ED33DA700F3DAF8 /* SortingCell.m in Sources */,
 				6838985E1E5EE5BA00F19EB1 /* UILabel_VController.m in Sources */,
 				68ECCE3520236C7E004E371C /* ZMProgressView.m in Sources */,
@@ -2569,6 +2730,7 @@
 				68ECCECD20236F30004E371C /* UIWindow+ZMAdd.m in Sources */,
 				68CFC60E1E77EDB3002EB232 /* SelectModel.m in Sources */,
 				6807CC9020026BF200E397C7 /* NSString+ZMAvoidCrash.m in Sources */,
+				6895B052202471FF0082ACE8 /* AppDelegate+UM.m in Sources */,
 				68E7DF181ED6CB6200E9D3DC /* ZMViewModel.m in Sources */,
 				68ECCE4120236C7E004E371C /* ZMTradeField.m in Sources */,
 				68E7DEFC1ED682F300E9D3DC /* Traveller.m in Sources */,
@@ -2579,6 +2741,7 @@
 				687B04631ED2BB0C00A5FEDA /* UIImage+HTRoundImage.m in Sources */,
 				68F7BFB31E34B5BE009B2101 /* FMDatabaseQueue.m in Sources */,
 				684CC6BC1EC070930042F56D /* SelectCheckModel.m in Sources */,
+				6895B045202462CB0082ACE8 /* WKWebViewTracker.m in Sources */,
 				68ECCECF20236F30004E371C /* MBProgress.m in Sources */,
 				68ECCEB720236F30004E371C /* NSDictionary+ZMAdd.m in Sources */,
 				6839AB8A1EB1F4A400960187 /* CaculatorMaker.m in Sources */,
@@ -2602,6 +2765,7 @@
 				68ECCE4520236C7E004E371C /* ZMTitleLable.m in Sources */,
 				68ECCEBB20236F30004E371C /* NSObject+PushMessage.m in Sources */,
 				68ECCED920236F30004E371C /* AssertHandler.m in Sources */,
+				6895B044202462CB0082ACE8 /* WebViewTracker.m in Sources */,
 				6807B60D2024450000BE7FA2 /* ZMBaseViewController.m in Sources */,
 				68F7C19D1E34BBA2009B2101 /* MoreCell.m in Sources */,
 				6807B62220244D0C00BE7FA2 /* ZM_NewsView.m in Sources */,
@@ -2609,7 +2773,6 @@
 				6807143C1ECD2C22003B5712 /* Placeholder_VC.m in Sources */,
 				6895AFED2024578D0082ACE8 /* ZM_AccountModel.m in Sources */,
 				68226AAB1E5FDDE00065FDC3 /* NSObject_VController.m in Sources */,
-				68ECCEDC20236F30004E371C /* NSDictionary+TXHandleCrash.m in Sources */,
 				68ECCECA20236F30004E371C /* UIView+ZMAdd.m in Sources */,
 				68F7C20D1E34BBA8009B2101 /* ZM_ProductModel.m in Sources */,
 				684988EF1EB02D4B00FCB42F /* NSArray_VController.m in Sources */,
@@ -2617,8 +2780,8 @@
 				68ECCF602023721A004E371C /* NSData+CommonCrypto.m in Sources */,
 				6807B61C20244C3500BE7FA2 /* ZMBaseView.m in Sources */,
 				682260A01E5A99C000F00C0D /* ZMUpperButton.m in Sources */,
-				68ECCEDE20236F30004E371C /* TXHandleCrash.m in Sources */,
 				68ECCEC920236F30004E371C /* UITableView+ZMAdd.m in Sources */,
+				6895B049202462CB0082ACE8 /* ZM_WKCookieTool.m in Sources */,
 				68ECCEBA20236F30004E371C /* NSObject+NSLog.m in Sources */,
 				6895AFF6202458CD0082ACE8 /* ZM_HomeDetailVController.m in Sources */,
 				68ECCE3020236C7E004E371C /* TitleView.m in Sources */,
@@ -2633,6 +2796,7 @@
 				68ECCF652023721A004E371C /* GTMBase64.m in Sources */,
 				68C0F01D1ECA888D0060556C /* NSNotificationCenter_VC.m in Sources */,
 				683898521E5EE36900F19EB1 /* UIVController.m in Sources */,
+				6895B04B202462CB0082ACE8 /* UIView+WebFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2773,6 +2937,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEVELOPMENT_TEAM = JBNRUUDAVT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProjectArchitecture/Tools/ZM_WebTools/WebViewMonitor",
+					"$(PROJECT_DIR)/ProjectArchitecture/OpensourceLibs",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ArchitecturePrefixHeader.pch";
 				INFOPLIST_FILE = ProjectArchitecture/Info.plist;
@@ -2792,6 +2961,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEVELOPMENT_TEAM = JBNRUUDAVT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProjectArchitecture/Tools/ZM_WebTools/WebViewMonitor",
+					"$(PROJECT_DIR)/ProjectArchitecture/OpensourceLibs",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ArchitecturePrefixHeader.pch";
 				INFOPLIST_FILE = ProjectArchitecture/Info.plist;

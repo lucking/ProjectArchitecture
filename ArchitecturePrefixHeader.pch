@@ -13,13 +13,12 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 // 配置头文件
-#import "BaseHeader.h"
+#import "ZM_BaseHeader.h"
+#import "ZM_FontHeader.h"
 #import "SingletonManager.h"
 #import "NetworkManager.h"
 #import "AppConst.h"
-#import "HudProgress.h"
 
-//#import "AppMacro.h"
 //#import "AppConfig.h"
 //#import "NetworkAPI.h"
 //#import <UIKit/UIKit.h>

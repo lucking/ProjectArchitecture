@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "ImageTextField.h"
+#import "TestColorHeader.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 {
@@ -54,9 +55,9 @@
 	if (_phoneText.mainText.text.length==11) {
 		_phoneText.mainText.userInteractionEnabled = NO;
 		NSString *str =[_phoneText.mainText.text substringWithRange:NSMakeRange(3,4)];
-		NSSLog(@"--->3: 从指定位置截取制定的宽度：%@",str);
+		NSLog(@"--->3: 从指定位置截取制定的宽度：%@",str);
 		_phoneText.mainText.text =[_phoneText.mainText.text stringByReplacingOccurrencesOfString:str withString:@"****"];
-		NSSLog(@"--->str= %@",_phoneText.mainText.text);
+		NSLog(@"--->str= %@",_phoneText.mainText.text);
 	}
     
 	_pwdText = [[ImageTextField alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(_phoneText.frame)+10, SSWIDTH-40, 35)];
@@ -71,7 +72,7 @@
 
     nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 	nextBtn.frame= CGRectMake(20, CGRectGetMaxY(_pwdText.frame)+20, SSWIDTH-40, 35);
-	nextBtn.backgroundColor= GrayColor_Login;
+	nextBtn.backgroundColor= Gray_AAAAAA;
 	[nextBtn setTitle:@"登录" forState:UIControlStateNormal];
 	[nextBtn setTintColor:[UIColor whiteColor]];
 	nextBtn.titleLabel.font = FFont(14);
@@ -95,8 +96,8 @@
 				if (_pwdText.mainText.text.length == 6) {
 					nextBtn.backgroundColor= NavBg_COLOR;
 					
-				}else nextBtn.backgroundColor= GrayColor_Login;
-			}else	nextBtn.backgroundColor= GrayColor_Login;
+				}else nextBtn.backgroundColor= Gray_AAAAAA;
+			}else	nextBtn.backgroundColor= Gray_AAAAAA;
 		}
 	}];
 	//注册按钮

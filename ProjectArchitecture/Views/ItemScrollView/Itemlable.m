@@ -25,7 +25,7 @@
         //横线
         float xx = 5;
         self.horizontallLine = [[UIView alloc]initWithFrame:CGRectMake(xx, HHeight-4, WWidth-(xx*2), 2)];
-        self.horizontallLine.backgroundColor = OrangeColorAA;
+        self.horizontallLine.backgroundColor = [UIColor orangeColor];
         self.horizontallLine.hidden = YES;
         [self addSubview:self.horizontallLine];
     }

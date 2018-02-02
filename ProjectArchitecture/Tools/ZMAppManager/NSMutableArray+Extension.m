@@ -31,9 +31,7 @@
         NSLog(@"--->@throw2 \n");
     }
 
-    
-    
-    
+        
     NSString *nilStr = nil;
     NSMutableArray *arrayM = [NSMutableArray array];
     @try {

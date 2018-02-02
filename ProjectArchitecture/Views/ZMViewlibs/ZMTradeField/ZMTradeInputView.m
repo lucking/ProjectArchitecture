@@ -7,6 +7,7 @@
 //
 
 #import "ZMTradeInputView.h"
+#import "TestColorHeader.h"
 
 @implementation ZMTradeInputView
 
@@ -14,16 +15,13 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
-       
         //蒙板
         self.coverView = [[UIView alloc]initWithFrame:self.bounds];
         self.coverView.backgroundColor = [UIColor grayColor];
         self.coverView.alpha = 0.5;
         [self addSubview:self.coverView];
         
-        
         [self initView];
-        
     }
     return self;
 }
@@ -106,7 +104,7 @@
 
     // 确定按钮
     self.okBtn = [[UIButton alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(_yuELab.frame)+5, bgWidth-20, 35)];
-    self.okBtn.backgroundColor= GrayColor_Login;
+    self.okBtn.backgroundColor= Gray_999999;
     self.okBtn.layer.cornerRadius = 5;
     self.okBtn.layer.masksToBounds= YES;
     [self.okBtn setTitle:@"立即提现" forState:UIControlStateNormal];
@@ -128,7 +126,7 @@
 				_okBtn.backgroundColor= NavBg_COLOR;
 				_okBtn.userInteractionEnabled = YES;
 			}else {
-				_okBtn.backgroundColor= GrayColor_Login;
+				_okBtn.backgroundColor= Gray_999999;
 				_okBtn.userInteractionEnabled = NO;
 			}
 		}
@@ -144,7 +142,7 @@
 - (void)tradeBtnClick:(UIButton *)Btn
 {
 	NSLog(@"tradeText = %@",self.tradeText.text);
-	_okBtn.backgroundColor= GrayColor_Login;
+	_okBtn.backgroundColor= Gray_999999;
     
     if ([self.delegate respondsToSelector:@selector(tradeInputView:BtnClick:)]) {
         [self.delegate tradeInputView:self BtnClick:Btn];

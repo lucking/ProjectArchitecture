@@ -7,6 +7,7 @@
 //
 
 #import "ZMTitleLable.h"
+#import "TestColorHeader.h"
 
 @implementation ZMTitleLable
 
@@ -20,8 +21,8 @@
         
         WWidth = self.frame.size.width;
         HHeight= self.frame.size.height;
-		// NSSLog(@"WWidth = %f",WWidth);
-		// NSSLog(@"HHeight = %f",HHeight);
+		// NSLog(@"WWidth = %f",WWidth);
+		// NSLog(@"HHeight = %f",HHeight);
 
 //        //竖线
 //        self.verticalLine = [[UIView alloc]initWithFrame:CGRectMake(WWidth-1, 10, 1, HHeight-20)];
@@ -31,7 +32,7 @@
         //横线
 		float xx = 5;
         self.horizontallLine = [[UIView alloc]initWithFrame:CGRectMake(xx, HHeight-4, WWidth-(xx*2), 2)];
-        self.horizontallLine.backgroundColor = OrangeColorAA;
+        self.horizontallLine.backgroundColor = [UIColor orangeColor];
         self.horizontallLine.hidden = YES;
         [self addSubview:self.horizontallLine];
 

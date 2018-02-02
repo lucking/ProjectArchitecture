@@ -21,7 +21,6 @@
     [[[NSThread currentThread] threadDictionary] setValue:myHandler
                                                    forKey:NSAssertionHandlerKey];
     
-    
     // NSCAssert\NSAssert：第一个参数是条件,如果第一个参数不满足条件,就会记录并打印后面的字符串
     int a = 1;
     NSString *myName= nil;

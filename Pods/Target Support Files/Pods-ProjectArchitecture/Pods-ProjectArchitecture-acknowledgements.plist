@@ -282,6 +282,17 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2011 - 2018 UMeng.com. All rights reserved.
+</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>UMengUShare</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>XMLDictionary
 
 Copyright (C) 2011 Charcoal Design

@@ -253,7 +253,7 @@
 #pragma mark UITableView
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //NSSLog(@"indexPath = %ld",(long)indexPath.row);
+    //NSLog(@"indexPath = %ld",(long)indexPath.row);
     // 刚选中又马上取消选中，格子不变色
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

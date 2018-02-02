@@ -17,8 +17,8 @@
 	if (self) {
 		myWidth = SSWIDTH;
 		myHeight= 60.f;
-//		NSSLog(@"myWidth = %f", myWidth);
-//		NSSLog(@"myHeight= %f", myHeight);
+//		NSLog(@"myWidth = %f", myWidth);
+//		NSLog(@"myHeight= %f", myHeight);
         [self addSubview:self.label];
 	}
 	return self;

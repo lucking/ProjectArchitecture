@@ -23,7 +23,7 @@
     // 设置各个圆角
     [self setCornersOfView:_myLab1 byCorners:UIRectCornerTopLeft|UIRectCornerBottomLeft
                cornerRadii:CGSizeMake(10,10)
-                 fillColor:Purple_CD69C9
+                 fillColor:[UIColor purpleColor]
                  lineWidth:10
                  lineColor:Clear_COLOR];
     
@@ -43,7 +43,7 @@
     CGFloat dashArray3[] = {2, 3};
     [self drawDashLineOfDashArray:dashArray3
                        startPoint:CGPointMake(5, 200)
-                         endPoint:CGPointMake(305, 200) lineWidth:2 lineColor:Orange_AA ];
+                         endPoint:CGPointMake(305, 200) lineWidth:2 lineColor:[UIColor orangeColor] ];
 }
 
 

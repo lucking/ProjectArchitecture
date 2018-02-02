@@ -9,6 +9,7 @@
 #import "UIViewController+ZMAdd.h"
 #import "objc/runtime.h"
 #import "UIWindow+ZMAdd.h"
+#import "TestColorHeader.h"
 
 @implementation UIViewController (ZMAdd)
 //@dynamic backBtn;

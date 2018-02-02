@@ -24,12 +24,12 @@
         // NSLog(@"idx=%lu, id= %@", (unsigned long)idx, obj);
         [mmutArray addObject:obj];
     }];
-    NSSLog(@"反向遍历_mutArray = %@",mmutArray);
+    NSLog(@"反向遍历_mutArray = %@",mmutArray);
     
     
     //倒序排列_array
     mmutArray = (NSMutableArray *)[[mmutArray reverseObjectEnumerator] allObjects];
-    NSSLog(@"倒序排列_array = %@",mmutArray);
+    NSLog(@"倒序排列_array = %@",mmutArray);
     
     //	[mutArray sortedArrayUsingSelector:<#(nonnull SEL)#>]
     
@@ -46,7 +46,7 @@
     NSArray *sortedArray = [keysArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
         return [obj1 compare:obj2 options:NSNumericSearch]; //allKeys排列顺序
     }];
-    NSSLog(@"---> sortedArray_11 = %@",sortedArray);
+    NSLog(@"---> sortedArray_11 = %@",sortedArray);
     
     
     
@@ -63,7 +63,7 @@
     CGFloat avg = [[array1 valueForKeyPath:@"@avg.floatValue"] floatValue];
     CGFloat max = [[array1 valueForKeyPath:@"@max.floatValue"] floatValue];
     CGFloat min = [[array1 valueForKeyPath:@"@min.floatValue"] floatValue];
-    NSSLog(@"---> count = %f",count);
+    NSLog(@"---> count = %f",count);
     NSLog(@"sum=%fn、avg=%fn、max=%fn、min=%f \n ",sum,avg,max,min);
 
     
@@ -195,7 +195,7 @@
                             {
                                 return [obj1 compare:obj2];
                             }];
-    NSSLog(@"---> NSArray的二分查找方法_findIndex_位置_22 = %ld \n ",findIndex);
+    NSLog(@"---> NSArray的二分查找方法_findIndex_位置_22 = %ld \n ",findIndex);
 }
 
 // 自己编写二分查找算法

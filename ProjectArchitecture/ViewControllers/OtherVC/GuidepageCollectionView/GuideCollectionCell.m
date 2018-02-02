@@ -63,7 +63,7 @@
 - (void)startBtnClick
 {
     // 进入首页
-	[[AppDelegate singleton] gotoMainPage];
+	[[AppDelegate shareInstance] gotoMainPage];
 }
 
 

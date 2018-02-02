@@ -9,6 +9,7 @@
 #import "TestVController.h"
 #import "TestAAView.h"
 #import "UILabel+ZMAdd.h"
+#import "TestColorHeader.h"
 
 @interface TestVController ()
 @property (nonatomic, strong) TestAAView *testAAView;

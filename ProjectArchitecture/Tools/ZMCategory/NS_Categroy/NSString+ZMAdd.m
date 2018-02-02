@@ -28,7 +28,7 @@
     //替换
     NSString *str = @"Replacing/";
     str = [str stringByReplacingOccurrencesOfString:@"/" withString:@"\\"];
-    NSSLog(@"---> str = %@",str);
+    NSLog(@"---> str = %@",str);
 
     
     
@@ -198,22 +198,22 @@
     // 汉字与UTF8相互转化:
     // 汉字 to UTF8
     NSString* strA = [@"中国万岁" encodingUTF8String];
-    NSSLog(@"-----> strA = %@ ",strA);
+    NSLog(@"-----> strA = %@ ",strA);
     
     // UTF8 to 汉字
     NSString* strB = [strA decodeUTF8String];
-    NSSLog(@"-----> strB = %@ \n ",strB);
+    NSLog(@"-----> strB = %@ \n ",strB);
     
     
     
     // 中文与ASCII相互转化:
     // 汉字 to ASCII
     NSString* strC = [@"湖南省岳阳市岳阳楼High" encodingASCIIString];
-    NSSLog(@"---> strC = %@ ",strC);
+    NSLog(@"---> strC = %@ ",strC);
     
     // ASCII to 汉字
     NSString* strD = [strC decodeASCIIString];
-    NSSLog(@"---> strD = %@ \n ",strD);
+    NSLog(@"---> strD = %@ \n ",strD);
 
     
     // 在已有字符串所指定的位置中 插入字符串

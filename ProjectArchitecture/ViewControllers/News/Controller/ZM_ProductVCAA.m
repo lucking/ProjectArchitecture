@@ -7,7 +7,6 @@
 //
 
 #import "ZM_ProductVCAA.h"
-#import "BaseHeader.h"
 #import "UIView+ZMFrame.h"
 
 @interface ZM_ProductVCAA ()

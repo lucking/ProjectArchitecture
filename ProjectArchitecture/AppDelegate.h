@@ -16,6 +16,12 @@
 static NSString *Test_CellId = @"Cell_Id";
 static CGFloat Test_rowHeight = 200;
 
+//锁屏 状态
+typedef NS_ENUM(NSUInteger, LockStates) {
+    LockStatesLockScreen   =0,     // 锁屏
+    LockStatesOpenScreen   =1,     // 开屏
+};
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     NSArray *sortArray;
@@ -23,8 +29,12 @@ static CGFloat Test_rowHeight = 200;
 @property (strong, nonatomic) UIWindow *window;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 @property (strong, nonatomic) ZMTabBarController* tabBarVC;
+// 是否允许屏幕旋转
+@property (nonatomic,assign) BOOL allowRotation;
+@property (nonatomic,assign) BOOL isStartLaunch;
+@property (nonatomic, assign) LockStates lockStates;
 
-+ (AppDelegate *)singleton;
++ (AppDelegate *)shareInstance;
 
 - (void)gotoMainPage;
 

@@ -9,6 +9,7 @@
 #import "UILabel_VController.h"
 #import "UILabel+ZMAdd.h"
 #import "UIViewController+ZMAdd.h"
+#import "TestColorHeader.h"
 
 @interface UILabel_VController ()
 {

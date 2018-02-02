@@ -10,19 +10,15 @@
 
 @implementation NoWiFiView
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];
 	if (self) {
-		self.backgroundColor = GrayColor_titView;
-
+		self.backgroundColor = Gray_999999;
 		myWidth=	self.frame.size.width;
 		myHeight=	self.frame.size.height;
-
 	}
 	return self;
-	
 }
 
 

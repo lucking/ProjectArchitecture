@@ -7,6 +7,7 @@
 //
 
 #import "ViewStandard.h"
+#import "TestColorHeader.h"
 
 @implementation ViewStandard
 
@@ -14,14 +15,10 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];
-
 	if (self) {
 		myWidth=	self.frame.size.width;
 		myHeight=	self.frame.size.height;
-		
-
 	}
-
 	return self;
 }
 

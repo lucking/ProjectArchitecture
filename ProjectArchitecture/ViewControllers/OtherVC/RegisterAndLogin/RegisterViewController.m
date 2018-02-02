@@ -12,6 +12,7 @@
 #import "SuccessViewController.h"
 #import "NSString+ZMAdd.h"
 #import "NSObject+AlertView.h"
+#import "TestColorHeader.h"
 
 #define  ValidTime      10
 #define  RefreshTime    1.0 //5.0
@@ -112,7 +113,7 @@
 
 	nextBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 	nextBtn.frame= CGRectMake(20, CGRectGetMaxY(self.readProtView.frame)+10, SSWIDTH-40, 35);
-	nextBtn.backgroundColor= GrayColor_Login;
+	nextBtn.backgroundColor= Gray_AAAAAA;
 	[nextBtn setTitle:@"提交注册" forState:UIControlStateNormal];
 	[nextBtn setTintColor:[UIColor whiteColor]];
 	nextBtn.titleLabel.font = FFont(14);
@@ -153,11 +154,11 @@
 						nextBtn.backgroundColor= NavBg_COLOR;
 						self.isCanUse = YES;
 
-					}else {nextBtn.backgroundColor= GrayColor_Login; self.isCanUse = NO;}
+					}else {nextBtn.backgroundColor= Gray_AAAAAA; self.isCanUse = NO;}
 					
-				}else{nextBtn.backgroundColor= GrayColor_Login; self.isCanUse = NO;}
+				}else{nextBtn.backgroundColor= Gray_AAAAAA; self.isCanUse = NO;}
 
-			}else {nextBtn.backgroundColor= GrayColor_Login; self.isCanUse = NO;}
+			}else {nextBtn.backgroundColor= Gray_AAAAAA; self.isCanUse = NO;}
 
 		}
 	}];
@@ -182,19 +183,19 @@
 //到计时
 -(void)timeFireMethods
 {
-	NSSLog(@"--->seconds: %d",secondsCountDown);
+	NSLog(@"--->seconds: %d",secondsCountDown);
 	secondsCountDown--;
 	NSString* BtnTitle= [NSString stringWithFormat:@"已发送%d",secondsCountDown];
 	[_yzmText.rightBtn setTitle:BtnTitle forState:UIControlStateNormal];
 
 	if(secondsCountDown==0)
 	{
-		NSSLog(@"--->释放前_isValid: %d",[timers isValid]);
+		NSLog(@"--->释放前_isValid: %d",[timers isValid]);
 		//允许点击
 		if ([timers isValid]) {
 			[timers invalidate];//释放方法
 			timers=nil;
-			NSSLog(@"--->释放后_isValid: %d",[timers isValid]);
+			NSLog(@"--->释放后_isValid: %d",[timers isValid]);
 		}
 		secondsCountDown = ValidTime;//恢复时间
 		[_yzmText.rightBtn setTitle:@"重新发送" forState:UIControlStateNormal];
@@ -207,7 +208,7 @@
  *  提交注册
  */
 -(void)registerBtnClick{
-	NSSLog(@"registerBtnClick");
+	NSLog(@"registerBtnClick");
 	
 	if ([NSString isCharAndNumber:self.pwdText.mainText.text]) {
 
@@ -226,10 +227,10 @@
 - (void)readProtocolView:(ZMReadProtocolView *)RPView BtnClick:(UIButton*)Btn
 {
 	if (Btn.tag == 100) {
-//		NSSLog(@"readBtn");
+//		NSLog(@"readBtn");
 
 	}else if (Btn.tag == 200){
-		NSSLog(@"protBtn");
+		NSLog(@"protBtn");
 
 	}
 }

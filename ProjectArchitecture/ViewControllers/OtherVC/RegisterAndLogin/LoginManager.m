@@ -58,10 +58,10 @@ Singleton_Instance_method_Impl(LoginManager)
 #pragma
 - (void)loginWithParameters:params success:(void (^)(id data))success failure:(void (^)(NSError * error))failure {
 
-	NSSLog(@"JSON_Params = %@ \n \n ",params);
+	NSLog(@"JSON_Params = %@ \n \n ",params);
 	[NetworkManager requestGetURL:Login_URL withParameters:params hudShow:YES success:^(id data) {
 
-		NSSLog(@"-----> 登录_data = %@",data);
+		NSLog(@"-----> 登录_data = %@",data);
         success(data);
 
 	} failure:^(NSError *error) {
@@ -76,7 +76,7 @@ Singleton_Instance_method_Impl(LoginManager)
 
 	[NetworkManager requestGetURL:Logout_URL withParameters:nil hudShow:YES success:^(id data) {
 
-		NSSLog(@"-----> 退出登录_data = %@",data);
+		NSLog(@"-----> 退出登录_data = %@",data);
 		if ([NSString isNotEmptyObject:data]) {
 			UUserDefaults.isLogin = NO; // 退出登录：标志
 		}

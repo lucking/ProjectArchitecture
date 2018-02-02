@@ -19,9 +19,9 @@
 #define ZM_LAZY(object, assignment) (object = object ?: assignment)
 
 //------------------"  手机尺寸类型  "---------------
-//判断是否为：iPad
+//判断是否为：iPad 同：([[[UIDevice currentDevice] model] isEqualToString:@"iPad"])
 #define ZM_IsiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-//判断是否为：iPhone
+//判断是否为：iPhone  同：([[[UIDevice currentDevice] model] isEqualToString:@"iPhone"])
 #define ZM_IsiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 //判断是否为：ipod
 #define ZM_IsiPod ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
@@ -29,7 +29,7 @@
 //判断手机类型： 横、竖屏_皆可用
 #define CurrentMode  [UIScreen instancesRespondToSelector:@selector(currentMode)]
 
-#define ZM_IsiPhone4 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 960),  [[UIScreen mainScreen] currentMode].size) : NO)
+#define ZM_isIPhone4 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 960),  [[UIScreen mainScreen] currentMode].size) : NO)
 #define ZM_IsiPhone5 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define ZM_IsiPhone6 (CurrentMode ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define ZM_IsiPhone6p (CurrentMode ? CGSizeEqualToSize(CGSizeMake(1920, 1080),[[UIScreen mainScreen] currentMode].size) : NO)
@@ -63,8 +63,8 @@
 
 //-----控件比例-----
 //屏幕自动适配 以5为基准， 4／5一样，6及以上除以5的宽高 ( 判断是不是4s如果是则高度和5s一样的比例 )
-#define GetWidth(width)   (zmiPhone4 || zmiPhone5 ? (width)  : ((width) *SSWIDTH/320))
-#define GetHeight(height) (zmiPhone4 || zmiPhone5 ? (height) : ((height)*SSHEIGHT/568))
+#define GetWidth(width)   (ZM_isIPhone4 || ZM_IsiPhone5 ? (width)  : ((width) *SSWIDTH/320))
+#define GetHeight(height) (ZM_isIPhone4 || ZM_IsiPhone5 ? (height) : ((height)*SSHEIGHT/568))
 
 
 //------------------------"  UIImage  "---------------------
@@ -76,10 +76,20 @@
 #define UIColorRGBA(r,g,b,a)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)]
 // 十六进制颜色
 #define Color_With_Hex(hexValue) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16)) / 255.0 green:((float)((hexValue & 0xFF00) >> 8)) / 255.0 blue:((float)(hexValue & 0xFF)) / 255.0 alpha:1.0f]
-// 调用
-//UIColor *redColor = Color_With_Hex(0xe4e5e5);
+//调用：UIColor *redColor = Color_With_Hex(0xe4e5e5);
+
 #define     Clear_COLOR         [UIColor clearColor]    // 透明色
 #define     White_COLOR         [UIColor whiteColor]    // 白色
+#define     Black_COLOR         [UIColor blackColor]    // 黑色
+#define     Gray_COLOR          [UIColor grayColor]     // 灰色
+// 导航栏
+#define     NavBg_COLOR1        UIColorRGB(255,120,2)
+#define     NavBg_COLOR         UIColorRGB(33,150,243)
+//TabBar按钮
+#define Color_normal     UIColorRGB(149,149,149) //默认：标题颜色
+#define Color_select     UIColorRGB(255,152,0)   //选中：标题颜色
+#define Color_tabBar     UIColorRGB(239,239,239) //tabBar颜色
+
 //---------------------"  灰色、字体颜色  "-------------------
 //背景：淡灰色
 #define  BgColor            UIColorRGB(238,243,249)
@@ -103,6 +113,26 @@
 #define  Gray_CCCCCC        UIColorRGB(204,204,204) //线条淡灰
 #define  Gray_DDDDDD        UIColorRGB(221,221,221) //线条常用
 #define  Gray_EEEEEE        UIColorRGB(238,238,238) //浅灰
+
+
+//7.2设置 view 圆角和边框
+#define RRadiusBorderView(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
+
+
+//7.1设置 view 圆角
+#define RRadiusView(View, Radius)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+
+
+// 设置随机颜色
+#define RandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
 
 
 

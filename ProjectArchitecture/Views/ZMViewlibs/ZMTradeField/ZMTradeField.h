@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <CoreText/CoreText.h>
-#import "BaseHeader.h"
 
 #define kSelfWidth   self.bounds.size.width
 #define kSelfHeght   self.bounds.size.height
@@ -18,7 +17,6 @@
 #define kDotwidth   8
 #define kDotheight  kDotwidth
 #define kInterval   kSelfWidth/6
-
 
 @interface ZMTradeField : UITextField< UITextFieldDelegate >
 {

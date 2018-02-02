@@ -47,7 +47,7 @@
     id dataKey = [keyData SHA256Hash];
     NSData *encryptedData = [messageData AES256EncryptedDataUsingKey:dataKey iV:AES_CBC_PASS_IV error:nil];
     
-    //NSSLog(@"encryptedData = %@ \n \n \n ",encryptedData);
+    //NSLog(@"encryptedData = %@ \n \n \n ",encryptedData);
     NSString *base64EncodStr = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
     
     return base64EncodStr;
@@ -95,7 +95,7 @@
         NSData *dataTemp = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
         plainText = [GTMBase64 stringByEncodingData:dataTemp];
     }else{
-        NSSLog(@"DES加密失败");
+        NSLog(@"DES加密失败");
     }
     return plainText;
 }

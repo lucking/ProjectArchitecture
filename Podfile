@@ -15,8 +15,10 @@ pod 'YYCache', '~> 1.0.4'
 pod 'YYCategories', '~> 1.0.4'
 pod 'YYImage', '~> 1.0.4'
 pod 'YYWebImage', '~> 1.0.5'
-pod 'ReactiveCocoa', '~> 2.5'
+pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
 pod 'RealReachability'
 
+pod 'UMengUShare/UI'
+pod 'UMengUShare/Social/ReducedWeChat'
 end
  

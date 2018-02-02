@@ -8,6 +8,7 @@
 
 #import "CollectDealView.h"
 #import "UIView+ZMFrame.h"
+#import "TestColorHeader.h"
 
 @interface CollectDealView()
 {

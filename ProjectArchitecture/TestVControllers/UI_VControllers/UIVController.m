@@ -119,12 +119,12 @@ static const  float SSPureHeight45  = (568-64-49);
 
 - (void)sizeTest {
     
-    NSSLog(@"mainScreen_width  = %f",[UIScreen mainScreen].bounds.size.width);
-    NSSLog(@"mainScreen_height = %f \n ",[UIScreen mainScreen].bounds.size.height);
-    NSSLog(@"bounds_width  = %f",self.view.bounds.size.width);
-    NSSLog(@"bounds_height = %f \n ",self.view.bounds.size.height);
-    NSSLog(@"frame_width = %f",self.view.frame.size.width);
-    NSSLog(@"frame_height= %f \n  \n ",self.view.frame.size.height);
+    NSLog(@"mainScreen_width  = %f",[UIScreen mainScreen].bounds.size.width);
+    NSLog(@"mainScreen_height = %f \n ",[UIScreen mainScreen].bounds.size.height);
+    NSLog(@"bounds_width  = %f",self.view.bounds.size.width);
+    NSLog(@"bounds_height = %f \n ",self.view.bounds.size.height);
+    NSLog(@"frame_width = %f",self.view.frame.size.width);
+    NSLog(@"frame_height= %f \n  \n ",self.view.frame.size.height);
     
     NSLog(@"SSPureHeight45 = %f",SSPureHeight45);
     

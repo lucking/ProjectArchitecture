@@ -7,6 +7,7 @@
 //
 
 #import "ImageTextField.h"
+#import "TestColorHeader.h"
 
 //#define myWidth		self.frame.size.width
 //#define myHeight	self.frame.size.height
@@ -23,7 +24,7 @@
     
     if (self) {
 
-		self.backgroundColor = GrayColor_Text;
+		self.backgroundColor = Gray_EEEEEE;
 		self.layer.cornerRadius = 3;
 		self.layer.masksToBounds= YES;
 		self.layer.borderWidth  = 1;
@@ -65,7 +66,7 @@
 }
 - (void)reloadUIwithDic:(NSDictionary *)parameter withType:(NSString *)type
 {
-	NSSLog(@"type= %@ ",type);
+	NSLog(@"type= %@ ",type);
 	//输入新密码
 	if ([type isEqualToString:@"SetNewPwd"]) {
 
@@ -109,7 +110,7 @@
     
     if ([self.delegate respondsToSelector:@selector(imageTextField:BtnClick:)]) {
         [self.delegate imageTextField:self BtnClick:Btn];
-        NSSLog(@"代理_按钮点击了");
+        NSLog(@"代理_按钮点击了");
     }
 }
 

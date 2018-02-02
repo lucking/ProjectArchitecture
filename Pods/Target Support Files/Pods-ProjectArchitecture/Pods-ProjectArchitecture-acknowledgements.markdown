@@ -215,6 +215,11 @@ THE SOFTWARE.
 
 
 
+## UMengUShare
+
+Copyright 2011 - 2018 UMeng.com. All rights reserved.
+
+
 ## XMLDictionary
 
 XMLDictionary

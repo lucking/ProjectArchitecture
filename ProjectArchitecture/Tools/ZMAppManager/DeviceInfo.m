@@ -10,7 +10,6 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import <sys/sysctl.h>//系统参数 使用
-#import "AppMacro.h"
 
 @implementation DeviceInfo
 
@@ -153,7 +152,7 @@
         
     }else if (IS_IPHONE6p){ return @"IS_IPHONE6p";
         
-    }else if (IS_IPHONE8X){ return @"IS_IPHONE8X";
+    }else if (IS_IPHONEX){ return @"IS_IPHONE8X";
     }
     return @"IS_IPHONExx未知";
 }

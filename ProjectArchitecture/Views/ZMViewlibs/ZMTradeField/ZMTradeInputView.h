@@ -8,7 +8,6 @@
 
 
 #import <UIKit/UIKit.h>
-#import "BaseHeader.h"
 #import <Foundation/Foundation.h>
 #import "ZMTradeField.h"
 #import "ZMTradeHeader.h"

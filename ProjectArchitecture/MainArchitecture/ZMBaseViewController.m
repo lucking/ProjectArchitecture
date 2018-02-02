@@ -131,7 +131,7 @@
     Btn1.layer.cornerRadius= 5;
     Btn1.layer.masksToBounds= YES;
     Btn1.layer.borderWidth= 1.2;
-    Btn1.layer.borderColor= Color_70AEE1.CGColor;
+    Btn1.layer.borderColor= UIColorRGB(112,174,225).CGColor;
     Btn1.titleLabel.font= [UIFont systemFontOfSize:15];
     Btn1.tag = tag;
     [Btn1 setTitle:title forState:UIControlStateNormal];

@@ -20,7 +20,7 @@
 		//如果要立即刷新，要先调用[view setNeedsLayout]，把标记设为需要布局，然后马上调用[view layoutIfNeeded]，实现布局
 		//[self setNeedsLayout];
 		//[self layoutIfNeeded];
-		self.backgroundColor = GrayColor_titView;
+		self.backgroundColor = Gray_AAAAAA;
 
 		myWidth=	self.frame.size.width;
 		myHeight=	self.frame.size.height;

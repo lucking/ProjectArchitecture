@@ -54,7 +54,7 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
 //    NNSLog(@"---> getCurrentVC_CC = %@",[[Common getCurrentVC] class]);
-//    NSSLog(@"---> selectedIndex_11 = %ld",self.selectedIndex);
+//    NSLog(@"---> selectedIndex_11 = %ld",self.selectedIndex);
     //不可选
 //    if (viewController == self.viewControllers[3]) {
 //        return NO;
