@@ -37,32 +37,45 @@ Singleton_Instance_method_Interface(HudProgress)
 #pragma mark ------------------"  MBProgressHUD Delegate  "------------------
 #pragma
 // 菊花
-- (void)hudShowLoading;
+- (void)hudShowLoadingAddSubview:(UIView *)superView;
 // 菊花 延时
-- (void)hudShowLoadingDelay:(NSTimeInterval)delay;
+- (void)hudShowLoadingDelay:(NSTimeInterval)delay 
+                 addSubview:(UIView *)superView;
 // 菊花消息
-- (void)hudShowLoadingMsg:(NSString *)message;
+- (void)hudShowLoadingMsg:(NSString *)message 
+               addSubview:(UIView *)superView;
 // 菊花消息 延时
-- (void)hudShowLoadingMsg:(NSString *)message afterDelay:(NSTimeInterval)delay;
+- (void)hudShowLoadingMsg:(NSString *)message afterDelay:(NSTimeInterval)delay 
+               addSubview:(UIView *)superView;
 
-// 普通：提示信息
-- (void)hudShowMessage:(NSString *)messag offset:(CGPoint)offset afterDelay:(NSTimeInterval)delay;
+// 普通：提示信息  （可调位置，可设置有延时）
+- (void)hudShowMessage:(NSString *)messag offset:(CGPoint)offset afterDelay:(NSTimeInterval)delay 
+            addSubview:(UIView *)superView;
+// 普通：提示信息  （居中，可设置有延时）
+- (void)hudShowMsg:(NSString *)message
+             delay:(NSTimeInterval)delay addSubview:(UIView *)superView;
+// 普通：提示信息（居中，无延时）
+- (void)hudShowMsg:(NSString *)message addSubview:(UIView *)superView;
+
 // 错误：提示信息
-- (void)hudShowErrorMsg:(NSString *)message afterDelay:(NSTimeInterval)delay;
+- (void)hudShowErrorMsg:(NSString *)message afterDelay:(NSTimeInterval)delay 
+             addSubview:(UIView *)superView;
 // 成功时：提示图片
-- (void)hudShowSucceedDelay:(NSTimeInterval)delay;
+- (void)hudShowSucceedDelay:(NSTimeInterval)delay 
+                 addSubview:(UIView *)superView;
 // 成功时：提示 图片+信息
-- (void)hudShowSucceedMsg:(NSString *)message afterDelay:(NSTimeInterval)delay;
+- (void)hudShowSucceedMsg:(NSString *)message afterDelay:(NSTimeInterval)delay 
+               addSubview:(UIView *)superView;
 
 
 // 提示：图片+信息
 - (void)hudShowImgName:(NSString *)imgName
                    msg:(NSString *)message
-            afterDelay:(NSTimeInterval)delay;
+            afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView;
 // 自定义view
 - (void)hudCustomView:(UIView *)customView
                   Msg:(NSString *)message
-           afterDelay:(NSTimeInterval)delay;
+           afterDelay:(NSTimeInterval)dela addSubview:(UIView *)superViewy;
 
 /** 多控制属性 hud
  @param message 消息
@@ -80,7 +93,7 @@ Singleton_Instance_method_Interface(HudProgress)
 
 
 //网络使用 含请求超时
-- (void)hudShowLoadingNetWork;
+- (void)hudShowLoadingNetWorkAddSubview:(UIView *)superView;
 - (void)hudNetWorkLoadingAddedTo:(UIView *)superView message:(NSString *)message;
 
 //隐藏

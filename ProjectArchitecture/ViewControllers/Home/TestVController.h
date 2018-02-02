@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ZM. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZMBaseViewController.h"
 
-@interface TestVController : UIViewController
+@interface TestVController : ZMBaseViewController
 
 @end

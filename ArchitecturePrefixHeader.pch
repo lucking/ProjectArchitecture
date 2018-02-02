@@ -15,7 +15,6 @@
 // 配置头文件
 #import "BaseHeader.h"
 #import "SingletonManager.h"
-//#import "ServerURL.h"
 #import "NetworkManager.h"
 #import "AppConst.h"
 #import "HudProgress.h"

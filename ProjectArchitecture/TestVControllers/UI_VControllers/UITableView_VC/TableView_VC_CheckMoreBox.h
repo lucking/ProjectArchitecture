@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface TableView_VC_CheckMoreBox : BBaseViewController
+@interface TableView_VC_CheckMoreBox : ZMBaseViewController
 
 @end

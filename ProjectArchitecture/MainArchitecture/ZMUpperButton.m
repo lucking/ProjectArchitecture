@@ -13,29 +13,17 @@
 
 + (instancetype)plusButton {
     ZMUpperButton *button = [[ZMUpperButton alloc] init];
-//    UIImage *buttonImage = [UIImage imageNamed:@"post_normal"];
-//    [button setImage:buttonImage forState:UIControlStateNormal];
-//    [button setTitle:@"发布" forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//    button.titleLabel.font = [UIFont systemFontOfSize:9.5];
-//    [button sizeToFit];
     [button addTarget:button action:@selector(clickPublish) forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
-
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //如果要立即刷新，要先调用[view setNeedsLayout]，把标记设为需要布局，然后马上调用[view layoutIfNeeded]，实现布局
-        //[self setNeedsLayout];
-        //[self layoutIfNeeded];
-        
         self.backgroundColor = [UIColor clearColor];
         self.titleLabel.font = [UIFont systemFontOfSize:12];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        
         self.highlighted = YES;
     }
     return self;
@@ -49,7 +37,6 @@
     CGFloat imageH = imageW;
     CGFloat imageX = (self.frame.size.width - imageW)/2;
     CGFloat imageY = 2;
-    
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
 /*
@@ -58,11 +45,10 @@
 - (CGRect)titleRectForContentRect:(CGRect)contentRect
 {
     CGFloat titleY = CGRectGetMaxY(self.imageView.frame) + 2;;
-    //    CGFloat titleY = self.frame.size.height-22 + 2;;
+    // CGFloat titleY = self.frame.size.height-22 + 2;;
     CGFloat titleX = 0;
     CGFloat titleH = 20;
     CGFloat titleW = self.frame.size.width;
-    
     return CGRectMake(titleX, titleY, titleW, titleH);
 }
 - (void)setHighlighted:(BOOL)highlighted

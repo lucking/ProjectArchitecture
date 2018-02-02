@@ -6,9 +6,9 @@
 //  Copyright © 2016年 ZM. All rights reserved.
 //
 
-#import "BaseObject.h"
+#import "ZMBaseObject.h"
 
-@interface Photo : BaseObject
+@interface Photo : ZMBaseObject
 {
 
 }

@@ -50,8 +50,7 @@
     //判断网络状况（有链接：执行请求；无链接：弹出提示） //isReachableViaWiFi、isConnectionAvailable
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
-//            [MMBProgress hudShowLoading:@"请稍候..."];
-            [HHudProgress hudShowLoadingNetWork];
+            [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
         }
         __weak __typeof(self)weakSelf = self;
         __block NSURLSessionDataTask *dataTask = nil;
@@ -87,7 +86,7 @@
     
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
-            [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+            [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
         }
         __weak __typeof(self)weakSelf = self;
         __block NSURLSessionDataTask *dataTask = nil;
@@ -129,7 +128,7 @@
     NSLog(@"--->请求参数: %@ \n ",params);
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
-            [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+            [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
         }
         __weak __typeof(self)weakSelf = self;
         __block NSURLSessionDataTask *dataTask = nil;
@@ -163,7 +162,7 @@
     NSLog(@"--->请求参数: %@ \n ",params);
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
-            [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+            [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
         }
         __weak __typeof(self)weakSelf = self;
         __block NSURLSessionDataTask *dataTask = nil;
@@ -199,7 +198,7 @@
     URL = [AIPURL_Development stringByAppendingFormat:@"%@",URL];
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
-            [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+            [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
         }
         __weak __typeof(self)weakSelf = self;
         __block NSURLSessionDataTask *dataTask = nil;
@@ -240,7 +239,7 @@
     
     if ([NetworkReachability isReachableViaWiFi]) {
         if (hudShow) {
-            [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+            [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
         }
         __block NSURLSessionDataTask *dataTask = nil;
         dataTask = [[NetworkSession sharedSessionManager] POST:URL parameters:JSON_Params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -298,19 +297,19 @@
     NSLog(@"---> localError = %@ \n ",localError);
 
 	if ([localError isEqualToString:LocalError_timedOut]) {
-        [HHudProgress hudShowErrorMsg:@"请求超时，服务链接中断 \n 程序员哥哥正在抢救中" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"请求超时，服务链接中断 \n 程序员哥哥正在抢救中" afterDelay:Hud_ErrorTime addSubview:nil];
 
     }else if ([localError isEqualToString:LocalError_notConnect]){
-        [HHudProgress hudShowErrorMsg:@"无法连接到服务器" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"无法连接到服务器" afterDelay:Hud_ErrorTime addSubview:nil];
 
 	}else if ([localError isEqualToString:LocalError_notRead]){
-        [HHudProgress hudShowErrorMsg:@"数据无法读取,因为它不在正确的格式" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"数据无法读取,因为它不在正确的格式" afterDelay:Hud_ErrorTime addSubview:nil];
         
     }else if ([localError isEqualToString:LocalError_cancelRequest]){
-        [HHudProgress hudShowErrorMsg:@"取消请求" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"取消请求" afterDelay:Hud_ErrorTime addSubview:nil];
 
     }else{
-        [HHudProgress hudShowErrorMsg:[error localizedDescription] afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:[error localizedDescription] afterDelay:Hud_ErrorTime addSubview:nil];
 	}
     
     //[HHudProgress hudShowLoadingMsg:@"请稍候..."];
@@ -327,7 +326,7 @@
 }
 //弹出网络错误提示框
 + (void)showWithoutNetwork{
-    [HHudProgress hudShowErrorMsg:@"网络异常，请检查网络连接" afterDelay:Hud_ErrorTime];
+    [HHudProgress hudShowErrorMsg:@"网络异常，请检查网络连接" afterDelay:Hud_ErrorTime addSubview:nil];
 }
 + (void)hudHidden {
     [HHudProgress hudHidden];

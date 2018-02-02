@@ -9,7 +9,7 @@
 #import "ZMNavController.h"
 #import "UIImage+ZMAdd.h"
 #import "UIView+ZMFrame.h"
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
 @interface ZMNavController ()<UIGestureRecognizerDelegate>
 
@@ -55,8 +55,8 @@
 //系统方法：右滑返回
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     BOOL isBack = YES; // 默认为支持右滑返回
-    //如果继承 BBaseViewController 也支持右滑返回 （//其他继承，根据要求另作处理）
-    if ([self.topViewController isKindOfClass:[BBaseViewController class]]) {
+    //如果继承 ZMBaseViewController 也支持右滑返回 （//其他继承，根据要求另作处理）
+    if ([self.topViewController isKindOfClass:[ZMBaseViewController class]]) {
         isBack = YES;
     }
     return isBack;

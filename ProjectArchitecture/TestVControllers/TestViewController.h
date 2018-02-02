@@ -6,13 +6,13 @@
 //  Copyright © 2016年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 #import "NSDate+ZMAdd.h"
 #import "NSObject+NSLog.h"
 #import "Photo.h"
 
 
-@interface TestViewController : BBaseViewController
+@interface TestViewController : ZMBaseViewController
 {
 
 }

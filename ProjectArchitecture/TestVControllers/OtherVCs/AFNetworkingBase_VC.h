@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface AFNetworkingBase_VC : BBaseViewController
+@interface AFNetworkingBase_VC : ZMBaseViewController
 
 @end
 

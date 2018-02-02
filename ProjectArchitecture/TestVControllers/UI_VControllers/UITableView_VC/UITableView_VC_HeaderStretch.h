@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface UITableView_VC_HeaderStretch : BBaseViewController
+@interface UITableView_VC_HeaderStretch : ZMBaseViewController
 
 @end

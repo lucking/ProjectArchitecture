@@ -8,9 +8,9 @@
 
 #import "HomeDataTool.h"
 #import "MJExtension.h"
-#import "HMAdModel.h"
-#import "HMProductModel.h"
-#import "HMNewsModel.h"
+#import "ZM_HomeAdModel.h"
+#import "ZM_ProductModel.h"
+#import "ZM_HomeNewsModel.h"
 
 @implementation HomeDataTool
 

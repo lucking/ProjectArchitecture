@@ -11,7 +11,7 @@
 #import "UIView+ZMFrame.h"
 #import "UIView+ZMAdd.h"
 #import "IQKeyboardManager.h"
-#import "AccountModel.h"
+#import "ZM_AccountModel.h"
 
 @interface TabelTextFieldVController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 {
@@ -21,7 +21,7 @@
 @property (nonatomic,strong) UITableView* ttableView;
 @property (nonatomic,strong) NSArray *titleArray;
 @property (nonatomic,strong) NSMutableArray *tableDataArray;
-@property (nonatomic,strong) AccountModel *accountModel;
+@property (nonatomic,strong) ZM_AccountModel *accountModel;
 @property (nonatomic,strong) AccounTDataModel *dataModel;
 @end
 
@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.tabBarController.tabBar.hidden = YES;
     [self setTitle:@"TabelFieldVC" TitleColor:[UIColor whiteColor]];
+
     //返回按钮
 //    [self backBtnNoNavBar:NO normalBack:YES];
     self.view.backgroundColor = [UIColor colorHexString:@"FFFAFA"];
@@ -66,7 +67,7 @@
 
 - (void)setDataSource
 {
-    _accountModel = [[AccountModel alloc] init];
+    _accountModel = [[ZM_AccountModel alloc] init];
     _dataModel = [[AccounTDataModel alloc] init];
     
     _tableDataArray = [[NSMutableArray alloc] init];
@@ -75,7 +76,7 @@
         
         str = [NSString stringWithFormat:@"str%d：",i];
         
-        AccountModel *nameModel = [[AccountModel alloc] init];
+        ZM_AccountModel *nameModel = [[ZM_AccountModel alloc] init];
         nameModel.title = str;
         nameModel.placeholder = [NSString stringWithFormat:@"请输入网店名称str%d",i];;
         nameModel.key = [NSString stringWithFormat:@"str%d",i];;
@@ -138,7 +139,7 @@
     field.tag = indexPath.row;
     
     
-    AccountModel *aModel = _tableDataArray[indexPath.row];
+    ZM_AccountModel *aModel = _tableDataArray[indexPath.row];
     nameLab.text = aModel.title;
     field.placeholder =  aModel.placeholder;
     //利用 KVC 控制变量

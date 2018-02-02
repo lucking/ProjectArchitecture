@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ZM. All rights reserved.
 //
 
-#import "ZMBaseViewController.h"
+#import "ZMBBaseViewController.h"
 #import "ZMWebViewModel.h"
 
-@interface CityBannerWebVController : ZMBaseViewController
+@interface CityBannerWebVController : ZMBBaseViewController
 
 @end

@@ -10,6 +10,31 @@
 
 @implementation TestAAView
 
+- (instancetype)init {
+    if ([super init]) {
+        [self addSubview:self.acceptBtn];
+    }
+    return self;
+}
+- (instancetype)initWithFrame:(CGRect)frame {
+    if ([super initWithFrame:frame]) {
+        [self addSubview:self.acceptBtn];
+    }
+    return self;
+}
+
+- (UIButton *)acceptBtn {
+    if (_acceptBtn==nil) {
+        _acceptBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _acceptBtn.backgroundColor = [UIColor orangeColor];
+        _acceptBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+        [_acceptBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_acceptBtn setTitle:@"接单" forState:UIControlStateNormal];
+        _acceptBtn.layer.cornerRadius = 3.f;
+        _acceptBtn.clipsToBounds = YES;
+    }
+    return _acceptBtn;
+}
 
 //核心代码：在自定义的UIView视图类中，我们重写点击视图的方法，
 

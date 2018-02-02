@@ -6,12 +6,12 @@
 //  Copyright © 2016年 ZM. All rights reserved.
 //
 
-#import "BaseObject.h"
+#import "ZMBaseObject.h"
 
 @class PageBean;
 @class Page;
 
-@interface Finance : BaseObject
+@interface Finance : ZMBaseObject
 
 PProperty_String(retCode);      //返回码
 PProperty_String(retFlag);      //返回正确、错误的标志
@@ -37,7 +37,7 @@ PProperty_Object(PageBean, pageBean);
 
 
 //------------------  新类：MapLogo   ------------------
-@interface MapLogo : BaseObject
+@interface MapLogo : ZMBaseObject
 
 PProperty_String(borrow_type);
 PProperty_String(details);
@@ -50,7 +50,7 @@ PProperty_String(status);
 @end
 
 //------------------  新类：PageBean   ------------------
-@interface PageBean : BaseObject
+@interface PageBean : ZMBaseObject
 
 PProperty_String(pageNum);
 PProperty_String(pageSize);
@@ -64,7 +64,7 @@ PProperty_String(totalPageNum);
 @end
 
 //------------------  新类：Page   ------------------
-@interface Page : BaseObject
+@interface Page : ZMBaseObject
 
 PProperty_String(annualRate);
 PProperty_String(auditStatus);
@@ -97,7 +97,7 @@ PProperty_String(vipStatus);
 @end
 
 //------------------  新类：ProvinceList   ------------------
-@interface ProvinceList : BaseObject
+@interface ProvinceList : ZMBaseObject
 
 PProperty_String(agencyId);
 PProperty_String(parentId);

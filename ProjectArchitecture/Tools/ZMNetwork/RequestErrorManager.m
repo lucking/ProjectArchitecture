@@ -41,19 +41,19 @@
     NSLog(@"---> localError = %@ \n ",localError);
     
     if ([localError isEqualToString:LocalError_timedOut]) {
-        [HHudProgress hudShowErrorMsg:@"请求超时，服务链接中断 \n 程序员哥哥正在抢救中" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"请求超时，服务链接中断 \n 程序员哥哥正在抢救中" afterDelay:Hud_ErrorTime addSubview:nil];
         
     }else if ([localError isEqualToString:LocalError_notConnect]){
-        [HHudProgress hudShowErrorMsg:@"无法连接到服务器" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"无法连接到服务器" afterDelay:Hud_ErrorTime addSubview:nil];
         
     }else if ([localError isEqualToString:LocalError_notRead]){
-        [HHudProgress hudShowErrorMsg:@"数据无法读取,因为它不在正确的格式" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"数据无法读取,因为它不在正确的格式" afterDelay:Hud_ErrorTime addSubview:nil];
         
     }else if ([localError isEqualToString:LocalError_cancelRequest]){
-        [HHudProgress hudShowErrorMsg:@"取消请求" afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:@"取消请求" afterDelay:Hud_ErrorTime addSubview:nil];
         
     }else{
-        [HHudProgress hudShowErrorMsg:[error localizedDescription] afterDelay:Hud_ErrorTime];
+        [HHudProgress hudShowErrorMsg:[error localizedDescription] afterDelay:Hud_ErrorTime addSubview:nil];
     }
 }
 
@@ -82,11 +82,11 @@
             
             return YES;
         }else{
-            [HHudProgress hudShowLoadingMsg:data[@"RespMessage"]];
+            [HHudProgress hudShowLoadingMsg:data[@"RespMessage"] addSubview:nil];
             return NO;
         }
     }else{
-        [HHudProgress hudShowLoadingMsg:@"数据异常，请稍后再试 ！"];
+        [HHudProgress hudShowLoadingMsg:@"数据异常，请稍后再试 ！" addSubview:nil];
         return NO;
     }
 }

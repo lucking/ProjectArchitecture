@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface TableView_VC_Checkmark : BBaseViewController
+@interface TableView_VC_Checkmark : ZMBaseViewController
 {
     
 }

@@ -6,9 +6,9 @@
 //  Copyright © 2015年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface SuccessViewController : BBaseViewController
+@interface SuccessViewController : ZMBaseViewController
 {
 
 }

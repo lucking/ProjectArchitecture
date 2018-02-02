@@ -6,8 +6,8 @@
 //  Copyright © 2015年 ZM. All rights reserved.
 //
 
-#import "BBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface RegisterViewController : BBaseViewController
+@interface RegisterViewController : ZMBaseViewController
 
 @end

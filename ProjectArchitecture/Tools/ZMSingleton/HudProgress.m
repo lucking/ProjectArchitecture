@@ -12,6 +12,10 @@
 #import "YYWebImage.h"
 #define  IMGNmae(imageName)  [UIImage imageNamed:imageName]
 
+// AppDelegate
+//#define ZM_APPDelegate      ((AppDelegate*)[UIApplication sharedApplication].delegate)
+//#define APPDelegateWindow   (((AppDelegate*)[UIApplication sharedApplication].delegate).window)
+
 @implementation HudProgress
 //实例化
 Singleton_Instance_method_Impl(HudProgress)
@@ -45,10 +49,10 @@ Singleton_Instance_method_Impl(HudProgress)
     
     
     
-    [[HudProgress singleton] hudShowLoadingMsg:@"请稍候..."];
+    [[HudProgress singleton] hudShowLoadingMsg:@"请稍候..." addSubview:nil];
     [[HudProgress singleton] hudHidden];
     //同上
-    [HHudProgress hudShowLoadingMsg:@"请稍候..."];
+    [HHudProgress hudShowLoadingMsg:@"请稍候..." addSubview:nil];
     [HHudProgress hudHidden];
 
 }
@@ -56,52 +60,83 @@ Singleton_Instance_method_Impl(HudProgress)
 
 #pragma mark ------------------"  MBProgressHUD Delegate  "------------------
 #pragma
+
+#pragma mark - 添加到父视图上
+- (MBProgressHUD *)hudAddSubview:(UIView *)superView {
+    if (superView==nil) {
+        return [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    }else {
+        return [MBProgressHUD showHUDAddedTo:superView animated:YES];
+    }
+}
+
 // 菊花
-- (void)hudShowLoading
+- (void)hudShowLoadingAddSubview:(UIView *)superView
 {
-     [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    [self hudAddSubview:superView];
 }
 // 菊花 延时
-- (void)hudShowLoadingDelay:(NSTimeInterval)delay
+- (void)hudShowLoadingDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     [hud hideAnimated:YES afterDelay:delay];
 }
 
-
 // 菊花消息
-- (void)hudShowLoadingMsg:(NSString *)message
+- (void)hudShowLoadingMsg:(NSString *)message addSubview:(UIView *)superView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.label.text = NSLocalizedString(message, @"HUD loading title");
     _hudView = hud;
 }
 // 菊花消息 延时
-- (void)hudShowLoadingMsg:(NSString *)message afterDelay:(NSTimeInterval)delay
+- (void)hudShowLoadingMsg:(NSString *)message afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.label.text = message;
     [hud hideAnimated:YES afterDelay:delay];
     _hudView = hud;
 }
 // CGPointMake(0, MBProgressMaxOffset) 底部
-// 普通：提示信息
+// 普通：提示信息（可调位置，可设置有延时）
 - (void)hudShowMessage:(NSString *)message
                 offset:(CGPoint)offset
-            afterDelay:(NSTimeInterval)delay
+            afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = NSLocalizedString(message, @"HUD message title");
     hud.offset = offset;
     [hud hideAnimated:YES afterDelay:delay];
     _hudView = hud;
 }
+// 普通：提示信息（居中，可设置有延时）
+- (void)hudShowMsg:(NSString *)message
+             delay:(NSTimeInterval)delay addSubview:(UIView *)superView
+{
+    MBProgressHUD *hud = [self hudAddSubview:superView];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = NSLocalizedString(message, @"HUD message title");
+    hud.offset = CGPointMake(0, 0);
+    [hud hideAnimated:YES afterDelay:delay];
+    _hudView = hud;
+}
+// 普通：提示信息（居中，无延时）
+- (void)hudShowMsg:(NSString *)message addSubview:(UIView *)superView
+{
+    MBProgressHUD *hud = [self hudAddSubview:superView];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = NSLocalizedString(message, @"HUD message title");
+    hud.offset = CGPointMake(0, 0);
+    _hudView = hud;
+}
+
+
 // 错误：提示信息
 - (void)hudShowErrorMsg:(NSString *)message
-            afterDelay:(NSTimeInterval)delay
+            afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = NSLocalizedString(message, @"HUD message title");
     hud.offset = CGPointMake(0, 0);
@@ -110,20 +145,20 @@ Singleton_Instance_method_Impl(HudProgress)
 }
 
 // 成功时：提示图片
-- (void)hudShowSucceedDelay:(NSTimeInterval)delay
+- (void)hudShowSucceedDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
     UIImage *image = [IMGNmae(@"Checkmark") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.mode = MBProgressHUDModeCustomView;
     hud.customView = [[UIImageView alloc] initWithImage:image];
     [hud hideAnimated:YES afterDelay:delay];
     _hudView = hud;
 }
 // 成功时：提示 图片+信息
-- (void)hudShowSucceedMsg:(NSString *)message afterDelay:(NSTimeInterval)delay
+- (void)hudShowSucceedMsg:(NSString *)message afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
     UIImage *image = [IMGNmae(@"Checkmark") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.label.text = message;
     hud.mode = MBProgressHUDModeCustomView;
     hud.customView = [[UIImageView alloc] initWithImage:image];
@@ -133,12 +168,12 @@ Singleton_Instance_method_Impl(HudProgress)
 // 提示：图片+信息
 - (void)hudShowImgName:(NSString *)imgName
                    msg:(NSString *)message
-            afterDelay:(NSTimeInterval)delay
+            afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
     YYImage *image = [YYImage imageNamed:imgName];
     YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.mode = MBProgressHUDModeCustomView;
     hud.customView = imageView;
     hud.label.text = message;
@@ -149,9 +184,9 @@ Singleton_Instance_method_Impl(HudProgress)
 // 自定义view
 - (void)hudCustomView:(UIView *)customView
                   Msg:(NSString *)message
-            afterDelay:(NSTimeInterval)delay
+            afterDelay:(NSTimeInterval)delay addSubview:(UIView *)superView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.mode = MBProgressHUDModeCustomView;
     hud.customView = customView;
     hud.label.text = message;
@@ -171,7 +206,7 @@ Singleton_Instance_method_Impl(HudProgress)
                   labFont:(UIFont *)font
                   hudMode:(MBProgressHUDMode)modeType
              hudAnimation:(MBProgressHUDAnimation)animationType
-               afterDelay:(NSTimeInterval)delay
+               afterDelay:(NSTimeInterval)delay 
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:superView animated:YES];
     hud.label.text = message;
@@ -187,13 +222,13 @@ Singleton_Instance_method_Impl(HudProgress)
 // NetWork NoResponse
 static NSTimeInterval TimeoutInterval = 60.f;
 
-- (void)hudShowLoadingNetWork {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+- (void)hudShowLoadingNetWorkAddSubview:(UIView *)superView {
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     [hud hideAnimated:YES afterDelay:TimeoutInterval];
     _hudView = hud;
 }
 - (void)hudNetWorkLoadingAddedTo:(UIView *)superView message:(NSString *)message {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:APPDelegateWindow animated:YES];
+    MBProgressHUD *hud = [self hudAddSubview:superView];
     hud.label.text = message;
     [hud hideAnimated:YES afterDelay:TimeoutInterval];
     _hudView = hud;

@@ -8,10 +8,10 @@
 
 #import "ZMTabBarController.h"
 
-#import "HomeViewController.h"
-#import "TransferViewController.h"
-#import "AccountViewController.h"
-#import "MoreViewController.h"
+#import "ZM_HomeVController.h"
+#import "ZM_NewsVController.h"
+#import "ZM_AccountVController.h"
+#import "ZM_MoreVController.h"
 
 @interface ZMTabBarController ()< UITabBarControllerDelegate, UITabBarDelegate >
 
@@ -88,13 +88,13 @@
 - (void)loadViewControllers {
 
     //1.
-    HomeViewController *aaVC =[[HomeViewController alloc] init];
+    ZM_HomeVController *aaVC =[[ZM_HomeVController alloc] init];
     //2.
-    TransferViewController *bbVC= [[TransferViewController alloc] init];
+    ZM_NewsVController *bbVC= [[ZM_NewsVController alloc] init];
     //3.
-    MoreViewController *ccVC = [[MoreViewController alloc] init];
+    ZM_MoreVController *ccVC = [[ZM_MoreVController alloc] init];
     //4.
-    AccountViewController *ddVC= [[AccountViewController alloc] init];
+    ZM_AccountVController *ddVC= [[ZM_AccountVController alloc] init];
     
     ZMNavController* navRootVC_1 = [[ZMNavController alloc] initWithRootViewController:aaVC];
     ZMNavController* navRootVC_2 = [[ZMNavController alloc] initWithRootViewController:bbVC];
@@ -109,7 +109,7 @@
                                                      normolImgName:@"home_bottom"
                                                      selectImgName:@"home_bottom_click"];
    
-    UITabBarItem *tabBarItem_2 =[self getTabBarItemOfNavController: navRootVC_2 myVC: bbVC title:@"模拟"
+    UITabBarItem *tabBarItem_2 =[self getTabBarItemOfNavController: navRootVC_2 myVC: bbVC title:@"资讯"
                                                      normolImgName:@"money_bottom"
                                                      selectImgName:@"money_bottom_click"];
     

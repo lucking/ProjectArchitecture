@@ -8,10 +8,10 @@
 
 #import "UIScrollView_VController.h"
 
-#import "ProductVCAA.h"
-#import "ProductVCBB.h"
-#import "ProductVCCC.h"
-#import "NewsTableVC.h"
+#import "ZM_ProductVCAA.h"
+#import "ZM_ProductVCBB.h"
+#import "ZM_ProductVCCC.h"
+#import "ZM_NewsTableVC.h"
 #import "ItemScrollView.h"
 #import "UIView+ZMFrame.h"
 
@@ -141,16 +141,16 @@
     self.bigScrollView.showsHorizontalScrollIndicator = NO;
     
     
-    ProductVCAA* vc1= [[ProductVCAA alloc]init];
+    ZM_ProductVCAA* vc1= [[ZM_ProductVCAA alloc]init];
     [self addChildViewController:vc1];
     
-    ProductVCBB *vc2 = [[ProductVCBB alloc]init];
+    ZM_ProductVCBB *vc2 = [[ZM_ProductVCBB alloc]init];
     [self addChildViewController:vc2];
     
-    ProductVCCC *vc3 = [[ProductVCCC alloc]init];
+    ZM_ProductVCCC *vc3 = [[ZM_ProductVCCC alloc]init];
     [self addChildViewController:vc3];
     
-    NewsTableVC *vc4 = [[NewsTableVC alloc]init];
+    ZM_NewsTableVC *vc4 = [[ZM_NewsTableVC alloc]init];
     [self addChildViewController:vc4];
     
     // 添加默认控制器
@@ -175,7 +175,7 @@
     self.bigScrollView.showsHorizontalScrollIndicator = NO;
 
     
-    ProductVCAA* vc1= [[ProductVCAA alloc]init];
+    ZM_ProductVCAA* vc1= [[ZM_ProductVCAA alloc]init];
     vc1.view.frame = self.bigScrollView.bounds;
     vc1.view.x = self.bigScrollView.width * 0;
     vc1.view.height = self.bigScrollView.height;
@@ -183,7 +183,7 @@
     [self.bigScrollView addSubview:vc1.view];
 
     
-    ProductVCBB *vc2 = [[ProductVCBB alloc]init];
+    ZM_ProductVCBB *vc2 = [[ZM_ProductVCBB alloc]init];
     vc2.view.frame = self.bigScrollView.bounds;
     vc2.view.x = self.bigScrollView.width * 1;
     vc2.view.height = self.bigScrollView.height;
@@ -191,7 +191,7 @@
     [self.bigScrollView addSubview:vc2.view];
 
     
-    ProductVCCC *vc3 = [[ProductVCCC alloc]init];
+    ZM_ProductVCCC *vc3 = [[ZM_ProductVCCC alloc]init];
     vc3.view.frame = self.bigScrollView.bounds;
     vc3.view.x = self.bigScrollView.width * 2;
     vc3.view.height = self.bigScrollView.height;
@@ -199,7 +199,7 @@
     [self.bigScrollView addSubview:vc3.view];
 
     
-    NewsTableVC *vc4 = [[NewsTableVC alloc]init];
+    ZM_NewsTableVC *vc4 = [[ZM_NewsTableVC alloc]init];
     vc4.view.frame = self.bigScrollView.bounds;
     vc4.view.x = self.bigScrollView.width * 3;
     vc4.view.height = self.bigScrollView.height;
