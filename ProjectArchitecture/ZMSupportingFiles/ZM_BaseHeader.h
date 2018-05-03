@@ -9,6 +9,9 @@
 #ifndef ZM_BaseHeader_h
 #define ZM_BaseHeader_h
 
+// weakSelf
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
 //------------------"  系统类型  "---------------
 //获取当前系统的版本号
 #define SystemVersion       [[[UIDevice currentDevice] systemVersion] floatValue]
@@ -57,9 +60,14 @@
 #define SSPureHeight    (SSHEIGHT-64-83)
 #endif
 
-// IS_IPHONE8X 
+#define zmStatusBarHeight    (ZM_IsiPhoneX ? (44):(20))
+#define zmNavHeight          (zmStatusBarHeight + 44)
+
+// IS_IPHONEX 
 #define StatusBarHeight     30
 #define SafeAreaBottom      34
+#define IPhoneXMainHeight       (SSHEIGHT-49-30-34)
+#define IPhoneXSafeAreaHeight   (SSHEIGHT-88-34)
 
 //-----控件比例-----
 //屏幕自动适配 以5为基准， 4／5一样，6及以上除以5的宽高 ( 判断是不是4s如果是则高度和5s一样的比例 )

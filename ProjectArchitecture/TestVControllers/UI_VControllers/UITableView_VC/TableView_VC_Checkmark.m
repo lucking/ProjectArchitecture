@@ -47,7 +47,7 @@ static NSString *_cellId = @"cellID";
     NSLogline(@"---> title= %@", self.title);
     self.title = @"cell_单选";
     //默认选第一个
-    [UserDefaults setBool:YES forKey:@"selectIndex_First"];
+    [UserDefaults zm_setBool:YES forKey:@"selectIndex_First"];
 
     self.automaticallyAdjustsScrollViewInsets = NO;
     _rowHeight = 50;
@@ -194,7 +194,7 @@ static NSString *_cellId = @"cellID";
         [cell.selectBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         
         if (indexPath.row==0) {
-            if ([UserDefaults getBoolForKey:@"selectIndex_First"]) {
+            if ([UserDefaults zm_getBoolForKey:@"selectIndex_First"]) {
                 //这个是系统中对勾的那种选择框 默认选择第一个
                 [cell.selectBtn setBackgroundImage:[UIImage imageNamed:@"yes1"] forState:UIControlStateNormal];
             }
@@ -246,8 +246,8 @@ static NSString *_cellId = @"cellID";
         [cell.selectBtn setTitle: [NSString stringWithFormat:@"%ld",_secondNum] forState:UIControlStateNormal];
 
         
-        if ([UserDefaults getBoolForKey:@"selectIndex_First"]) {
-            [UserDefaults removeObjectForKey:@"selectIndex_First"];
+        if ([UserDefaults zm_getBoolForKey:@"selectIndex_First"]) {
+            [UserDefaults zm_removeObjectForKey:@"selectIndex_First"];
             [cell.selectBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         }
     }

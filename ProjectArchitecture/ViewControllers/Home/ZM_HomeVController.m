@@ -7,6 +7,7 @@
 //
 
 #import "ZM_HomeVController.h"
+#import "UIViewController+ZMAdd.h"
 
 #import "AppDelegate.h"
 #import "TestViewController.h"
@@ -45,7 +46,7 @@ static NSString *_cellId = @"CellCC_Id";
     [super viewDidLoad];
 	// 初始化UI
 	[self initUI];
-    [self addBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(BarButtonItem) tintColor:[UIColor magentaColor] isRightItem:YES];
+    [self addBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(BarButtonItem) tintColor:[UIColor whiteColor] isRightItem:YES];
 
     
     //UITabBar 高度由49pt变成了83pt
@@ -153,7 +154,7 @@ static NSString *_cellId = @"CellCC_Id";
         if (i==6) { title = @"LoginVC"; }
         if (i==7) { title = @"TestVC"; }
 
-        [self addBtnTitle:title frame:CGRectMake(10, 30+ (35+10)*i+ 40, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 30+ (35+10)*i+ 40, width, 35) tag:i];
     }
     [self.view addSubview:self.dateLabel];
 }

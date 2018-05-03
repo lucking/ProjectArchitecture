@@ -27,8 +27,6 @@ static NSString *URL_Str2 = @"http://zhekou.yijia.com/lws/view/ichuanyi/suit_lis
     //返回按钮
 //    [self backBtnNoNavBar:NO normalBack:YES];
     
-    
-    
 }
 
 /*

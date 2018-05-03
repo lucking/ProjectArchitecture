@@ -12,9 +12,15 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+/** iOS项目工程中添加.C文件，报错！
+ *  检查你的*.pch文件，将#import用#ifdef __OBJC__    #endif包裹起来
+ */
+#ifdef __OBJC__
 // 配置头文件
 #import "ZM_BaseHeader.h"
 #import "ZM_FontHeader.h"
+#import "ZM_MacroHeader.h"
+
 #import "SingletonManager.h"
 #import "NetworkManager.h"
 #import "AppConst.h"
@@ -23,12 +29,17 @@
 //#import "NetworkAPI.h"
 //#import <UIKit/UIKit.h>
 //#import <Foundation/Foundation.h>
-#import "ReactiveCocoa.h"
+//#import "ReactiveCocoa.h"
 //#import "Masonry.h"
-//#import <ReactiveCocoa.h>
+#import <ReactiveCocoa.h>
 //#import <Masonry.h>
 //#import <SDWebImage/SDWebImageManager.h>
-//#import <ReactiveCocoa/ReactiveCocoa.h>
+
+//#import <UMSocialCore/UMSocialCore.h>
+//#import "UMMobClick/MobClick.h"
+//#import "UIButton+WebCache.h"
+//#import <UIImageView+WebCache.h>
+#endif
 
 
 #endif /* ArchitecturePrefixHeader_pch */

@@ -9,18 +9,18 @@
 #import "ZMBaseObject.h"
 
 @interface ZM_HomeNewsModel : ZMBaseObject
-PProperty_String(retFlag); //请求是否正确
-PProperty_String(retCode); //反馈码
-PProperty_String(retMsg);  //返回信息
+@property (nonatomic, copy) NSString*(retFlag); //请求是否正确
+@property (nonatomic, copy) NSString*(retCode); //反馈码
+@property (nonatomic, copy) NSString*(retMsg);  //返回信息
 
-PProperty_MutArray(newsList);
+@property (nonatomic, strong) NSMutableArray *(newsList);
 @end
 
 
 
 @interface NewsListModel : ZMBaseObject
 
-PProperty_String(newsId);		// 新闻编号
-PProperty_String(newsTitle);	// 新闻标题
-PProperty_String(newsImgUrl);	// 新闻广告图地址
+@property (nonatomic, copy) NSString*(newsId);		// 新闻编号
+@property (nonatomic, copy) NSString*(newsTitle);	// 新闻标题
+@property (nonatomic, copy) NSString*(newsImgUrl);	// 新闻广告图地址
 @end

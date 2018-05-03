@@ -11,7 +11,10 @@
 
 #pragma mark - 数据信息
 //登录信息
-#define CENTERMODEL @"CENTERMODEL"
+#define ZM_LoginUserMODEL  @"LoginUserModel"
+
+
+
 
 
 #endif /* ZM_MacroHeader_h */

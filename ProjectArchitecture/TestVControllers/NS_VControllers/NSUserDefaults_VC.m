@@ -7,6 +7,7 @@
 //
 
 #import "NSUserDefaults_VC.h"
+#import "UIViewController+ZMAdd.h"
 
 @interface NSUserDefaults_VC ()
 
@@ -25,19 +26,19 @@
 //例一：
 - (void)case1 {
 #pragma Bool
-    [UserDefaults setBool:YES forKey:@"Key"];
-    [UserDefaults getBoolForKey:@"Key"];
+    [UserDefaults zm_setBool:YES forKey:@"Key"];
+    [UserDefaults zm_getBoolForKey:@"Key"];
 #pragma NSString
-    [UserDefaults setNSString:@"" forKey:@"Key"];
-    [UserDefaults getNSStringForKey:@""];
+    [UserDefaults zm_setNSString:@"" forKey:@"Key"];
+    [UserDefaults zm_getNSStringForKey:@""];
 #pragma Integer
-    [UserDefaults setInteger:100 forKey:@"Key"];
-    [UserDefaults getIntegerForKey:@"Key"];
+    [UserDefaults zm_setInteger:100 forKey:@"Key"];
+    [UserDefaults zm_getIntegerForKey:@"Key"];
 #pragma Object
-    [UserDefaults setObject:@"" forKey:@"Key"];
-    [UserDefaults getObjectForKey:@"Key"];
+    [UserDefaults zm_setObject:@"" forKey:@"Key"];
+    [UserDefaults zm_getObjectForKey:@"Key"];
 #pragma remove
-    [UserDefaults removeObjectForKey:@"Key"];
+    [UserDefaults zm_removeObjectForKey:@"Key"];
 
 }
 
@@ -73,7 +74,7 @@
     CGFloat width = 120;
     for (int i=1 ; i<11; i++) {
         title = [NSString stringWithFormat:@"case%d",i];
-        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) tag:i];
     }
 }
 

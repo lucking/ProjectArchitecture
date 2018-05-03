@@ -18,9 +18,6 @@
 /** 将特殊字符替换掉，图片自适应
  现象：UIWebView 加载内容用三个方法，其中 loadHTMLString 用来加载字符或者文本内容。当内容来自 json 数据时，
  特殊字符比如“<”、“>”、" “ "、" ” "等会被编码，
- 一段 img HTML标签(<img src="http://pinglun.fx678.com/data/attachment/forum/201511/03/101036dp84jaaca7858ej4.jpg">)
- 会被编码成       “<img src='http://pinglun.fx678.com/data/attachment/forum/201511/03/101036dp84jaaca7858ej4.jpg'/></align>”,
- 此种情况导致 UIWebView 识别不了 这些 HTML 便签，会被原封不动的输出来。
  */
 + (NSString *)htmlEntityDecode:(NSString *)string
 {

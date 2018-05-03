@@ -74,6 +74,7 @@
 {
     _autoScrollTimeInterval = autoScrollTimeInterval;
     self.carousel.autoscroll = autoScrollTimeInterval;
+    
 }
 
 
@@ -200,8 +201,8 @@
                                                                             NavBarStyleTypekey:@(kNavBarStyleNomal)}];
 //    CityBannerWebVController *currentVC = [[CityBannerWebVController alloc] init];
     CityBannerWebVController *currentVC = [[CityBannerWebVController alloc] initWithViewModel:viewModel];;
-
 //    currentVC.viewModel = viewModel;
+    
     [[UIViewController getCurrentVC].navigationController pushViewController:currentVC animated:YES];
     if (self.clickItemOperationBlock) {
         self.clickItemOperationBlock(index);

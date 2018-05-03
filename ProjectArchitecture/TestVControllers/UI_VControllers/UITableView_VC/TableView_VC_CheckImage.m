@@ -63,7 +63,7 @@ static NSString *_cellId = @"cellID";
 
     
     //默认选第一个
-    [UserDefaults setBool:YES forKey:@"selectIndex_First"];
+    [UserDefaults zm_setBool:YES forKey:@"selectIndex_First"];
     
     _currentModel = [[SelectCheckModel alloc] init];
 
@@ -218,8 +218,8 @@ static NSString *_cellId = @"cellID";
         NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
         CheckmarkCell *cell = [tableView cellForRowAtIndexPath:index];
         
-        if ([UserDefaults getBoolForKey:@"selectIndex_First"]) {
-            [UserDefaults removeObjectForKey:@"selectIndex_First"];
+        if ([UserDefaults zm_getBoolForKey:@"selectIndex_First"]) {
+            [UserDefaults zm_removeObjectForKey:@"selectIndex_First"];
             [cell.selectBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
         }
     }

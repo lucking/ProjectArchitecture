@@ -8,20 +8,14 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+BaseSetting.h"
+#import "AppDelegate+UM.h"
 #import "IQKeyboardManager.h"
 #import "GuidepageViewController.h"
 #import "ServerConfig.h"
 #import "NetworkReachability.h"
-//测试
-#import "AssertHandler.h"
-#import "CatchCrash.h"
-#import "ZMAvoidCrash.h"
-#import "NSData+ZMAdd.h"
-#import "Person.h"
-#import "NSDate+ZMAdd.h"
-#import "APPInfoManager.h"
-#import "DeviceInfo.h"
 #import "NetworkSession.h"
+#import "TestCommon.h"
+#import <UMSocialCore/UMSocialCore.h>
 
 @interface AppDelegate () {
     
@@ -52,110 +46,59 @@ static AppDelegate *_singleInstance;
     [self configurationIQKeyboard];
     // 5.配置网络状态
     [self configurationNetWorkStatus];
-    // 6.注册避免崩溃函数
-    [self configZMAvoidCrash];
+    // 7.友盟的方法本身是异步执行，所以不需要再异步调用
+    [self umengTrack];
     
-    NSUInteger networkType= [NetworkSession getNetworkStates];
-    NSLog(@"---networkType= %ld",networkType);
+    // 6.注册避免崩溃函数
+//    [self configZMAvoidCrash];
+   
+    
+    //NSUInteger networkType= [NetworkSession getNetworkStates];
+    //NSLog(@"---networkType= %ld",networkType);
     NSLog(@"---NetWorkStatus= %ld",[AppDelegate sharedAppDelegate].NetWorkStatus);
 
-    [RACObserve(ZM_APPDelegate, NetWorkStatus) subscribeNext:^(NSNumber *networkStatus) {
-        UUserDefaults.netWorkStatus = [networkStatus integerValue];
-        if (networkStatus.integerValue == RealStatusNotReachable || networkStatus.integerValue == RealStatusUnknown) {
-            NSLog(@"------> execute:@(RealStatusNotReachable)  ");
-        }else{
-            NSLog(@"------> networkStatus= %ld",[networkStatus integerValue]);
-        }
-        NSLog(@"---UUserDefaults.netWorkStatus= %ld",UUserDefaults.netWorkStatus);
-    }];
+//    [RACObserve(ZM_APPDelegate, NetWorkStatus) subscribeNext:^(NSNumber *networkStatus) {
+//        UUserDefaults.netWorkStatus = [networkStatus integerValue];
+//        if (networkStatus.integerValue == RealStatusNotReachable || networkStatus.integerValue == RealStatusUnknown) {
+//            NSLog(@"------> execute:@(RealStatusNotReachable)  ");
+//        }else{
+//            NSLog(@"------> networkStatus= %ld",[networkStatus integerValue]);
+//        }
+//        NSLog(@"---UUserDefaults.netWorkStatus= %ld",UUserDefaults.netWorkStatus);
+//    }];
 
     //测试
-    [self test];
+    [TestCommon test];
     //进入主题主页：ZMTabBarController
     [self gotoMainPage];
+//    //[UserDefaults removeObjectKey:@"firstLaunch"];
+//    //判断用户是否第一次进入这个页面
+//    if ([UserDefaults getBoolStorageWithKey:@"firstLaunch"]) {
+//        // 主题
+//        [self gotoMainPage];
+//        
+//    }else{
+//        NSLog(@"第一次进入_开始：引导页");
+//        [UserDefaults storageBool:YES Key:@"firstLaunch"];//第一次进入：保存进入标识
+//        GuidepageViewController *GuideVC= [[GuidepageViewController alloc]init];
+//        self.window.rootViewController = GuideVC;
+//    }
+
     return YES;
 }
 
-//测试
-- (void)test {
-    //[DeviceInfo ISIPHONEXX];
-    [NSData nowTest];
-    
-    //测试 配置网络状态
-    [NetworkReachability netWorkReachabilityStatus];
-    // 设备信息管理
-    NSLog(@"---> randomUUID_1= %@ ",[DeviceInfo randomUUID]);
-    NSLog(@"---> randomUUID_2= %@ ",[DeviceInfo randomUUID]);
-
-    NSLog(@"---> systemVersion= %@ ",[DeviceInfo systemVersion]);
-    NSLog(@"---> appVersion= %@ ",[[APPInfoManager singleton] appVersion]);
-
-    //获取当前时间戳
-    NSLog(@"---> getNowTimeTimestamp0= %@ ",[NSDate timeSwitchTimestampFormatter:@"YYYY-MM-dd HH:mm:ss"]);
-    NSLog(@"---> getNowTimeTimestamp1= %@ ",[NSDate getNowTimestamp]);
-    NSLog(@"---> getNowTimeTimestamp2= %@ ",[NSDate getNowTimestampOfSecond]);
-    NSLog(@"---> getNowTimeTimestamp3= %@ ",[NSDate getNowTimestampOfMillisecond]);
-
-    NSString *timestamp = [NSDate getNowTimestamp];
-    NSLog(@"---> timestamp.length= %ld ",timestamp.length);
-
-    if ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)) {
-        
-    }
-    
-//    Person *pp = [[Person alloc] init];
-//    [pp setValue:@"aaaa" forKey:@"firstName"];
-//    [pp setValue:@"bbb" forKey:@"name"];
-    
-    
-//    //断点配置
-//    AssertHandler *myHandler = [[AssertHandler alloc] init];
-//    // 配置给当前的线程_跳跃崩溃断点_并打印崩溃日志
-//    [[[NSThread currentThread] threadDictionary] setValue:myHandler forKey:NSAssertionHandlerKey];
-//    // 手动断点
-//    [myHandler printMyName:nil];
-//    
-//    // NSMutableArray+Extension 交换方法_跳过崩溃
-//    NSString *nilStr = nil;
-//    NSMutableArray *arrayM = [NSMutableArray array];
-//    [arrayM addObject:nilStr];
-    
-    
-    //    //[UserDefaults removeObjectKey:@"firstLaunch"];
-    //    //判断用户是否第一次进入这个页面
-    //    if ([UserDefaults getBoolStorageWithKey:@"firstLaunch"]) {
-    //        // 主题
-    //        [self gotoMainPage];
-    //
-    //    }else{
-    //        NSLog(@"第一次进入_开始：引导页");
-    //        [UserDefaults storageBool:YES Key:@"firstLaunch"];//第一次进入：保存进入标识
-    //        GuidepageViewController *GuideVC= [[GuidepageViewController alloc]init];
-    //        self.window.rootViewController = GuideVC;
-    //    }
-    
-}
 
 // 配置网络状态
 - (void)configurationNetWorkStatus
 {
-    [GLobalRealReachability startNotifier];
-    RAC(self, NetWorkStatus) = [[[[[NSNotificationCenter defaultCenter]
-                                   rac_addObserverForName:kRealReachabilityChangedNotification object:nil]
-                                  map:^(NSNotification *notification) {
-                                      return @([notification.object currentReachabilityStatus]);
-                                  }]
-                                 startWith:@([GLobalRealReachability currentReachabilityStatus])]
-                                distinctUntilChanged];
-}
-
-
-- (void)dealwithCrashMessage:(NSNotification *)note {
-    //不论在哪个线程中导致的crash，这里都是在主线程
-    
-    //注意:所有的信息都在userInfo中
-    //你可以在这里收集相应的崩溃信息进行相应的处理(比如传到自己服务器)
-    NSLog(@"\n\n在AppDelegate中 方法:dealwithCrashMessage方法中的日志输出\n\n你可以从note中获取到相关的crash信息，并且传到自己的服务器或者利用第三方SDK进行自定义异常的上报\n\n");    
+//    [GLobalRealReachability startNotifier];
+//    RAC(self, NetWorkStatus) = [[[[[NSNotificationCenter defaultCenter]
+//                                   rac_addObserverForName:kRealReachabilityChangedNotification object:nil]
+//                                  map:^(NSNotification *notification) {
+//                                      return @([notification.object currentReachabilityStatus]);
+//                                  }]
+//                                 startWith:@([GLobalRealReachability currentReachabilityStatus])]
+//                                distinctUntilChanged];
 }
 
 #pragma mark 进入主题主页
@@ -163,6 +106,27 @@ static AppDelegate *_singleInstance;
     NSLog(@"进入主页_gotoMainPage");
     self.tabBarVC = [[ZMTabBarController alloc] init];
     self.window.rootViewController = self.tabBarVC;
+}
+
+
+#pragma mark ============================"  页面回调  "==============================
+// 支持所有iOS系统
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [self UM_application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    return result;
+}
+//仅支持iOS9以上系统，iOS8及以下系统不会回调
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+    BOOL result = [self UM_application:app openURL:url options:options];
+    return result;
+}
+// 支持所有iOS系统
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    BOOL result = [self UM_application:application handleOpenURL:url];
+    return result;
 }
 
 

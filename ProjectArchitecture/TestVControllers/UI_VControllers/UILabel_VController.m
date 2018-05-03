@@ -34,8 +34,8 @@
     //覆盖默认返回按钮：处理有其他返回情况
     [self backBtnNoNavBar:NO normalBack:NO];
     __weak typeof(self) weakSf = self;
-    self.popBlock = ^(UIButton *Btn) {
-        NSLog(@"--> popBlock_UILabel_VC");
+    self.backBlock = ^(UIButton *Btn) {
+        NSLog(@"--> backBlock_UILabel_VC");
         [weakSf.navigationController popViewControllerAnimated:YES];
     };
     

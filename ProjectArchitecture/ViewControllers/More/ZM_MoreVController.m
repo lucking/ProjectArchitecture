@@ -8,6 +8,7 @@
 
 #import "ZM_MoreVController.h"
 #import "ItemScrollView.h"
+#import "UIViewController+ZMAdd.h"
 
 @interface ZM_MoreVController ()
 {
@@ -55,13 +56,9 @@
     for (int i=1 ; i<6; i++) {
         
         title = [NSString stringWithFormat:@"case%d",i];
-        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) tag:i];
     }
-    
-    //    CGFloat yy = SSHEIGHT-90;
-    //    [self addBtnTitle:@"attentionCase3_1" frame:CGRectMake(10, yy, width, 35) Tag:111];
-    //    [self addBtnTitle:@"attentionCase3_2" frame:CGRectMake(10*2+width, yy, width, 35) Tag:222];
-    //    [self addBtnTitle:@"solveCase3_1" frame:CGRectMake(10, yy+45, width, 35) Tag:333];
+
 }
 - (void)myBtnClick:(UIButton *)Btn{
     

@@ -18,8 +18,8 @@
     if (self) {
         myWidth = SSWIDTH - 10;
         myHeight= rowHeight;
-        NSLog(@"myWidth = %f", myWidth);
-        NSLog(@"myHeight= %f", myHeight);
+//        NSLog(@"myWidth = %f", myWidth);
+//        NSLog(@"myHeight= %f", myHeight);
     }
     return self;
 }

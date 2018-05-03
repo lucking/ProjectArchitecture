@@ -44,6 +44,7 @@
 @end
 
 @implementation TestViewController
+
 //- (void)viewWillAppear:(BOOL)animated{
 //    [super viewWillAppear:YES];
 //    //隐藏tabBar
@@ -126,7 +127,6 @@
                                  NSForegroundColorAttributeName:[UIColor clearColor]};
     [item setTitleTextAttributes:attributes forState:UIControlStateNormal];
     [item setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
-    
     
     //    //无效
     //    UIImage *image = [UIImage imageNamed:@"backBlack1"]; //navigationbar_back

@@ -52,8 +52,8 @@ static const  float SSPureHeight45  = (568-64-49);
     //覆盖默认返回按钮：处理有其他返回情况
     [self backBtnNoNavBar:NO normalBack:NO];
     __weak typeof(self) weakSf = self;
-    self.popBlock = ^(UIButton *Btn) {
-        NSLog(@"--> popBlock_UIVC");
+    self.backBlock = ^(UIButton *Btn) {
+        NSLog(@"--> backBlock_UIVC");
         [weakSf.navigationController popViewControllerAnimated:YES];
     };
     
@@ -99,7 +99,7 @@ static const  float SSPureHeight45  = (568-64-49);
     CGFloat width = 120;
     for (int i=1 ; i<11; i++) {
         title = [NSString stringWithFormat:@"case%d",i];
-        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) tag:i];
     }
 }
 - (void)myBtnClick:(UIButton *)Btn{

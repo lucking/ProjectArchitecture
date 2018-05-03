@@ -1,0 +1,23 @@
+{
+    "status": "1",
+    "message": "登录成功！",
+    "time": "2018-02-12 15:20:36",
+    
+    "LoginUser":{
+        "avatar": "http://www.aiderizhi.com/uploads/image/201602/1455847156898257.jpeg",
+        "imageName": "http://www.aiderizhi.com/uploads/image/201602/1455847156898257.jpeg",
+        "userId": "100020180001",
+        "nickName": "大情圣",
+        "userName": "张三丰",
+        "userPhone": "15956215872",
+        "userPosition": "",
+        "email": "15956215872@qq.com",
+        "sex": "男",
+        "country": "中国",
+        "province": "安徽",
+        "city": "黄山",
+        "userType":"2",
+        "sign": "--",
+        "time": "2018-02-12 15:20:36"
+    }
+}

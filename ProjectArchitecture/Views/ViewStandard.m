@@ -11,15 +11,43 @@
 
 @implementation ViewStandard
 
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    NSLog(@"--------- drawRect: Drawing code");
+}
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-	self = [super initWithFrame:frame];
-	if (self) {
-		myWidth=	self.frame.size.width;
-		myHeight=	self.frame.size.height;
-	}
-	return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    NSLog(@"--------- awakeFromNib: Initialization code");
+    
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self configInit];
+        NSLog(@"--------- initWithFrame");
+    }
+    return self;
+}
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self configInit];
+        NSLog(@"--------- init");
+    }
+    return self;
+}
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    myWidth=  self.frame.size.width;
+    myHeight= self.frame.size.height;
+}
+// 初始化配置
+- (void)configInit {
+    
 }
 
 

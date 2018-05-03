@@ -7,6 +7,7 @@
 //
 
 #import "UIView_VController.h"
+#import "UIViewController+ZMAdd.h"
 #import "AAView.h"
 
 @interface UIView_VController ()
@@ -72,7 +73,7 @@
     CGFloat width = 120;
     for (int i=1 ; i<11; i++) {
         title = [NSString stringWithFormat:@"case%d",i];
-        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) tag:i];
     }
 }
 - (void)myBtnClick:(UIButton *)Btn{

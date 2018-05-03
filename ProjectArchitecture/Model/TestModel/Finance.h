@@ -13,19 +13,19 @@
 
 @interface Finance : ZMBaseObject
 
-PProperty_String(retCode);      //返回码
-PProperty_String(retFlag);      //返回正确、错误的标志
-PProperty_String(retMsg);       //返回信息
+@property (nonatomic, copy) NSString*(retCode);      //返回码
+@property (nonatomic, copy) NSString*(retFlag);      //返回正确、错误的标志
+@property (nonatomic, copy) NSString*(retMsg);       //返回信息
 //PPropertyObject(Finance, finance);//可用也可不用
 
 //模型：mapLogo
-PProperty_MutArray(mapLogo);
+@property (nonatomic, strong) NSMutableArray *(mapLogo);
 //模型：provinceList
-PProperty_MutArray(provinceList);
+@property (nonatomic, strong) NSMutableArray *(provinceList);
 //模型：PageBean
-PProperty_Object(PageBean, pageBean);
+@property (nonatomic, strong) PageBean *pageBean;
 //模型：Page
-//PProperty_MutArray(pageArray);
+//@property (nonatomic, strong) NSMutableArray *(pageArray);
 
 #pragma mark -首页产品
 + (void)getFinance:(NSDictionary *)params hudShow:(BOOL)hudShow success:(void (^)(id data,NSMutableArray* mutArray))successHandle failure:(void (^)(NSError *error))failureHandle;
@@ -39,24 +39,24 @@ PProperty_Object(PageBean, pageBean);
 //------------------  新类：MapLogo   ------------------
 @interface MapLogo : ZMBaseObject
 
-PProperty_String(borrow_type);
-PProperty_String(details);
-PProperty_String(ID); //id
-PProperty_String(imagpath);
-PProperty_String(mark);
-PProperty_String(name);
-PProperty_String(nid);
-PProperty_String(status);
+@property (nonatomic, copy) NSString*(borrow_type);
+@property (nonatomic, copy) NSString*(details);
+@property (nonatomic, copy) NSString*(ID); //id
+@property (nonatomic, copy) NSString*(imagpath);
+@property (nonatomic, copy) NSString*(mark);
+@property (nonatomic, copy) NSString*(name);
+@property (nonatomic, copy) NSString*(nid);
+@property (nonatomic, copy) NSString*(status);
 @end
 
 //------------------  新类：PageBean   ------------------
 @interface PageBean : ZMBaseObject
 
-PProperty_String(pageNum);
-PProperty_String(pageSize);
-PProperty_String(startOfPage);
-PProperty_String(totalNum);
-PProperty_String(totalPageNum);
+@property (nonatomic, copy) NSString*(pageNum);
+@property (nonatomic, copy) NSString*(pageSize);
+@property (nonatomic, copy) NSString*(startOfPage);
+@property (nonatomic, copy) NSString*(totalNum);
+@property (nonatomic, copy) NSString*(totalPageNum);
 /**
  *  里面是Page模型
  */
@@ -66,44 +66,44 @@ PProperty_String(totalPageNum);
 //------------------  新类：Page   ------------------
 @interface Page : ZMBaseObject
 
-PProperty_String(annualRate);
-PProperty_String(auditStatus);
-PProperty_String(borrowAmount);
-PProperty_String(borrowLogo);
-PProperty_String(borrowShow);
+@property (nonatomic, copy) NSString*(annualRate);
+@property (nonatomic, copy) NSString*(auditStatus);
+@property (nonatomic, copy) NSString*(borrowAmount);
+@property (nonatomic, copy) NSString*(borrowLogo);
+@property (nonatomic, copy) NSString*(borrowShow);
 
-PProperty_String(borrowStatus);
-PProperty_String(borrowTitle);
-PProperty_String(borrowWay);
-PProperty_String(credit);
-PProperty_String(creditrating);
-PProperty_String(deadline);
-PProperty_String(excitationSum);
-PProperty_String(excitationType);
+@property (nonatomic, copy) NSString*(borrowStatus);
+@property (nonatomic, copy) NSString*(borrowTitle);
+@property (nonatomic, copy) NSString*(borrowWay);
+@property (nonatomic, copy) NSString*(credit);
+@property (nonatomic, copy) NSString*(creditrating);
+@property (nonatomic, copy) NSString*(deadline);
+@property (nonatomic, copy) NSString*(excitationSum);
+@property (nonatomic, copy) NSString*(excitationType);
 
-PProperty_String(hasPWD);
-PProperty_String(idstan);
-PProperty_String(imgPath);
-PProperty_String(investNum);
-PProperty_String(isDayThe);
+@property (nonatomic, copy) NSString*(hasPWD);
+@property (nonatomic, copy) NSString*(idstan);
+@property (nonatomic, copy) NSString*(imgPath);
+@property (nonatomic, copy) NSString*(investNum);
+@property (nonatomic, copy) NSString*(isDayThe);
 
-PProperty_String(minTenderedSum);
-PProperty_String(purpose);
-PProperty_String(schedules);
-PProperty_String(t_b_region);
-PProperty_String(username);
-PProperty_String(vip);
-PProperty_String(vipStatus);
+@property (nonatomic, copy) NSString*(minTenderedSum);
+@property (nonatomic, copy) NSString*(purpose);
+@property (nonatomic, copy) NSString*(schedules);
+@property (nonatomic, copy) NSString*(t_b_region);
+@property (nonatomic, copy) NSString*(username);
+@property (nonatomic, copy) NSString*(vip);
+@property (nonatomic, copy) NSString*(vipStatus);
 @end
 
 //------------------  新类：ProvinceList   ------------------
 @interface ProvinceList : ZMBaseObject
 
-PProperty_String(agencyId);
-PProperty_String(parentId);
-PProperty_String(regionId);
-PProperty_String(regionName);
-PProperty_String(regionType);
+@property (nonatomic, copy) NSString*(agencyId);
+@property (nonatomic, copy) NSString*(parentId);
+@property (nonatomic, copy) NSString*(regionId);
+@property (nonatomic, copy) NSString*(regionName);
+@property (nonatomic, copy) NSString*(regionType);
 @end
 
 

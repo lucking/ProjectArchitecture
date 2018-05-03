@@ -7,19 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZMNavigationBarView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface ZMBaseViewController : UIViewController
-{
-    
-}
+
 @property (nullable, nonatomic, strong) UIButton *backBtn;
-@property (nullable, nonatomic, strong) UILabel *titleNavLab;
 // 自定义标题
 @property (nullable, nonatomic, copy) NSString *titleCustom;
+@property (nullable, nonatomic, strong) UILabel *titleNavLab;
+@property (nullable, nonatomic, weak) ZMNavigationBarView *zmNavBarView;
+@property (nonatomic,copy) void (^zmBackBlock)(void);
 
 // 导航标题 navigationTitle
--(void)setTitle:(NSString*)title TitleColor:(UIColor*)color;
+- (void)setTitle:(NSString*)title TitleColor:(UIColor*)color;
+/**
+ * 设置航条：带右按钮 导
+ */
+- (void)zm_NavTitle:(NSString *)str backBtnHidden:(BOOL)hidden autoBack:(BOOL)autoBack;
+
 
 /**
  添加系统的 BarButtonSystemItem
@@ -35,6 +41,14 @@ NS_ASSUME_NONNULL_BEGIN
                      tintColor:(UIColor *)tintColor
                    isRightItem:(BOOL)isRightItem;
 
+//添加带标题的 BarButtonItemTitle
+- (void)addBarButtonItemTitle:(NSString *)title
+                    itemStyle:(UIBarButtonItemStyle)itemStyle
+                       target:(id)target
+                       action:(SEL)action
+                         font:(UIFont *)font
+                    tintColor:(UIColor *)tintColor
+                  isRightItem:(BOOL)isRightItem;
 /**
  添加带图片的 BarButtonItem
  
@@ -43,18 +57,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param tintColor 类型颜色
  @param isRightItem 是否是右边的Item：YES rightBarButtonItem、NO leftBarButtonItem
  */
-- (void)addBarButtonImageItemImgName:(NSString *)imgName
-                              action:(SEL)action
-                           tintColor:(UIColor *)tintColor
-                         isRightItem:(BOOL)isRightItem;
-
-
-
-
-// 添加按钮：UIButton （测试使用）
-- (void)addBtnTitle:(NSString*)title frame:(CGRect)frame Tag:(int)tag;
-- (void)myBtnClick:(UIButton *)Btn;
-
+- (void)addBarButtonItemImgName:(NSString *)imgName
+                         action:(SEL)action
+                      tintColor:(UIColor *)tintColor
+                    isRightItem:(BOOL)isRightItem;
 
 // 停止菊花
 - (void)hudHidden;

@@ -7,6 +7,7 @@
 //
 
 #import "UIApplication_VC.h"
+#import "UIViewController+ZMAdd.h"
 
 @interface UIApplication_VC ()
 
@@ -68,7 +69,7 @@
     CGFloat width = 120;
     for (int i=1 ; i<11; i++) {
         title = [NSString stringWithFormat:@"case%d",i];
-        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) tag:i];
     }
     
 }

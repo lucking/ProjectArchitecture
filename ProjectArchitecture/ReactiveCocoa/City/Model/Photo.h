@@ -12,8 +12,8 @@
 {
 
 }
-PProperty_String(name);
-PProperty_String(age);
+@property (nonatomic, copy) NSString*(name);
+@property (nonatomic, copy) NSString*(age);
 
 
 

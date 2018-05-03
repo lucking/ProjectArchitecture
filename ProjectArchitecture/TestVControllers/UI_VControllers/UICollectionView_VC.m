@@ -7,6 +7,7 @@
 //
 
 #import "UICollectionView_VC.h"
+#import "UIViewController+ZMAdd.h"
 #import "ItemCollectionView.h"
 #import "SelectDayView.h"
 #import "NSDate+ZMAdd.h"
@@ -39,7 +40,7 @@
     CGFloat width = 120;
     for (int i=1 ; i<11; i++) {
         title = [NSString stringWithFormat:@"case%d",i];
-        [self addBtnTitle:title frame:CGRectMake(10, 120+ (35+10)*(i-1), width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 120+ (35+10)*(i-1), width, 35) tag:i];
     }
 
 }

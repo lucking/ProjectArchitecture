@@ -12,13 +12,12 @@
 {
 
 }
-PProperty_String(firstName);// 名
-PProperty_String(lastName); // 姓
-PProperty_String(name);     // 姓名
-PProperty_Int(age);         // 年龄
-PProperty_BOOL(sex);        // 性别
-PProperty_String(month);    // 月份
-
+@property (nonatomic, copy) NSString*(firstName);// 名
+@property (nonatomic, copy) NSString*(lastName); // 姓
+@property (nonatomic, copy) NSString*(name);     // 姓名
+@property (nonatomic, assign) int age;         // 年龄
+@property (nonatomic, assign) BOOL sex;        // 性别
+@property (nonatomic, copy) NSString*(month);    // 月份
 
 
 

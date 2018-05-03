@@ -20,12 +20,12 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
-  - ReactiveCocoa (2.5.2):
-    - ReactiveCocoa/UI (= 2.5.2)
-  - ReactiveCocoa/Core (2.5.2):
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5.2)
-  - ReactiveCocoa/UI (2.5.2):
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
   - RealReachability (1.1.9):
     - RealReachability/Connection (= 1.1.9)
@@ -38,6 +38,10 @@ PODS:
   - UMengUShare/Core (6.4.8.2):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.8.2)
+  - UMengUShare/Social/ReducedQQ (6.4.8.2):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.8.2):
+    - UMengUShare/Core
   - UMengUShare/Social/ReducedWeChat (6.4.8.2):
     - UMengUShare/Core
   - UMengUShare/UI (6.4.8.2):
@@ -62,9 +66,11 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
-  - ReactiveCocoa (from `https://github.com/zhao0/ReactiveCocoa.git`, tag `2.5.2`)
+  - ReactiveCocoa (~> 2.5)
   - RealReachability
   - SDWebImage (~> 4.0.0)
+  - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedSina
   - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI
   - XMLDictionary (~> 1.4.1)
@@ -72,16 +78,6 @@ DEPENDENCIES:
   - YYCategories (~> 1.0.4)
   - YYImage (~> 1.0.4)
   - YYWebImage (~> 1.0.5)
-
-EXTERNAL SOURCES:
-  ReactiveCocoa:
-    :git: https://github.com/zhao0/ReactiveCocoa.git
-    :tag: 2.5.2
-
-CHECKOUT OPTIONS:
-  ReactiveCocoa:
-    :git: https://github.com/zhao0/ReactiveCocoa.git
-    :tag: 2.5.2
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -91,7 +87,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  ReactiveCocoa: 3ff25b1bd992ac79c5c79b26b6c0c1713b715bb2
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   RealReachability: a8c483900986a0f3305733961effbfbb00637a02
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
@@ -101,6 +97,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: c4fad93dceff989732b496729deadf5fea72fd17
+PODFILE CHECKSUM: 5a1b2cf3056e016d66b195a4d1698a3e30c53fa3
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0

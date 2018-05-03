@@ -7,6 +7,7 @@
 //
 
 #import "Network_VController.h"
+#import "UIViewController+ZMAdd.h"
 #import "NetworkSession.h"
 #import "HTConst.h"
 #import "ServerConfig.h"
@@ -29,7 +30,7 @@
         if (i==6) {
             title= @"我的阿里云股票测试";
         }
-        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) Tag:i];
+        [self addBtnTitle:title frame:CGRectMake(10, 50+ (35+10)*i, width, 35) tag:i];
     }
 
     //映客主播
