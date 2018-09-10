@@ -6,14 +6,15 @@
 //  Copyright © 2015年 ZM. All rights reserved.
 //
 
-#import "Singleton.h"
+//#import "Singleton.h"
+#import <Foundation/Foundation.h>
 
-@interface LoginManager : Singleton
-{
-    
-}
-//创建实例
-Singleton_Instance_method_Interface(LoginManager)
+@interface LoginManager : NSObject
+
+////创建实例
+//Singleton_Instance_method_Interface(LoginManager)
+/** 单例 */
++ (LoginManager *)singleton;
 
 // 获取模拟用户信息
 + (NSDictionary *)getTestUserInfo;
@@ -23,11 +24,9 @@ Singleton_Instance_method_Interface(LoginManager)
  */
 @property (nonatomic, strong) NSString *deviceToken;
 @property (nonatomic, strong) NSString *token;
-//@property (nonatomic, assign) BOOL isOnline DEPRECATED_ATTRIBUTE;
 /**
  *  用户信息
  */
-//@property (nonatomic, retain) NSNumber *userId;			// 标识
 @property (nonatomic, readonly) NSString *userId;		// 标识
 @property (nonatomic, readonly) NSString *userName;		// 姓名
 @property (nonatomic, readonly) NSString *userPwd;		// 登录密码
@@ -43,8 +42,6 @@ Singleton_Instance_method_Interface(LoginManager)
  */
 @property (nonatomic, strong, readonly) NSString *userIdentify;
 @property (nonatomic, assign) BOOL isLogin; // 是否登录
-
-
 
 
 /**
@@ -68,8 +65,8 @@ Singleton_Instance_method_Interface(LoginManager)
 - (void)logout;
 
 
-
-
+// 第三方等登录数据
+- (NSArray *)thirdLoginViewDataArray;
 
 @end
 

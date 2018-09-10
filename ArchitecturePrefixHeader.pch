@@ -17,7 +17,7 @@
  */
 #ifdef __OBJC__
 // 配置头文件
-#import "ZM_BaseHeader.h"
+#import "ZMBaseHeader.h"
 #import "ZM_FontHeader.h"
 #import "ZM_MacroHeader.h"
 

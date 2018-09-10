@@ -38,11 +38,10 @@
 	if ([_Btn.titleLabel.text isEqualToString:@""] || _Btn.titleLabel.text==nil ) {
 		_Btn.hidden = YES;
 	}else{
-		float width = [NSString getTextSizeWidth:_Btn.titleLabel.text Font:FFont(14) Height:myHeight];
+		float width = [NSString zm_getTextSizeWidth:_Btn.titleLabel.text Font:FFont(14) Height:myHeight];
 		//[_Btn setTitleEdgeInsets:UIEdgeInsetsMake(_Btn.frame.size.width-width,0, width,myHeight)];
 		_Btn.frame = CGRectMake(myWidth-width-20, 0, width+20, myHeight);
 	}
-
 //	if ([_titleLab.text isEqualToString:@""] || _titleLab.text==nil ) {
 //		_titleLab.hidden = YES;
 //	}
@@ -53,8 +52,7 @@
 	if (_line==nil) {
 		_line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, self.frame.size.height)];
 		[self addSubview:_line];
-	}
-	return _line;
+	} return _line;
 }
 
 -(UILabel *)titleLab{
@@ -63,8 +61,7 @@
 		_titleLab.textColor = Gray_333333;
 		_titleLab.font = FFont(14);
 		[self addSubview:_titleLab];
-	}
-	return _titleLab;
+	} return _titleLab;
 }
 
 -(UIButton *)Btn{
@@ -74,15 +71,11 @@
 		[_Btn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
 		[_Btn setTitleColor:Gray_666666 forState:UIControlStateNormal];
 		[self addSubview:_Btn];
-	}
-	return _Btn;
+	} return _Btn;
 }
 
 -(void)rightBtnClick{
-
-
 	self.rightBtnBlock(@"");
-
 }
 
 @end

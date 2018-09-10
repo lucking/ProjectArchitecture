@@ -35,7 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = White_COLOR;
-//	NNSLog(@"---> getCurrentVC_CC = %@ \n ",[Common getCurrentVC]);
+//	NSLog(@"---> getCurrentVC_CC = %@ \n ",[Common getCurrentVC]);
 //    if ([[[Common getCurrentVC] class] isEqual:[AccountViewController class]]) {
 //    }
 
@@ -122,7 +122,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.scrollEnabled = YES;
-        [UIView clearTableViewLine:_tableView isHeaderView:YES isFooterView:YES];
+        [UIView zm_clearTableViewLine:_tableView isHeaderView:YES isFooterView:YES];
         [self.view addSubview:self.tableView];
     }
     return _tableView;
@@ -140,7 +140,7 @@
         imgV.image = [UIImage imageNamed:@"Photo"];
         imgV.layer.cornerRadius = ww/2;
         imgV.clipsToBounds = YES;
-        imgV.backgroundColor = Color_With_Hex(0xFFF5EE);
+        imgV.backgroundColor = ColorHex(0xFFF5EE);
         [_topView addSubview:imgV];
         
         
@@ -153,12 +153,12 @@
         UILabel *detailLab = [[UILabel alloc] initWithFrame:CGRectMake(imgV.right+5, hh/2+5, 120, labHH)];
         detailLab.text = @"金服来了襄阳公司";
         detailLab.font = FFont(14);
-        detailLab.textColor = Color_With_Hex(0xBC8F8F);
+        detailLab.textColor = ColorHex(0xBC8F8F);
         [_topView addSubview:detailLab];
         
         UIImageView *imgVIP = [[UIImageView alloc]initWithFrame:CGRectMake(nameLab.right+5, nameLab.top, 20, 20)];
         imgVIP.image = [UIImage imageNamed:@"VIP_gold"];
-        imgVIP.backgroundColor = Color_With_Hex(0xFFF5EE);
+        imgVIP.backgroundColor = ColorHex(0xFFF5EE);
         [_topView addSubview:imgVIP];
         
         UIButton* Btn= [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 36)];

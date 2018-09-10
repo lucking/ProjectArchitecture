@@ -300,9 +300,9 @@
 	<key>NSAppleMusicUsageDescription</key>
 	<string>App需要您的同意,才能访问媒体资料库</string>
 	<key>NSCameraUsageDescription</key>
-	<string>是否允许此App使用你的相机</string>
+	<string>需要您的同意，来访问相机进行图片修改</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>是否允许此App访问你的相册</string>
+	<string>需要您的同意，来访问相册进行图片修改</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

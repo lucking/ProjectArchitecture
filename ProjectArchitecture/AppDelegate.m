@@ -12,9 +12,7 @@
 #import "IQKeyboardManager.h"
 #import "GuidepageViewController.h"
 #import "ServerConfig.h"
-#import "NetworkReachability.h"
-#import "NetworkSession.h"
-#import "TestCommon.h"
+//#import "TestCommon.h"
 #import <UMSocialCore/UMSocialCore.h>
 
 @interface AppDelegate () {
@@ -67,8 +65,8 @@ static AppDelegate *_singleInstance;
 //        NSLog(@"---UUserDefaults.netWorkStatus= %ld",UUserDefaults.netWorkStatus);
 //    }];
 
-    //测试
-    [TestCommon test];
+//    //测试
+//    [TestCommon test];
     //进入主题主页：ZMTabBarController
     [self gotoMainPage];
 //    //[UserDefaults removeObjectKey:@"firstLaunch"];
@@ -91,14 +89,14 @@ static AppDelegate *_singleInstance;
 // 配置网络状态
 - (void)configurationNetWorkStatus
 {
-//    [GLobalRealReachability startNotifier];
-//    RAC(self, NetWorkStatus) = [[[[[NSNotificationCenter defaultCenter]
-//                                   rac_addObserverForName:kRealReachabilityChangedNotification object:nil]
-//                                  map:^(NSNotification *notification) {
-//                                      return @([notification.object currentReachabilityStatus]);
-//                                  }]
-//                                 startWith:@([GLobalRealReachability currentReachabilityStatus])]
-//                                distinctUntilChanged];
+    [GLobalRealReachability startNotifier];
+    RAC(self, NetWorkStatus) = [[[[[NSNotificationCenter defaultCenter]
+                                   rac_addObserverForName:kRealReachabilityChangedNotification object:nil]
+                                  map:^(NSNotification *notification) {
+                                      return @([notification.object currentReachabilityStatus]);
+                                  }]
+                                 startWith:@([GLobalRealReachability currentReachabilityStatus])]
+                                distinctUntilChanged];
 }
 
 #pragma mark 进入主题主页
@@ -149,6 +147,7 @@ static AppDelegate *_singleInstance;
     NSLog(@"---> 7.内存警告 \n ");
     [self didReceiveMemoryWarning];
 }
+
 
 
 @end

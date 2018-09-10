@@ -8,22 +8,15 @@
 
 #import "ZM_HomeVController.h"
 #import "UIViewController+ZMAdd.h"
-
 #import "AppDelegate.h"
-#import "TestViewController.h"
 #import "ZMCache.h"
-
 #import "RegisterViewController.h"
 #import "CityTravelNotesController.h"
 #import "LoginVC.h"
-#import "TestVController.h"
 
 static NSString *_cellId = @"CellCC_Id";
 
 @interface ZM_HomeVController ()
-{
-    Ivar aa;
-}
 @property (nonatomic, strong) UILabel *dateLabel;
 @end
 
@@ -36,7 +29,6 @@ static NSString *_cellId = @"CellCC_Id";
     self.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.hidden = NO;
-    
 }
 - (void)viewDidAppear:(BOOL)animated {
 }
@@ -45,28 +37,15 @@ static NSString *_cellId = @"CellCC_Id";
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// 初始化UI
-	[self initUI];
+    [self initUI];
     [self addBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(BarButtonItem) tintColor:[UIColor whiteColor] isRightItem:YES];
-
-    
-    //UITabBar 高度由49pt变成了83pt
-    //NavTabBar 高度由20pt变成了44pt
-    CGFloat statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
-    NSLog(@"---statusBarHeight= %f",statusBarHeight);
-    // <8x ---statusBarHeight= 20.000000
-    // =8x ---statusBarHeight= 44.000000
-    //在其他型号的iPhone上StatusBar是20,在iPhone X上StatusBar的高度是44，
-    //当你设置了这个属性的时候：Navigation bar height是140,否则 Navigation bar height是88
-    if (@available(iOS 11.0, *)) {
-        //self.navigationController.navigationBar.prefersLargeTitles = true;
-    } else {
-        // Fallback on earlier versions
-    }
 
 }
 //可在子VC中重写
 - (void)BarButtonItem {
-    [HHudProgress hudHidden];
+//    [HHudProgress hudHidden];
+    CityTravelNotesController* pushVC= [[CityTravelNotesController alloc] init];
+    [self.navigationController pushViewController:pushVC animated:YES];
 }
 
 - (void)zm_aaa {
@@ -74,25 +53,14 @@ static NSString *_cellId = @"CellCC_Id";
 }
 //例一：
 - (void)case1 {
-    TestViewController* pushVC= [[TestViewController alloc] init];
-    pushVC.vcType = @"UIVC";
-    [self.navigationController pushViewController:pushVC animated:YES];
-
-//    UICollectionView_VC* pushVC= [[UICollectionView_VC alloc] init];
-//    pushVC.title = @"UICollectionView_VC";
-//    [self.navigationController pushViewController:pushVC animated:YES];
 }
 //例二：
 - (void)case2 {
-    TestViewController* pushVC= [[TestViewController alloc] init];
-    pushVC.vcType = @"NSVC";
-    [self.navigationController pushViewController:pushVC animated:YES];
+
 }
 //例三：
 - (void)case3 {
-    TestViewController* pushVC= [[TestViewController alloc] init];
-    pushVC.vcType = @"OtherVC";
-    [self.navigationController pushViewController:pushVC animated:YES];
+
 }
 //例四：
 - (void)case4 {
@@ -113,9 +81,9 @@ static NSString *_cellId = @"CellCC_Id";
 }
 //例七：
 - (void)case7 {
-    TestVController* pushVC= [[TestVController alloc] init];
-    pushVC.title = @"TestVC";
-    [self.navigationController pushViewController:pushVC animated:YES];
+//    TestVController* pushVC= [[TestVController alloc] init];
+//    pushVC.title = @"TestVC";
+//    [self.navigationController pushViewController:pushVC animated:YES];
 }
 //例八：
 - (void)case8 {
@@ -158,7 +126,7 @@ static NSString *_cellId = @"CellCC_Id";
     }
     [self.view addSubview:self.dateLabel];
 }
-- (void)myBtnClick:(UIButton *)Btn{
+- (void)BtnClick:(UIButton *)Btn{
     
     if (Btn.tag==1) {
         [self case1];
@@ -186,9 +154,7 @@ static NSString *_cellId = @"CellCC_Id";
         _dateLabel.font = [UIFont systemFontOfSize:15];
         _dateLabel.textColor = [UIColor orangeColor];
         _dateLabel.textAlignment = NSTextAlignmentCenter;
-        _dateLabel.text = @"点击屏幕";
-        
-    }
+        _dateLabel.text = @"点击屏幕";}
     return _dateLabel;
 }
 

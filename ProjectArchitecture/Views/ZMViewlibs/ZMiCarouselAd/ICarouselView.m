@@ -108,7 +108,7 @@
 			[imageView sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"load.jpg"]];
 		}else{
 			//imageView.image = [UIImage imageNamed:str];
-			imageView.image = [UIImage compressImageName:str JPEGCompression:1.0];
+			imageView.image = [UIImage zm_compressImageName:str JPEGCompression:1.0];
 		}
 		view = imageView;
 	}

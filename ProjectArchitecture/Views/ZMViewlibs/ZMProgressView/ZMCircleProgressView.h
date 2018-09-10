@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZM_BaseHeader.h"
+#import "ZMBaseHeader.h"
 
 
 @interface ZMCircleProgressView : UIView

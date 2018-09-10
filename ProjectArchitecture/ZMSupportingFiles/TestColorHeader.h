@@ -30,22 +30,22 @@
 #define     Blue_2599FA     UIColorRGB(37,153,250)  //浅蓝色
 #define     Blue_3C96F5     UIColorRGB(60,150,225)  //蓝
 #define     Blue_59A2E3     UIColorRGB(89,162,227)  //背景
-#define Bule_5CACEE     Color_With_Hex(0x5CACEE)
-#define Bule_20B2AA     Color_With_Hex(0x20B2AA)
+#define Bule_5CACEE     ColorHex(0x5CACEE)
+#define Bule_20B2AA     ColorHex(0x20B2AA)
 
 
 // 标准绿色
 #define GreenColor      UIColorRGB(5,111,0)
 // 绿色
 #define GreenColorAA    UIColorRGB(90,220,80)
-#define Green_00CD66    Color_With_Hex(0x00CD66)
-#define Green698B69     Color_With_Hex(0x698B69)
-#define Green5F9EA0     Color_With_Hex(0x5F9EA0)
+#define Green_00CD66    ColorHex(0x00CD66)
+#define Green698B69     ColorHex(0x698B69)
+#define Green5F9EA0     ColorHex(0x5F9EA0)
 
 //---------------------"  红、粉、紫   "-------------------
-#define Red_EEAEEE      Color_With_Hex(0xEEAEEE) //粉紫
-#define Purple_AB82FF   Color_With_Hex(0xAB82FF) //淡紫
-#define Purple_CD69C9   Color_With_Hex(0xCD69C9) //淡紫
+#define Red_EEAEEE      ColorHex(0xEEAEEE) //粉紫
+#define Purple_AB82FF   ColorHex(0xAB82FF) //淡紫
+#define Purple_CD69C9   ColorHex(0xCD69C9) //淡紫
 
 
 

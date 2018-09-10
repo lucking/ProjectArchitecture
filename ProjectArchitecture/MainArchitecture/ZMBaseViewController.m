@@ -14,47 +14,50 @@
 
 @implementation ZMBaseViewController
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        //self.title = @"首页";
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-    self.navigationController.navigationBar.tintColor = Clear_COLOR;
-    //[self test];
+    
+    //系统返回按钮：隐藏文字、自定义文字、返回按钮的颜色
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];  
+    //返回按钮的箭头颜色
+    [self.navigationController.navigationBar setTintColor:Gray_888888];
+    //    [self navBarColor:Gray_F5F5F5];
+    //    [self navBackColor:Gray_888888];
+    //    [self navBarColor:White_COLOR];
+    
 }
-
-//view 将要出现
-- (void)viewWillAppear:(BOOL)animated {
-}
-//view 已经出现
-- (void)viewDidAppear:(BOOL)animated {
-}
-//view 将要消失
-- (void)viewWillDisappear:(BOOL)animated {
-}
-//view 已经消失
-- (void)viewDidDisappear:(BOOL)animated {
-}
-
 
 //系统方法：右滑返回
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    
-    NSLog(@"---> self.navVC.childVCs.count = %ld ",self.navigationController.childViewControllers.count);
-    NSLog(@"---> self.childVCs.count = %ld \n ",self.childViewControllers.count);
     return self.navigationController.childViewControllers.count > 1;
-    //或 return YES;
 }
 
+// 导航背景颜色
+- (void)navBarColor:(UIColor *)navColor {
+    self.navigationController.navigationBar.barTintColor    = navColor;
+    self.navigationController.navigationBar.backgroundColor = navColor;
+}
+
+/**
+ * 设置航条：带右按钮 导
+ */
+- (void)zm_setNavTitle:(NSString *)str backBtnHidden:(BOOL)hidden originalBack:(BOOL)originalBack {
+    
+    ZMNavigationBarView *nav = [[ZMNavigationBarView alloc] init];
+    nav.backButton.hidden = hidden;
+    nav.title = str;
+    [self.view addSubview:nav];
+    self.zmNavBarView= nav;
+    zmWS(weakSf);
+    if (originalBack) {
+        nav.zmBackBlock = ^{
+            [weakSf.navigationController popViewControllerAnimated:YES];
+        };
+    }
+}
 //导航标题 navTitle
 -(void)setTitle:(NSString*)title TitleColor:(UIColor*)color
 {
@@ -68,15 +71,14 @@
     self.titleNavLab = titleLab;
     self.navigationItem.titleView = self.titleNavLab;
 }
-
 - (void)setTitleCustom:(NSString *)titleCustom {
     _titleCustom = titleCustom;
     _titleNavLab.text = titleCustom;
 }
 
 //使用系统的 BarButtonSystemItem
-- (void)addBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action
-                     tintColor:(UIColor *)tintColor isRightItem:(BOOL)isRightItem
+- (void)addBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(id)target action:(SEL)action tintColor:(UIColor *)tintColor
+                   isRightItem:(BOOL)isRightItem
 {
     if (isRightItem) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:target action:action];
@@ -88,41 +90,61 @@
         
     }
 }
+//添加带标题的 BarButtonItemTitle
+- (void)addBarButtonItemTitle:(NSString *)title itemStyle:(UIBarButtonItemStyle)itemStyle
+                       target:(id)target action:(SEL)action font:(UIFont *)font
+                    tintColor:(UIColor *)tintColor 
+                  isRightItem:(BOOL)isRightItem
+{
+    if (isRightItem) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:itemStyle target:target action:action];
+        self.navigationItem.rightBarButtonItem.tintColor = tintColor;
+        [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil] forState:UIControlStateNormal];
+    }else {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:title style:itemStyle target:target action:action];
+        self.navigationItem.leftBarButtonItem.tintColor = tintColor;
+        [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil] forState:UIControlStateNormal];
+    } 
+}
+
 //添加带图片的 BarButtonItem
-- (void)addBarButtonImageItemImgName:(NSString *)imgName action:(SEL)action
-                           tintColor:(UIColor *)tintColor isRightItem:(BOOL)isRightItem
+- (void)addBarButtonItemImgName:(NSString *)imgName action:(SEL)action
+                      tintColor:(UIColor *)tintColor
+                    isRightItem:(BOOL)isRightItem
 {
     if (isRightItem) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imgName] style:UIBarButtonItemStylePlain target:self action:action];
         self.navigationItem.rightBarButtonItem.tintColor = tintColor;
-        
     }else {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:imgName] style:UIBarButtonItemStylePlain target:self action:action];
         self.navigationItem.leftBarButtonItem.tintColor = tintColor;
     }
 }
 
+// 清除UITableView底部多余的分割线
+- (void)clearTableViewLine:(UITableView *)tabelView {
+    UIView *View= [UIView new];
+    View.backgroundColor= [UIColor clearColor];
+    [tabelView setTableHeaderView:View];
+    [tabelView setTableFooterView:View];
+}
 // 菊花停止
 - (void)hudHidden {
-    [[HudProgress singleton] hudHidden];
+    [HHudProgress hudHidden];
 }
 // 等待：提示信息
-- (void)hudShowLoading:(NSString *)message afterDelay:(NSTimeInterval)delay
-{
-    [[HudProgress singleton] hudShowLoadingMsg:message afterDelay:delay addSubview:nil];
+- (void)hudShowLoading:(NSString *)message afterDelay:(NSTimeInterval)delay{
+    [HHudProgress hudShowMsg:message delay:delay addSubview:self.view];
 }
 // 普通：提示信息
 - (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay {
-    [[HudProgress singleton] hudShowLoadingMsg:message afterDelay:delay addSubview:nil];
+    [HHudProgress hudShowMsg:message delay:delay addSubview:self.view];
 }
 // 成功时：提示信息
 - (void)hudShowSucceed:(NSString *)message afterDelay:(NSTimeInterval)delay {
-    [[HudProgress singleton] hudShowSucceedMsg:message afterDelay:delay addSubview:nil];
+    [HHudProgress hudShowSucceedMsg:message afterDelay:delay addSubview:nil];
 }
 
-- (void)dealloc {
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -67,7 +67,7 @@ static NSString *Identifier = @"CityTravelCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self backBtnNoNavBar:NO normalBack:YES];
+    [self zm_backBtnNoNavBar:NO normalBack:YES];
     self.title = @"旅游";
 
     self.itemData = [[NSMutableArray alloc] initWithObjects:@"去你妈的",@"去你妈的", nil];

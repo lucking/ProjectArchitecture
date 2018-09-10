@@ -15,26 +15,26 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - iCarousel (1.8.3)
-  - IQKeyboardManager (4.0.13)
-  - Masonry (1.0.2)
-  - MBProgressHUD (1.0.0)
-  - MJExtension (3.0.13)
-  - MJRefresh (3.1.15.3)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
+  - IQKeyboardManager (6.1.1)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
+  - ReactiveCocoa (2.5.2):
+    - ReactiveCocoa/UI (= 2.5.2)
+  - ReactiveCocoa/Core (2.5.2):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
+  - ReactiveCocoa/no-arc (2.5.2)
+  - ReactiveCocoa/UI (2.5.2):
     - ReactiveCocoa/Core
-  - RealReachability (1.1.9):
-    - RealReachability/Connection (= 1.1.9)
-    - RealReachability/Ping (= 1.1.9)
-  - RealReachability/Connection (1.1.9)
-  - RealReachability/Ping (1.1.9)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - RealReachability (1.3.0):
+    - RealReachability/Connection (= 1.3.0)
+    - RealReachability/Ping (= 1.3.0)
+  - RealReachability/Connection (1.3.0)
+  - RealReachability/Ping (1.3.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - UMengUShare/Core (6.4.8.2):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.8.2)
@@ -61,35 +61,45 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - iCarousel (~> 1.8.3)
-  - IQKeyboardManager (~> 4.0.10)
-  - Masonry (= 1.0.2)
-  - MBProgressHUD (~> 1.0.0)
-  - MJExtension (~> 3.0.13)
-  - MJRefresh (~> 3.1.12)
-  - ReactiveCocoa (~> 2.5)
+  - IQKeyboardManager
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - ReactiveCocoa (from `https://github.com/zhao0/ReactiveCocoa.git`, tag `2.5.2`)
   - RealReachability
-  - SDWebImage (~> 4.0.0)
+  - SDWebImage
   - UMengUShare/Social/ReducedQQ
   - UMengUShare/Social/ReducedSina
   - UMengUShare/Social/ReducedWeChat
   - UMengUShare/UI
-  - XMLDictionary (~> 1.4.1)
-  - YYCache (~> 1.0.4)
-  - YYCategories (~> 1.0.4)
-  - YYImage (~> 1.0.4)
-  - YYWebImage (~> 1.0.5)
+  - XMLDictionary
+  - YYCache
+  - YYCategories
+  - YYImage
+  - YYWebImage
+
+EXTERNAL SOURCES:
+  ReactiveCocoa:
+    :git: https://github.com/zhao0/ReactiveCocoa.git
+    :tag: 2.5.2
+
+CHECKOUT OPTIONS:
+  ReactiveCocoa:
+    :git: https://github.com/zhao0/ReactiveCocoa.git
+    :tag: 2.5.2
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
-  IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  RealReachability: a8c483900986a0f3305733961effbfbb00637a02
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  ReactiveCocoa: 3ff25b1bd992ac79c5c79b26b6c0c1713b715bb2
+  RealReachability: eae9c58d2db52fadd8e1cba4b5d4c028454fbc47
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -97,6 +107,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 5a1b2cf3056e016d66b195a4d1698a3e30c53fa3
+PODFILE CHECKSUM: 4f0fd800f613ac61fb25828baaef020ebe9a7009
 
 COCOAPODS: 1.4.0

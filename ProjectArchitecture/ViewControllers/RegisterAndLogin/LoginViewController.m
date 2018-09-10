@@ -127,7 +127,7 @@
         [HHudProgress hudShowMsg:@"请安装微信" delay:1.0f addSubview:self.view];
         return;
     }
-    WS(weakSelf);
+    zmWS(weakSelf);
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController : self completion:^(id result, NSError *error) {
         
         UMSocialUserInfoResponse *resp = result;
@@ -145,7 +145,7 @@
         [HHudProgress hudShowMsg:@"请安装QQ" delay:1.0f addSubview:self.view];
         return;
     }
-    WS(weakSelf);
+    zmWS(weakSelf);
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_QQ currentViewController : self completion:^(id result, NSError *error) {
         
         UMSocialUserInfoResponse *resp = result;
@@ -200,7 +200,7 @@
         [HHudProgress hudShowMsg:@"请安装新浪" delay:1.0f addSubview:self.view];
         return;
     }
-    WS(weakSelf);
+    zmWS(weakSelf);
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Sina currentViewController : self completion:^(id result, NSError *error) {
         
         UMSocialUserInfoResponse *resp = result;

@@ -4,19 +4,22 @@ inhibit_all_warnings!
 
 target 'ProjectArchitecture' do
 pod 'AFNetworking', '~> 3.1.0'
-pod 'IQKeyboardManager', '~> 4.0.10'
-pod 'MJRefresh', '~> 3.1.12'
-pod 'MJExtension', '~> 3.0.13'
-pod 'Masonry', '1.0.2'
-pod 'MBProgressHUD', '~> 1.0.0'
-pod 'XMLDictionary', '~> 1.4.1'
+pod 'IQKeyboardManager'
+pod 'MJRefresh'
+pod 'MJExtension'
+pod 'Masonry'
+pod 'MBProgressHUD'
+pod 'XMLDictionary'
 pod 'iCarousel', '~> 1.8.3'
-pod 'SDWebImage', '~> 4.0.0'
-pod 'YYCache', '~> 1.0.4'
-pod 'YYCategories', '~> 1.0.4'
-pod 'YYImage', '~> 1.0.4'
-pod 'YYWebImage', '~> 1.0.5'
-pod 'ReactiveCocoa', '~> 2.5',:inhibit_warnings => true
+pod 'SDWebImage'
+pod 'YYCache'
+pod 'YYCategories'
+pod 'YYImage'
+pod 'YYWebImage'
+#pod 'ReactiveCocoa', '~> 2.5',:inhibit_warnings => true
+#ReactiveCocoa Unknown warning group ‘-Wreceiver-is-weak’,ignored警告
+#pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
+pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
 pod 'RealReachability'
 
 pod 'UMengUShare/UI'

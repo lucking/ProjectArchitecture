@@ -21,10 +21,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <UIKit/UIScrollView.h>
 
 
 @interface UIScrollView (Additions)
+
+/**
+ If YES, then scrollview will ignore scrolling (simply not scroll it) for adjusting textfield position. Default is NO.
+ */
+@property(nonatomic, assign) BOOL shouldIgnoreScrollingAdjustment;
 
 /**
  Restore scrollViewContentOffset when resigning from scrollView. Default is NO.

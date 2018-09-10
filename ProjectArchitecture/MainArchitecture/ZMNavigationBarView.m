@@ -13,7 +13,6 @@
 
 @end
 
-
 @implementation ZMNavigationBarView
 
 - (instancetype)init {
@@ -35,8 +34,7 @@
 
 // 初始化配置
 - (void)configInit {  
-    self.frame = CGRectMake(0, 0, SSWIDTH, zmNavHeight);
-    self.backgroundColor = Gray_CCCCCC;
+    self.frame = CGRectMake(0, 0, SSWIDTH, ZM_NavBarHeight);
     UIView *statusBarView   = [[UIView alloc] init];
     UIView *titleView       = [[UIView alloc] init];
     UIButton *backButton    = [[UIButton alloc] init];
@@ -49,7 +47,7 @@
     
     [statusBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-        make.height.equalTo(@(zmStatusBarHeight));
+        make.height.equalTo(@(ZM_NavBarStatusHeight));
     }];
     [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(statusBarView.mas_bottom);
@@ -59,8 +57,6 @@
         make.centerY.equalTo(titleView);
         make.left.equalTo(titleView).mas_offset(0);
         make.width.equalTo(@(60));
-        // make.height.equalTo(titleView.mas_height);
-        // make.top.bottom.equalTo(titleView);
         make.height.equalTo(@(44));
     }];
     [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,22 +65,40 @@
         make.top.bottom.equalTo(titleView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     // 赋值 
-    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
-    [backButton setImage:[UIImage imageNamed:@"backWhite52px"] forState:UIControlStateNormal];
-    [backButton setImage:[UIImage imageNamed:@"backBlack1"] forState:UIControlStateHighlighted];
+    [backButton setImage:[UIImage imageNamed:@"arrow_left_g1"] forState:UIControlStateNormal]; //backWhite52px
     [backButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [backButton addTarget:self action:@selector(zm_backClick) forControlEvents:UIControlEventTouchUpInside];
+    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
+    backButton.hidden   = YES;
 
     self.statusBarView  = statusBarView;
     self.titleView      = titleView;
     self.backButton     = backButton;
     self.titleLab       = titleLab;
-    // 测试 
-    self.titleLab.text = @"我的标题";
-//    self.statusBarView.backgroundColor = [UIColor yellowColor];
-//    self.titleView.backgroundColor     = [UIColor blueColor];
-//    self.backButton.backgroundColor    = [UIColor orangeColor];
-//    self.titleLab.backgroundColor      = [UIColor lightGrayColor];    
+    self.backgroundColor = Gray_DDDDDD;
+    //statusBarView.backgroundColor = [UIColor yellowColor];
+}
+
+- (void)rightItemTitle:(NSString *)title font:(CGFloat)font imgName:(NSString *)imgName {
+    
+    UIButton *rightItem = [[UIButton alloc] init];
+    [rightItem setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+    [rightItem setTitle:title forState:UIControlStateNormal];
+    [rightItem.titleLabel setFont:[UIFont systemFontOfSize:font]];
+    [rightItem addTarget:self action:@selector(rightItemClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.titleView addSubview:rightItem];
+    
+    [rightItem mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.titleView);
+        make.right.equalTo(self.titleView).mas_offset(-10);
+        make.width.equalTo(@(40));
+        make.height.equalTo(@(44));
+    }];
+}
+- (void)rightItemClick {
+    if (self.rightItemBlock) {
+        self.rightItemBlock();  
+    }
 }
 
 - (void)setTitle:(NSString *)title {
@@ -95,9 +109,21 @@
 -(void)zm_backClick
 {
     if (self.zmBackBlock) {
-        self.zmBackBlock();
+        self.zmBackBlock(); 
+    }
+    //代理响应
+    if ([self.delegate respondsToSelector:@selector(zmNavBarView:originalBack:)]) {
+        [self.delegate zmNavBarView:self originalBack:self.originalBack];
     }
 }
 
+// 测试  
+- (void)test {
+    self.titleLab.text = @"我的标题";
+    self.statusBarView.backgroundColor = [UIColor yellowColor];
+    self.titleView.backgroundColor     = [UIColor blueColor];
+    self.backButton.backgroundColor    = [UIColor orangeColor];
+    self.titleLab.backgroundColor      = [UIColor lightGrayColor];    
+}
 
 @end

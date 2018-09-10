@@ -43,7 +43,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NNSLog(@"---> getCurrentVC_BB = %@ \n ",[Common getCurrentVC]);
+    //NSLog(@"---> getCurrentVC_BB = %@ \n ",[Common getCurrentVC]);
     [self initUI];
     [HHudProgress hudHidden];
 }
@@ -69,7 +69,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.smallScrollView.showsHorizontalScrollIndicator = NO;
     self.smallScrollView.showsVerticalScrollIndicator = NO;
-    self.smallScrollView.backgroundColor = Color_With_Hex(0xC6E2FF);
+    self.smallScrollView.backgroundColor = ColorHex(0xC6E2FF);
     //self.smallScrollView.delegate = self;// 不可用
     [self.view addSubview:self.smallScrollView];
     

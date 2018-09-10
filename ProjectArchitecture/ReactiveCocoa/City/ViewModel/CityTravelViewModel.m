@@ -32,9 +32,7 @@
     [super initialize];
     
     RACSignal *visibleStateChanged = [RACObserve(self, isSearch) skip:1];
-    
     [visibleStateChanged subscribeNext:^(NSNumber *visible) {
-        
         _isSearch = visible.boolValue;
     }];
     //更多数据

@@ -34,7 +34,7 @@
 
     //返回按钮
 //    [self backBtnNoNavBar:NO normalBack:YES];
-    self.view.backgroundColor = [UIColor colorHexString:@"FFFAFA"];
+    self.view.backgroundColor = [UIColor zm_colorHexString:@"FFFAFA"];
     // 添加单击手势
     UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(KeyBoardDown)];
     [self.view addGestureRecognizer:tap];
@@ -96,7 +96,7 @@
         _ttableView.dataSource = self;
         _ttableView.delegate = self;
         _ttableView.scrollEnabled = YES;
-        [UIView clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
+        [UIView zm_clearTableViewLine:_ttableView isHeaderView:YES isFooterView:YES];
         [self.view addSubview:self.ttableView];
     }
     return _ttableView;

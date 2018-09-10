@@ -11,7 +11,7 @@
 #import "BannerModel.h"
 #import "UIImageView+HTRoundImage.h"
 #import <SDWebImageManager.h>
-#import "HTConst.h"
+//#import "HTConst.h"
 #import "UIView+ZMFrame.h"
 #import "ZMWebViewModel.h"
 #import "CityBannerWebVController.h"
@@ -95,7 +95,6 @@
         @strongify(self);
         if ([x count] > 0) {
             [self.placeholderImageView removeFromSuperview];
-            
             [x enumerateObjectsUsingBlock:^(BannerModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
                 [self.imageURLStringsGroup addObject:model];
             }];
@@ -195,15 +194,13 @@
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
      BannerModel *model = self.imageURLStringsGroup[index];
-     ZMWebViewModel *viewModel = [[ZMWebViewModel alloc] initWithServices:nil
-                                                                   params:@{ViewTitlekey:@"",
-                                                                            RequestURLkey:model.html_url,
-                                                                            NavBarStyleTypekey:@(kNavBarStyleNomal)}];
+     ZMWebViewModel *viewModel = [[ZMWebViewModel alloc] initWithServices:nil params:@{ViewTitlekey:@"", RequestURLkey:model.html_url, NavBarStyleTypekey:@(kNavBarStyleNomal)}];
+    
 //    CityBannerWebVController *currentVC = [[CityBannerWebVController alloc] init];
     CityBannerWebVController *currentVC = [[CityBannerWebVController alloc] initWithViewModel:viewModel];;
 //    currentVC.viewModel = viewModel;
     
-    [[UIViewController getCurrentVC].navigationController pushViewController:currentVC animated:YES];
+    [[UIViewController zm_getCurrentVC].navigationController pushViewController:currentVC animated:YES];
     if (self.clickItemOperationBlock) {
         self.clickItemOperationBlock(index);
     }

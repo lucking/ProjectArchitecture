@@ -88,7 +88,7 @@
 
 	NSString* 	_message = @"你有账户现在有 2亿 金额！";
 	// 测试
-	[self showAlertTitle:nil message:_message okTitle:@"确定" cancelTitle:nil okAction:^{
+	[self zm_showAlertTitle:nil message:_message okTitle:@"确定" cancelTitle:nil okAction:^{
 		NSLog(@"---> 确定");
 
 	}  cancelAction:^{
@@ -208,14 +208,10 @@
  */
 -(void)registerBtnClick{
 	NSLog(@"registerBtnClick");
-	
-	if ([NSString isCharAndNumber:self.pwdText.mainText.text]) {
-
+	if ([NSString zm_isCharAndNumber:self.pwdText.mainText.text]) {
 	}
 	if (self.isCanUse == YES) {
-		
 	}
-
 }
 
 #pragma mark ========="  ZMReadProtocolViewDelegate：阅读协议   "========

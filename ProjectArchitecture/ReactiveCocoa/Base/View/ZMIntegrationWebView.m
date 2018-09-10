@@ -31,10 +31,7 @@ static void *ZMIntegrationWebBrowserContext = &ZMIntegrationWebBrowserContext;
 @property (nonatomic, strong) UIWebView *uiWebView;
 @end
 
-
-
 @implementation ZMIntegrationWebView
-
 
 #pragma mark --Initializers
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -392,7 +389,6 @@ static void *ZMIntegrationWebBrowserContext = &ZMIntegrationWebBrowserContext;
 }
 
 #pragma mark - Dealloc
-
 - (void)dealloc {
     [self.uiWebView setDelegate:nil];
     [self.wkWebView setNavigationDelegate:nil];

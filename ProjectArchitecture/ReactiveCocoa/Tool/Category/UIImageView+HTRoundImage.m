@@ -11,6 +11,7 @@
 
 
 @implementation UIImageView (HTRoundImage)
+
 - (void)HT_setImageWithCornerRadius:(CGFloat)radius imageURL:(NSURL *)imageURL placeholder:(NSString *)placeholder size:(CGSize)size
 {
     [self HT_setImageWithHTRadius:HTRadiusMake(radius, radius, radius, radius) imageURL:imageURL placeholder:placeholder borderColor:nil borderWidth:0 backgroundColor:nil contentMode:UIViewContentModeScaleAspectFill size:size];

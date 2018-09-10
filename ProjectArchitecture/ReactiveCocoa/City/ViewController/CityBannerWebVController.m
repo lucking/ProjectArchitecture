@@ -86,7 +86,7 @@
         }];
     
     // 标题
-    if ([self.viewModel.title isNotBlank]) {
+    if ([self.viewModel.title zm_isNotBlank]) {
         RAC(self.navigationItem,title) = RACObserve(self.viewModel, title);
     }else{
         [[self

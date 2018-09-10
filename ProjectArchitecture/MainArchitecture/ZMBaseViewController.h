@@ -19,13 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, weak) ZMNavigationBarView *zmNavBarView;
 @property (nonatomic,copy) void (^zmBackBlock)(void);
 
+
+// 导航背景颜色
+- (void)navBarColor:(UIColor *)navColor;
 // 导航标题 navigationTitle
 - (void)setTitle:(NSString*)title TitleColor:(UIColor*)color;
-/**
- * 设置航条：带右按钮 导
- */
-- (void)zm_NavTitle:(NSString *)str backBtnHidden:(BOOL)hidden autoBack:(BOOL)autoBack;
-
+// 设置导航条：带右按钮 
+- (void)zm_setNavTitle:(NSString *)str backBtnHidden:(BOOL)hidden originalBack:(BOOL)originalBack;
 
 /**
  添加系统的 BarButtonSystemItem
@@ -42,8 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
                    isRightItem:(BOOL)isRightItem;
 
 //添加带标题的 BarButtonItemTitle
-- (void)addBarButtonItemTitle:(NSString *)title
-                    itemStyle:(UIBarButtonItemStyle)itemStyle
+- (void)addBarButtonItemTitle:(NSString *)title itemStyle:(UIBarButtonItemStyle)itemStyle
                        target:(id)target
                        action:(SEL)action
                          font:(UIFont *)font
@@ -62,6 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
                       tintColor:(UIColor *)tintColor
                     isRightItem:(BOOL)isRightItem;
 
+
+// 清除UITableView底部多余的分割线
+- (void)clearTableViewLine:(UITableView *)tabelView;
 // 停止菊花
 - (void)hudHidden;
 // 等待：提示信息
@@ -70,6 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hudShowMessage:(NSString *)message afterDelay:(NSTimeInterval)delay;
 // 成功时：提示信息
 - (void)hudShowSucceed:(NSString *)message afterDelay:(NSTimeInterval)delay;
+
 @end
 
 NS_ASSUME_NONNULL_END
